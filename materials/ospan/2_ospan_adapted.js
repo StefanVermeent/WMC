@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>WM operation span task</title>
-    <script src="jspsych-6.3.1/jspsych.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-html-button-operationspan.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-instructions.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-operation-span-recall.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link href="jspsych-6.3.1/css/jspsych_operationspan.css" rel="stylesheet" type="text/css"></link>
-    
-    <script src="0_functions.js"></script>
-    <script src="1_setup.js"></script>
-  
-  <style>
-
-  </style>
-  </head>
-  <body></body>
-  <script>
-  
-  
 var ospan_adapted_procedure = {
   timeline: [
     
@@ -31,8 +5,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return attention_cue(next_letter = 0)
-        },
+        return attention_cue(next_letter = 0);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -41,8 +15,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 0, part = "letter")
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 0, part = "letter");
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -51,14 +25,14 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 0, part = "cog_load")
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 0, part = "cog_load");
+      },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
       on_finish: function(){
         var acc = jsPsych.data.get().last(1).values()[0].accuracy;
         if (acc==1){
-        nMathAcc+=1
+          nMathAcc+=1;
         }
       }
     },
@@ -67,8 +41,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return attention_cue(next_letter = 1)
-        },
+        return attention_cue(next_letter = 1);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -77,8 +51,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 1)
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 1);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -87,14 +61,14 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 1, part = "cog_load")
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 1, part = "cog_load");
+      },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
       on_finish: function(){
         var acc = jsPsych.data.get().last(1).values()[0].accuracy;
         if (acc==1){
-        nMathAcc+=1
+          nMathAcc+=1;
         }
       }
     },
@@ -103,8 +77,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return attention_cue(next_letter = 2)
-        },
+        return attention_cue(next_letter = 2);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -113,8 +87,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 2)
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 2);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -123,14 +97,14 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 2, part = "cog_load")
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 2, part = "cog_load");
+      },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
       on_finish: function(){
         var acc = jsPsych.data.get().last(1).values()[0].accuracy;
         if (acc==1){
-        nMathAcc+=1
+          nMathAcc+=1;
         }
       }
     },
@@ -139,8 +113,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return attention_cue(next_letter = 3)
-        },
+        return attention_cue(next_letter = 3);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -149,8 +123,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 3)
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 3);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -159,14 +133,14 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 3, part = "cog_load")
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 3, part = "cog_load");
+      },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
       on_finish: function(){
         var acc = jsPsych.data.get().last(1).values()[0].accuracy;
         if (acc==1){
-        nMathAcc+=1
+          nMathAcc+=1;
         }
       }
     },
@@ -175,8 +149,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return attention_cue(next_letter = 4)
-        },
+        return attention_cue(next_letter = 4);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -185,8 +159,8 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 4)
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 4);
+      },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
@@ -195,14 +169,14 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 4, part = "cog_load")
-        },
+        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 4, part = "cog_load");
+      },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
       on_finish: function(){
         var acc = jsPsych.data.get().last(1).values()[0].accuracy;
         if (acc==1){
-        nMathAcc+=1
+          nMathAcc+=1;
         }
       }
     },
@@ -212,41 +186,37 @@ var ospan_adapted_procedure = {
       type: 'operation-span-recall',
       correct_order: jsPsych.timelineVariable('selection'),
       data: function(){
-        return {set_size: setSizes[n]}
+        return {set_size: setSizes[n]};
       },
       on_finish: function(){
-        nLetters = setSizes[n]
+        nLetters = setSizes[n];
         nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
-    }
+      }
     },
     
     // Trial Feedback
     {
       type: 'instructions',
       pages: function(){
-      pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of "+nLetters+"</font> letters in their correct order.</b><br><br>"
-      if (n>nPracticeTrials){
-        pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of "+nLetters+"</font> math problems accurately.<br><br></div>"
+        pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of "+nLetters+"</font> letters in their correct order.</b><br><br>";
+        if (n>nPracticeTrials){
+          pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of "+nLetters+"</font> math problems accurately.<br><br></div>";
+        }
+        return [pageOne];
+      },
+      allow_backward: false,
+      button_label_next: "Next Trial",
+      show_clickable_nav: true,
+      on_finish: function(){
+        nMathAcc = 0;
       }
-      return [pageOne]
-    },
-    allow_backward: false,
-    button_label_next: "Next Trial",
-    show_clickable_nav: true,
-    on_finish: function(){
-      nMathAcc = 0
-    }
     }
   ],
   timeline_variables: [
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)}
   ]
-}  
-
-
-jsPsych.init({
-  timeline: [ospan_adapted_procedure]
-})
-
-  </script>
-</html>
+};
