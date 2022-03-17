@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>WM symmetry span task</title>
+    <script src="jspsych-6.3.1/jspsych.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-html-button-response.js"></script>
+   
+    <script src="jspsych-6.3.1/plugins/jspsych-sspan_task_setup.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-sspan-task-cue.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-spatial-span.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-spatial-span-recall.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-symmetry-judgement-task.js"></script>
+    
+    <script src="jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
+    
+    <script src="jspsych-6.3.1/plugins/jspsych-operation-span-recall.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="jspsych-6.3.1/css/jspsych_operationspan.css" rel="stylesheet" type="text/css"></link>
+    
+    <script src="ospan_0_functions.js"></script>
+    <script src="ospan_1_setup.js"></script>
+    <script src="ospan_2_adapted.js"></script>
+    <script src="ospan_3_standard.js"></script>
+    
+    <script src="sspan_1_setup.js"></script>
+    <script src="sspan_2_adapted.js"></script>
+    <script src="sspan_3_standard.js"></script>
+    
+    <link href="jspsych-6.3.1/css/jspsych_grid.css" rel="stylesheet" type="text/css"></link>
+
+
+  </head>
+  <body></body>
+  <script>
+ 
+ var task_choice = {
+   type: "html-button-response",
+   stimulus: "Which game do you want to try?<br><br>",
+   choices: ["ospan - standard", "ospan - adapted", "sspan_standard", "sspan - adapted"],
+ }
+ 
+ 
+ var ospan_std = {
+   timeline: [ospan_standard_procedure],
+   conditional_function: function(){
+     var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
+     console.log(selected_task);
+     if(selected_task == 0){
+       return true;
+     } else {
+       return false;
+       }
+   }
+};
+
+ var ospan_adp = {
+   timeline: [ospan_adapted_procedure],
+   conditional_function: function(){
+     var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
+     console.log(selected_task);
+     if(selected_task == 1){
+       return true;
+     } else {
+       return false;
+       }
+   }
+};
+
+ var sspan_std = {
+   timeline: [sspan_standard_procedure],
+   conditional_function: function(){
+     var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
+     console.log(selected_task);
+     if(selected_task == 2){
+       return true;
+     } else {
+       return false;
+       }
+   }
+};
+
+ var sspan_adp = {
+   timeline: [sspan_adapted_procedure],
+   conditional_function: function(){
+     var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
+     console.log(selected_task);
+     if(selected_task == 3){
+       return true;
+     } else {
+       return false;
+       }
+   }
+};
+   
+
+
+jsPsych.init({
+  timeline: [
+    task_choice,
+    ospan_std,
+    ospan_adp,
+    sspan_std,
+    sspan_adp
+  ],
+  on_finish: function() {
+    jsPsych.data.displayData(); // comment out if you do not want to display results at the end of task
+  }
+});
+</script>
+</html>

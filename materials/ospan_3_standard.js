@@ -1,21 +1,11 @@
-var ospan_adapted_procedure = {
+var ospan_standard_procedure = {
   timeline: [
-    
-    // First Attention cue
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 0);
-      },
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 1000
-    },
-    
+
     // First Letter
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 0, part = "letter");
+        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[0] + "</div>";
       },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
@@ -25,7 +15,7 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 0, part = "cog_load");
+        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
       },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
@@ -36,22 +26,12 @@ var ospan_adapted_procedure = {
         }
       }
     },
-    
-    // Second Attention cue
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 1);
-      },
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 1000
-    },
-    
+
     // Second Letter
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 1);
+        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[1] + "</div>";
       },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
@@ -61,7 +41,7 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 1, part = "cog_load");
+        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
       },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
@@ -72,22 +52,12 @@ var ospan_adapted_procedure = {
         }
       }
     },
-    
-    // Third Attention cue
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 2);
-      },
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 1000
-    },
-    
+
     // Third Letter
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 2);
+        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[2] + "</div>";
       },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
@@ -97,7 +67,7 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 2, part = "cog_load");
+        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
       },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
@@ -109,21 +79,11 @@ var ospan_adapted_procedure = {
       }
     },
     
-    // Fourth Attention cue
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 3);
-      },
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 1000
-    },
-    
     // Fourth Letter
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 3);
+        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[3] + "</div>";
       },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
@@ -133,7 +93,7 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 3, part = "cog_load");
+        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
       },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
@@ -145,21 +105,11 @@ var ospan_adapted_procedure = {
       }
     },
     
-    // Fifth Attention cue
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 4);
-      },
-      choices: jsPsych.NO_KEYS,
-      trial_duration: 1000
-    },
-    
     // Fifth Letter
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 4);
+        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[4] + "</div>";
       },
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
@@ -169,7 +119,7 @@ var ospan_adapted_procedure = {
     {
       type: 'html-keyboard-response',
       stimulus: function() {
-        return test_display(selected_letters = jsPsych.timelineVariable('selection'), current_letter = 4, part = "cog_load");
+        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
       },
       trial_duration:6000,
       choices: ["ArrowLeft", "ArrowRight"],
@@ -198,9 +148,9 @@ var ospan_adapted_procedure = {
     {
       type: 'instructions',
       pages: function(){
-        pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of "+nLetters+"</font> letters in their correct order.</b><br><br>";
+        pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of 5</font> letters in their correct order.</b><br><br>";
         if (n>nPracticeTrials){
-          pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of "+nLetters+"</font> math problems accurately.<br><br></div>";
+          pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of 5</font> math problems accurately.<br><br></div>";
         }
         return [pageOne];
       },
