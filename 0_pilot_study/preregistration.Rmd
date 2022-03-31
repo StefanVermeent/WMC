@@ -1,8 +1,8 @@
 ---
 title: "Preregistration Pilot 1"
 output: github_document
-bibliography: ../references.bib
-csl: ../apa.csl
+bibliography: references.bib
+csl: apa.csl
 link-citations: true
 ---
 
@@ -10,11 +10,7 @@ link-citations: true
 
 ## Overview
 
-This preregistration document is based on [@akker2021] for secondary data analyses. There are three parts, which you can jump to following the links below:
 
-- [Part 1 - Study information]
-- [Part 2 - Data Description]
-- [Part 3 - Variables]
 
 ## Part 1 - Study Information
 

@@ -1,1 +1,44 @@
-# WMC
+The role of attention in working memory capacity among adversity-exposed
+people
+================
+
+*Last updated on donderdag, maart 31, 2022 at 08:49 *
+
+## Overview
+
+This repository contains preregistrations, data, code, an (eventual)
+reproducible manuscript/supplement for a project entitled “The role of
+attention in working memory capacity among adversity-exposed people”
+(working title).
+
+This project consists of X online experiments conducted through the
+Prolific Platform.
+
+## Directory Structure
+
+The names of each folder are intended to be self-explanatory. There are
+X top-level folders that organize all scripts and data files related to
+a specific study. The studies are numbered in chronological order (i.e.,
+[`0_pilot_study/`](0_pilot_study/); …).
+
+In each top-level study folder, the following inputs and outputs are
+organized:
+
+1.  `preregistration.md`: Preregistration document that details the
+    plans for the study. Preregistrations are time-stamped using Git
+    version control. Go to the
+    [`Git Tags page`](https://github.com/StefanVermeent/WMC/tags) of
+    this project to see a full time-stamped list of all preregistrations
+    and other major milestones of the project (e.g., potential
+    deviations from preregistrations).
+2.  `codebooks/`: Lists of variable names, labels, and value labels
+    (where applicable).
+3.  `materials/`: Scripts and other files required for running the
+    cognitive tasks. For more information on how to try out the
+    cognitive tasks, see the README file in this folder.
+4.  `data/`: Data, stored as an \[`.Rdata`\] file and \[`.csv`\] files.
+5.  `scripts/`: R-scripts that read, analyze, and produce all outputs.
+6.  `supplement/`: A supplemental text with additional information and
+    materials.
+
+## References
