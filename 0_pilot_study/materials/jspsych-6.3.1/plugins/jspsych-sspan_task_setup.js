@@ -55,13 +55,6 @@ jsPsych.plugins["sspan_task_setup"] = (function() {
         default: true,
         description: "should a red box be marked"
       },
-    // button_html: {
-    //   type: jsPsych.plugins.parameterType.IMAGE,
-    //   pretty_name: 'Button html',
-    //   default: '<button class="jspsych-btn-numpad" style = "width:120px; font-size: 16px" >%choice%</button>',
-    //   array: true,
-    //   description: 'The html of the button. Can create own style.'
-    // },
       trial_duration: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Trial duration',

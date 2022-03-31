@@ -1,0 +1,148 @@
+---
+title: "Preregistration Pilot 1"
+output: github_document
+bibliography: ../references.bib
+csl: ../apa.csl
+link-citations: true
+---
+
+*Last updated `r format(Sys.time(), "on %A, %B %d, %Y at %I:%M %p")`*
+
+## Overview
+
+This preregistration document is based on [@akker2021] for secondary data analyses. There are three parts, which you can jump to following the links below:
+
+- [Part 1 - Study information]
+- [Part 2 - Data Description]
+- [Part 3 - Variables]
+
+## Part 1 - Study Information
+
+### Q1.	Working title (required) 
+Working memory capacity in people from harsh environments.
+
+### Q2.	Authors 
+Stefan Vermeent, Ethan S. Young, Jean-Louis van Gelder, Willem E. Frankenhuis
+
+### Q3.	Description 
+This preregistration covers the first pilot study of this project. The purpose of the project is to understand performance differences on working memory capacity as a function of early-life adversity. We include two versions of the Operation Span (Ospan) task: a standard version and and a more present-oriented version.
+
+### Q4.	Research questions
+-	Is early-life exposure to violence associated with lower working memory capacity, and does this association depend on task format?
+
+
+### Q5.	Hypotheses 
+
+General hypotheses
+1.	Individuals with more early-life violence exposure have worse letter recall than individuals with less violence exposure on the standard version of the Ospan, but perform at least equally well on the present-oriented version of the Ospan.
+2.	Individuals with more early-life violence exposure are slower to solve math equations and make more errors than individuals with less violence exposure on the standard version of the Ospan, but perform at least equally well on the present-oriented version of the Ospan 
+
+Theory-specific hypotheses using Drift Diffusion parameters (see link…)
+Option 1: Processing bottleneck hypothesis
+3.	On the standard version of the Ospan, individuals with more early-life violence exposure have a lower processing speed (drift rate parameter) on the math task than individuals with less violence exposure, which mediates the link between 
+
+Option 2: Present-oriented attention hypothesis
+4.	On the standard version of the Ospan individuals with more early-life violence exposure spend less time on maintenance of letters during the math trials (Non-decision time parameter), 
+
+
+
+
+
+## Part 2 - Design Plan
+
+### Q1.	Study type
+Experimental/cross-sectional
+
+
+### Q2.	Study design
+
+
+
+Describe your study design. Examples include two-group, factorial, randomized block, and repeated measures. Is it a between (unpaired), within-subject (paired), or mixed design? Describe any counterbalancing required. Typical study designs for observation studies include cohort, cross sectional, and case-control studies.
+Example: We have a between subjects design with 1 factor (sugar by mass) with 4 levels. 
+More info: This question has a variety of possible answers. The key is for a researcher to be as detailed as is necessary given the specifics of their design. Be careful to determine if every parameter has been specified in the description of the study design. There may be some overlap between this question and the following questions. That is OK, as long as sufficient detail is given in one of the areas to provide all of the requested information. For example, if the study design describes a complete factorial, 2 X 3 design and the treatments and levels are specified previously, you do not have to repeat that information.
+
+## Part 3 - Sampling Plan
+
+### Q1.	Data collection procedures 
+Data will be collected using the online research platform Prolific Academic. People are eligible for participation if they 1) grew up and currently live in the United States; 2) Speak fluent English; 3) Are between the ages of 18 and 30. We balance our sample to include 50% males. Using the MacArthur Scale of Subjective Social Status that is a part of Prolific’s pre-screening questions, we make sure that 50% of the sample consists of participants who indicated their current perceived socio-economic status (SES) to be relatively low (between 1 and 4 on a 10-point scale), and 50% consists of participants who have a high perceived SES (between 5 and 10). 
+
+The experiment is expected to take 30 minutes on average and participants will be paid 3.75 pounds.
+
+### Q2.	Sample size 
+Our target sample size is 550 people.
+
+
+### Q3.	Sample size rationale
+
+
+
+## Part 4 - Variables
+
+### Q1.	Manipulated variables
+Ospan task condition: all participants complete a standard version and a newly developed ‘present-oriented’ version of the Ospan task. In the Ospan task, participants have to perform two tasks simultaneously: 1) remember an increasingly long sequence of letters; 2) solve mathematical equations. The two tasks alternate, meaning people have to maintain and rehearse the letters in working memory while solving the equations. In the standard version, both task components are presented in the center of the screen. In the present-oriented version, the letters are spatially laid out from left to right at the top of the screen, while the equations are presented in the center of the screen. The letters are covered by black boxes and appear one by one by removing a specific box. See LINK for task materials and LINK for a working version of the task.
+
+In this section you can describe all variables (both manipulated and measured variables) that will later be used in your confirmatory analysis plan. In your analysis plan, you will have the opportunity to describe how each variable will be used. If you have variables which you are measuring for exploratory analyses, you are not required to list them, though you are permitted to do so.
+
+### Q2.	Measured variables 
+Dependent variables (raw)
+Each version of the Ospan provides the following DVs:
+1.	ospan_let_recall: total number of letters recalled in the correct order on the standard task version.
+2.	ospan_let_recall: total number of letters recalled in the correct order on the present-oriented task version.
+3.	ospan_math_acc: total number of math equations solved correctly on the standard task version.
+
+4.	ospan_math_acc: total number of math equations solved correctly on the present-oriented task version.
+5.	ospan_math_rt: Mean reaction time (in seconds) on the correct math equation trials.
+
+Dependent variables (Drift Diffusion parameters (see … for more information))
+6.	Ospan_math_v: Drift rate across all math trials.
+7.	Ospan_math_a: Boundary separation across all math trials.
+8.	Ospan_math_t0: Non-decision time across all math trials.
+
+
+### Q3 Independent variables
+1.	vio_comp: Violence exposure composite score. Consists of the unweighted average of two measures:
+a.	nvs_mean: mean score on items of the Neighborhood Violence Scale (REFERENCE). 
+b.	Fighting_mean: The unweighted average of two items related to witnessing and participating in fights before age 13.
+nvs_mean and fighting_mean are z-transformed prior to averaging.
+
+
+### Q4 Covariates
+1.	dems_edu: highest level of education that participant achieved. Consists of eight levels: 1) Some high school; 2) GED; 3) High school diploma; 4) Some college but no college degree; 5) Associate’s Degree; 6) Bachelor’s or RN degree; 7) Master’s degree; 8) Doctoral or law degree. Education level is treated as a continuous scale.
+2.	task_anxiety: Perceived level of anxiety induced by the Ospan task, separately assessed for each version using a single item: “How anxious did the numbers & letters game make you feel?”, rated on a five-point scale ranging from 1 (not at all) to 5 (very much).
+
+
+## Part 5 - Analysis Plan
+
+
+### Q1.	Statistical models 
+
+
+### Q2.	Multiverse analyses
+
+
+### Q3.	Transformations 
+
+
+### Q4.	Data exclusion
+Participant-level exclusions
+First, we excluded participants who did not complete the full study and those who did not complete both versions of the Ospan. Second, we analyzed responses to the attention checks and reversed coded items in the questionnaire part of the experiment. We excluded participants if they missed both attention check items or if they had suspicious response patterns (e.g., consistently endorsing high response options even when some items were reverse coded). Third, we excluded participants whose screen height was < 700 pixels, or whose screen height was bigger than their screen width (suggesting that they did not complete the experiment on a laptop or desktop pc). Finally, we exclude participants whose accuracy on the math subtask is lower than 85% across all blocks in order to ensure that participants engaged seriously with the task.
+
+### Q5 Trial-level exclusions
+trials with reaction times < 250 ms or > 3500 ms [@ratcliff_2015] were excluded from the analyses (*N* = `r #TBD `). Participants with more than 10 removed trials were excluded from the analyses (N = `r #TBD `). Finally, we logged whether participants exited full-screen mode and/or engaged with other browser tabs (i.e., blur events) at any point during the Flanker Task. We excluded participants for whom blur events occurred while a Flanker block was ongoing (but not while reading instructions or taking breaks in between conditions). Full-screen exits were included in the [multiverse analysis](#multiverse_plan).
+
+### Q5.	Missing data 
+How will you deal with incomplete or missing data?
+Example: If a subject does not complete any of the three indices of tastiness, that subject will not be included in the analysis.
+More information: Any relevant explanation is acceptable. As a final reminder, remember that the final analysis must follow the specified plan, and deviations must be either strongly justified or included as a separate, exploratory analysis.
+
+
+
+
+
+
+
+
+
+
+

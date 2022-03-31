@@ -210,8 +210,9 @@ var sspan_standard_procedure = {
   timeline_variables: [
     {selection: jsPsych.randomization.sampleWithoutReplacement(matrix, 4), trial: 1},
     {selection: jsPsych.randomization.sampleWithoutReplacement(matrix, 4), trial: 2},
-
-
+    {selection: jsPsych.randomization.sampleWithoutReplacement(matrix, 4), trial: 3},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(matrix, 4), trial: 4},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(matrix, 4), trial: 5},
   ]
 };
     
