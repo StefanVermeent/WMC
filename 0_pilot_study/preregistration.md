@@ -1,7 +1,7 @@
 Preregistration Pilot 1
 ================
 
-*Last updated on maandag, april 04, 2022 at 03:52 *
+*Last updated on dinsdag, april 05, 2022 at 03:15 *
 
 ## Overview
 
@@ -402,7 +402,10 @@ mode and/or engaged with other browser tabs (i.e., blur events) at any
 point during the Flanker Task. We excluded participants for whom blur
 events occurred while a Flanker block was ongoing (but not while reading
 instructions or taking breaks in between conditions). Full-screen exits
-were included in the [multiverse analysis](#multiverse_plan).
+were included in the [multiverse analysis](#multiverse).
+
+After applying the participant-level and trial-level exclusions listed
+above, we check
 
 ## References
 
