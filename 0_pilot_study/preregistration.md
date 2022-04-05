@@ -1,7 +1,7 @@
 Preregistration Pilot 1
 ================
 
-*Last updated on dinsdag, april 05, 2022 at 03:15 *
+*Last updated on dinsdag, april 05, 2022 at 03:19 *
 
 ## Overview
 
@@ -73,6 +73,10 @@ in order to account for the effect of SES and its “descendants” (i.e.,
 education level and task anxiety) on the association between Adversity
 and the different task performance indices (i.e., math processing speed,
 attention allocation, and working memory capacity).
+
+<p align="center">
+<img src="Fig1.png" title="DAG">
+</p>
 
 ![](Fig1.png)<!-- -->
 
