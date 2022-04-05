@@ -1,7 +1,7 @@
 Preregistration Pilot 1
 ================
 
-*Last updated on dinsdag, april 05, 2022 at 03:19 *
+*Last updated on dinsdag, april 05, 2022 at 03:20 *
 
 ## Overview
 
@@ -75,10 +75,8 @@ and the different task performance indices (i.e., math processing speed,
 attention allocation, and working memory capacity).
 
 <p align="center">
-<img src="Fig1.png" title="DAG">
+<img src="fig1.png" title="DAG">
 </p>
-
-![](Fig1.png)<!-- -->
 
 ## Part 2 - Design Plan
 

@@ -55,7 +55,7 @@ The Directed Acyclic Graph (DAG) of the causal model that underlies our hypothes
 Based on this DAG, we control for socio-economic status (SES) in all main statistical models, in order to account for the effect of SES and its "descendants" (i.e., education level and task anxiety) on the association between Adversity and the different task performance indices (i.e., math processing speed, attention allocation, and working memory capacity).
 
 <p align="center">
-  <img src="Fig1.png" title="DAG">
+  <img src="fig1.png" title="DAG">
 </p>
 
 
