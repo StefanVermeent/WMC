@@ -13,3 +13,7 @@ var nLetterRecalled = 0; // feedback
 var nMathAcc = 0; // feedback
 
 
+var fullscreenmode = {
+  type: 'fullscreen',
+  fullscreen_mode: true
+};
