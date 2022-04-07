@@ -4,13 +4,8 @@
     <script src="jspsych-6.3.1/jspsych.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-html-button-response.js"></script>
-   
-    <script src="jspsych-6.3.1/plugins/jspsych-sspan_task_setup.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-sspan-task-cue.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-spatial-span.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-spatial-span-recall.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-symmetry-judgement-task.js"></script>
-    <script src="jspsych-6.3.1/plugins/jspsych-ospan-standard.js"></script>
+
+    <script src="jspsych-6.3.1/plugins/jspsych-ospan-trial.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-ospan-cue.js"></script>
     
     <script src="jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
@@ -41,7 +36,7 @@
  var task_choice = {
    type: "html-button-response",
    stimulus: "Which game do you want to try?<br><br>",
-   choices: ["ospan - standard", "ospan - adapted", "sspan_standard", "sspan - adapted"],
+   choices: ["ospan - standard", "ospan - adapted"],
  }
  
  console.log(nMathAcc)
@@ -70,31 +65,7 @@
    }
 };
 
- var sspan_std = {
-   timeline: [sspan_standard_procedure],
-   conditional_function: function(){
-     var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
-     console.log(selected_task);
-     if(selected_task == 2){
-       return true;
-     } else {
-       return false;
-       }
-   }
-};
 
- var sspan_adp = {
-   timeline: [sspan_adapted_procedure],
-   conditional_function: function(){
-     var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
-     console.log(selected_task);
-     if(selected_task == 3){
-       return true;
-     } else {
-       return false;
-       }
-   }
-};
    
 
 
@@ -103,8 +74,6 @@ jsPsych.init({
     task_choice,
     ospan_std,
     ospan_adp,
-    sspan_std,
-    sspan_adp
   ],
   on_finish: function() {
     jsPsych.data.displayData(); // comment out if you do not want to display results at the end of task

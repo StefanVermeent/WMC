@@ -1,253 +1,184 @@
 var ospan_adapted_procedure = {
   timeline: [
     
-    // First Attention cue
+    // First Cue
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 0);
-      },
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 0,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 500
+      trial_duration: 500,
     },
     
     // First Letter
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 0, part = "letter");
-      },
+      type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 0,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 1000,
-      data: {
-        task: 'ospan_adapted',
-        subtask: "letter",
-        stimulus: jsPsych.timelineVariable('selection')[0],
-        block: jsPsych.timelineVariable('block'),
-        trial: 1
-  },
+      trial_duration: 1000
     },
     
     // First equation
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 0, part = "cog_load");
-      },
-      trial_duration:5000,
-      choices: ["ArrowLeft", "ArrowRight"],
+     type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 0,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
-      },
-      data: {
-        task: 'ospan_adapted',
-        subtask: 'math',
-        block: jsPsych.timelineVariable('block'),
-        trial: 1
-  },
+      }
     },
     
-    // Second Attention cue
+    // Second Cue
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 1);
-      },
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 1,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 500
+      trial_duration: 500,
     },
     
     // Second Letter
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 1);
-      },
+      type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 1,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 1000,
-      data: {
-        task: 'ospan_adapted',
-        subtask: "letter",
-        stimulus: jsPsych.timelineVariable('selection')[1],
-        block: jsPsych.timelineVariable('block'),
-        trial: 2
-      }
+      trial_duration: 1000
     },
     
     // Second equation
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 1, part = "cog_load");
-      },
-      trial_duration:5000,
-      choices: ["ArrowLeft", "ArrowRight"],
+     type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 1,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
-      },
-      data: {
-        task: 'ospan_adapted',
-        subtask: 'math',
-        block: jsPsych.timelineVariable('block'),
-        trial: 2,
-        //correct: jsPsych.data.get().last(1).values()[0].accuracy
-  },
+      }
     },
     
-    // Third Attention cue
+    // Third Cue
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 2);
-      },
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 2,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 500
+      trial_duration: 500,
     },
     
     // Third Letter
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 2);
-      },
+      type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 2,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 1000,
-      data: {
-        task: 'ospan_adapted',
-        subtask: "letter",
-        stimulus: jsPsych.timelineVariable('selection')[2],
-        block: jsPsych.timelineVariable('block'),
-        trial: 3
-      }
+      trial_duration: 1000
     },
     
     // Third equation
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 2, part = "cog_load");
-      },
-      trial_duration:5000,
-      choices: ["ArrowLeft", "ArrowRight"],
+     type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 2,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
-      },
-      data: {
-        task: 'ospan_adapted',
-        subtask: 'math',
-        block: jsPsych.timelineVariable('block'),
-        trial: 3,
-       // correct: jsPsych.data.get().last(1).values()[0].accuracy
-  },
+      }
     },
     
-    // Fourth Attention cue
+    // Fourth Cue
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 3);
-      },
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 3,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 500
+      trial_duration: 500,
     },
     
     // Fourth Letter
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 3);
-      },
+      type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 3,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 1000,
-      data: {
-        task: 'ospan_adapted',
-        subtask: "letter",
-        stimulus: jsPsych.timelineVariable('selection')[3],
-        block: jsPsych.timelineVariable('block'),
-        trial: 4
-      }
+      trial_duration: 1000
     },
     
     // Fourth equation
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 3, part = "cog_load");
-      },
-      trial_duration:5000,
-      choices: ["ArrowLeft", "ArrowRight"],
+     type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 3,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
-      },
-      data: {
-        task: 'ospan_adapted',
-        subtask: 'math',
-        block: jsPsych.timelineVariable('block'),
-        trial: 4,
-       // correct: jsPsych.data.get().last(1).values()[0].accuracy
-  },
+      }
     },
     
-    // Fifth Attention cue
+    // Fifth Cue
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return attention_cue(next_letter = 4);
-      },
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 4,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 500
+      trial_duration: 500,
     },
     
     // Fifth Letter
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 4);
-      },
+      type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 4,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 1000,
-      data: {
-        task: 'ospan_adapted',
-        subtask: "letter",
-        stimulus: jsPsych.timelineVariable('selection')[4],
-        block: jsPsych.timelineVariable('block'),
-        trial: 5
-      }
+      trial_duration: 1000
     },
     
     // Fifth equation
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return test_display(box_color = "black", selected_letters = jsPsych.timelineVariable('selection'), current_letter = 4, part = "cog_load");
-      },
-      trial_duration:5000,
-      choices: ["ArrowLeft", "ArrowRight"],
+     type: 'ospan-trial',
+      task_version: "adapted",
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 4,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
-      },
-      data: {
-        task: 'ospan_adapted',
-        subtask: 'math',
-        block: jsPsych.timelineVariable('block'),
-        trial: 5,
-      //  correct: jsPsych.data.get().last(1).values()[0].accuracy
-  },
+      }
     },
     
     // Recall phase

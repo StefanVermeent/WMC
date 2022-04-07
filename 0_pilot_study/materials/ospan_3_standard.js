@@ -11,7 +11,8 @@ var ospan_standard_procedure = {
     
     // First Letter
     {
-      type: 'ospan-standard',
+      type: 'ospan-trial',
+      task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "span",
       trial_number: 0,
@@ -21,7 +22,8 @@ var ospan_standard_procedure = {
     
     // First equation
     {
-     type: 'ospan-standard',
+     type: 'ospan-trial',
+     task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 0,
@@ -45,7 +47,8 @@ var ospan_standard_procedure = {
 
    // Second Letter
    {
-      type: 'ospan-standard',
+      type: 'ospan-trial',
+      task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "span",
       trial_number: 1,
@@ -55,7 +58,8 @@ var ospan_standard_procedure = {
    
    // Second equation
    {
-     type: 'ospan-standard',
+     type: 'ospan-trial',
+     task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 1,
@@ -79,7 +83,8 @@ var ospan_standard_procedure = {
 
    // Third Letter
    {
-      type: 'ospan-standard',
+      type: 'ospan-trial',
+      task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "span",
       trial_number: 2,
@@ -89,7 +94,8 @@ var ospan_standard_procedure = {
    
    // Third equation
    {
-     type: 'ospan-standard',
+     type: 'ospan-trial',
+     task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 2,
@@ -113,7 +119,8 @@ var ospan_standard_procedure = {
    
    // Fourth Letter
    {
-      type: 'ospan-standard',
+      type: 'ospan-trial',
+      task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "span",
       trial_number: 3,
@@ -123,7 +130,8 @@ var ospan_standard_procedure = {
    
    // Fourth equation
    {
-     type: 'ospan-standard',
+     type: 'ospan-trial',
+     task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 3,
@@ -147,7 +155,8 @@ var ospan_standard_procedure = {
    
    // Fifth Letter
    {
-      type: 'ospan-standard',
+      type: 'ospan-trial',
+      task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "span",
       trial_number: 4,
@@ -157,7 +166,8 @@ var ospan_standard_procedure = {
    
    // Fifth equation
    {
-     type: 'ospan-standard',
+     type: 'ospan-trial',
+     task_version: "standard",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 4,
