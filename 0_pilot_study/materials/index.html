@@ -10,6 +10,8 @@
     <script src="jspsych-6.3.1/plugins/jspsych-spatial-span.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-spatial-span-recall.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-symmetry-judgement-task.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-ospan-standard.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-ospan-cue.js"></script>
     
     <script src="jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-instructions.js"></script>
@@ -42,12 +44,11 @@
    choices: ["ospan - standard", "ospan - adapted", "sspan_standard", "sspan - adapted"],
  }
  
- 
+ console.log(nMathAcc)
  var ospan_std = {
    timeline: [ospan_standard_procedure],
    conditional_function: function(){
      var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
-     console.log(selected_task);
      if(selected_task == 0){
        return true;
      } else {

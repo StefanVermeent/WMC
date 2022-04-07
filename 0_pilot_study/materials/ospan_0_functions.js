@@ -2,11 +2,11 @@ var cogloadf = function(){  // generates math questions
   var possibleOperations = [" + ", " - "];
   operation = jsPsych.randomization.sampleWithReplacement(possibleOperations, 1)[0];
   if (operation==" + "){
-    num1 = Math.floor(jStat.uniform.sample(1, 11));
-    num2 =  Math.floor(jStat.uniform.sample(1, 11));
+    num1 = Math.floor(jStat.uniform.sample(1, 5));
+    num2 =  Math.floor(jStat.uniform.sample(1, 5));
     ans = num1 + num2;
   } else if (operation==" - "){
-    num1 = Math.floor(jStat.uniform.sample(1, 11));
+    num1 = Math.floor(jStat.uniform.sample(1, 5));
     num2 = Math.floor(jStat.uniform.sample(1, num1));
     ans = num1 - num2;
   }
@@ -33,9 +33,10 @@ var cogloadf = function(){  // generates math questions
 
 
 
-var test_display = function(selected_letters, current_letter, part){
+var test_display = function(box_color, selected_letters, current_letter, part){
     
-    var boxes = ["black", "black", "black", "black", "black"];
+    var boxes = [box_color,box_color,box_color,box_color,box_color];
+   // var boxes = ["black", "black", "black", "black", "black"];
     var letter1 = selected_letters[0];
     var letter2 = selected_letters[1];
     var letter3 = selected_letters[2];

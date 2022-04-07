@@ -1,172 +1,210 @@
 var ospan_standard_procedure = {
   timeline: [
-
+    // First Cue
+    {
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 0,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500,
+    },
+    
     // First Letter
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[0] + "</div>";
-      },
+      type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 0,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
     
     // First equation
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
-      },
-      trial_duration:6000,
-      choices: ["ArrowLeft", "ArrowRight"],
+     type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 0,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
       }
+    },
+    
+    // Second Cue
+    {
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 1,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500
     },
 
-    // Second Letter
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[1] + "</div>";
-      },
+   // Second Letter
+   {
+      type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 1,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
-    
-    // Second equation
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
-      },
-      trial_duration:6000,
-      choices: ["ArrowLeft", "ArrowRight"],
+   
+   // Second equation
+   {
+     type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 1,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
       }
+    },
+    
+    // Third Cue
+    {
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 2,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500
     },
 
-    // Third Letter
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[2] + "</div>";
-      },
+   // Third Letter
+   {
+      type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 2,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
-    
-    // Third equation
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
-      },
-      trial_duration:6000,
-      choices: ["ArrowLeft", "ArrowRight"],
+   
+   // Third equation
+   {
+     type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 2,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
       }
     },
     
-    // Fourth Letter
+    // First Cue
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[3] + "</div>";
-      },
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 3,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500
+    },
+   
+   // Fourth Letter
+   {
+      type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 3,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
-    
-    // Fourth equation
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
-      },
-      trial_duration:6000,
-      choices: ["ArrowLeft", "ArrowRight"],
+   
+   // Fourth equation
+   {
+     type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 3,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
       }
     },
     
-    // Fifth Letter
+    // Fifth Cue
     {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + jsPsych.timelineVariable('selection')[4] + "</div>";
-      },
+      type: 'ospan-cue',
+      stimulus: "",
+      trial_number: 4,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500
+    },
+   
+   // Fifth Letter
+   {
+      type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "span",
+      trial_number: 4,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
-    
-    // Fifth equation
-    {
-      type: 'html-keyboard-response',
-      stimulus: function() {
-        return "<div style = 'font-size: 70px'>" + cogloadf() + "</div>";
-      },
-      trial_duration:6000,
-      choices: ["ArrowLeft", "ArrowRight"],
+   
+   // Fifth equation
+   {
+     type: 'ospan-standard',
+      stimulus: jsPsych.timelineVariable('selection'),
+      trial_type: "cog_load",
+      trial_number: 4,
+      choices: ["arrowleft", "arrowright"],
+      trial_duration: 6000,
       on_finish: function(){
-        var acc = jsPsych.data.get().last(1).values()[0].accuracy;
-        if (acc==1){
+        if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
       }
     },
-    
-    // Recall phase
-    {
-      type: 'operation-span-recall',
-      correct_order: jsPsych.timelineVariable('selection'),
-      data: function(){
-        return {set_size: setSizes[n]};
-      },
-      on_finish: function(){
-        nLetters = setSizes[n];
-        nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
-      }
-    },
-    
-    // Trial Feedback
-    {
-      type: 'instructions',
-      pages: function(){
-        pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of 5</font> letters in their correct order.</b><br><br>";
-        if (n>nPracticeTrials){
-          pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of 5</font> math problems accurately.<br><br></div>";
-        }
-        return [pageOne];
-      },
-      allow_backward: false,
-      button_label_next: "Next Trial",
-      show_clickable_nav: true,
-      on_finish: function(){
-        nMathAcc = 0;
-      }
-    }
+   
+   // Recall phase
+   {
+     type: 'operation-span-recall',
+     correct_order: jsPsych.timelineVariable('selection'),
+     data: function(){
+       return {set_size: setSizes[n]};
+     },
+     on_finish: function(){
+       nLetters = setSizes[n];
+       nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
+     }
+   },
+   
+   // Trial Feedback
+   {
+     type: 'instructions',
+     pages: function(){
+       pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of 5</font> letters in their correct order.</b><br><br>";
+       pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of 5</font> math problems accurately.<br><br></div>";
+       
+       return [pageOne];
+     },
+     allow_backward: false,
+     button_label_next: "Next Trial",
+     show_clickable_nav: true,
+     on_finish: function(){
+       nMathAcc = 0;
+     }
+   }
   ],
   timeline_variables: [
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)}
+   // {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
+   // {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
+   // {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
+   // {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)}
   ]
 };
