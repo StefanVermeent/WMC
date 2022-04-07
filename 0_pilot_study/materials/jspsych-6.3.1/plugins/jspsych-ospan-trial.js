@@ -2,7 +2,7 @@
  * Example plugin template
  */
 
-jsPsych.plugins["ospan-standard"] = (function() {
+jsPsych.plugins["ospan-trial"] = (function() {
 
   var plugin = {};
 
@@ -12,9 +12,14 @@ jsPsych.plugins["ospan-standard"] = (function() {
 
 
   plugin.info = {
-    name: 'ospan-standard',
+    name: 'ospan-trial',
     description: '',
     parameters: {
+      task_version: {
+        type: jsPsych.plugins.parameterType.STRING,
+        default: undefined,
+        description: 'Version of the Ospan. Should be one of "standard", "adapted"'
+      },
       stimulus: {
         type: jsPsych.plugins.parameterType.HTML_STRING,
         pretty_name: 'Stimulus',
@@ -31,6 +36,7 @@ jsPsych.plugins["ospan-standard"] = (function() {
         default: undefined,
         description: 'Trial number.'
       },
+      
       choices: {
         type: jsPsych.plugins.parameterType.KEYCODE,
         array: true,
@@ -104,7 +110,14 @@ jsPsych.plugins["ospan-standard"] = (function() {
   var equation = (trial.trial_type === "cog_load")? cogloadf(math_correct) : "";
   
   // Boxes that cover the letters; are only shown on the letter trials
-  var boxes = (trial.trial_type === "cog_load")? ["white","white","white","white","white"] : ["black","black","black","black","black"];
+
+  
+  if(trial.task_version == "standard") {
+    var boxes = (trial.trial_type === "cog_load")? ["white","white","white","white","white"] : ["black","black","black","black","black"];
+  } else {
+    var boxes = ["black","black","black","black","black"]
+  }
+  
   
   // Determine which letter is reveiled during the letter encoding phase
     if(trial.trial_number === 0) {
