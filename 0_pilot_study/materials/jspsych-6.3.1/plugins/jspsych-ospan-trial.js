@@ -109,15 +109,56 @@ jsPsych.plugins["ospan-trial"] = (function() {
   // Mathematical equation
   var equation = (trial.trial_type === "cog_load")? cogloadf(math_correct) : "";
   
-  // Boxes that cover the letters; are only shown on the letter trials
-
   
+  // Logic flow that determines which boxes and letters are shown
+  // On standard trials, boxes and trial letter are only shown on span trials, but disappear on cognitive load trials
+  // On adapted trials, boxes and trial letter remain on screen during cognitive load trials.
   if(trial.task_version == "standard") {
-    var boxes = (trial.trial_type === "cog_load")? ["white","white","white","white","white"] : ["black","black","black","black","black"];
-  } else {
-    var boxes = ["black","black","black","black","black"]
+    if(trial.trial_type === "cog_load") {
+      var boxes = ["white","white","white","white","white"];
+      
+      var letter1 = "";
+      var letter2 = "";
+      var letter3 = "";
+      var letter4 = "";
+      var letter5 = "";
+    }
+    if(trial.trial_type === "span") {
+      
+      var boxes = ["black","black","black","black","black"];
+      
+      var letter1 = trial.stimulus[0];
+      var letter2 = trial.stimulus[1];
+      var letter3 = trial.stimulus[2];
+      var letter4 = trial.stimulus[3];
+      var letter5 = trial.stimulus[4];
+    }
   }
   
+  
+  
+  if(trial.task_version == "adapted") {
+    if(trial.trial_type === "cog_load") {
+      var boxes = ["black", "black", "black", "black", "black"];
+      
+      var letter1 = trial.stimulus[0];
+      var letter2 = trial.stimulus[1];
+      var letter3 = trial.stimulus[2];
+      var letter4 = trial.stimulus[3];
+      var letter5 = trial.stimulus[4];
+    }
+    if(trial.trial_type === "span") {
+      
+      var boxes = ["black","black","black","black","black"];
+      
+      var letter1 = trial.stimulus[0];
+      var letter2 = trial.stimulus[1];
+      var letter3 = trial.stimulus[2];
+      var letter4 = trial.stimulus[3];
+      var letter5 = trial.stimulus[4];
+    }
+  }
+    
   
   // Determine which letter is reveiled during the letter encoding phase
     if(trial.trial_number === 0) {
@@ -135,15 +176,6 @@ jsPsych.plugins["ospan-trial"] = (function() {
     if(trial.trial_number == 4) {
       boxes[4] = "white";
     }
-    
-  
-  // SET LETTERS FOR THE DISPLAY  
-  var letter1 = (trial.trial_number === 0 & trial.trial_type === "span")? current_letter : "";
-  var letter2 = (trial.trial_number === 1 & trial.trial_type === "span")? current_letter : "";
-  var letter3 = (trial.trial_number === 2 & trial.trial_type === "span")? current_letter : "";
-  var letter4 = (trial.trial_number === 3 & trial.trial_type === "span")? current_letter : "";
-  var letter5 = (trial.trial_number === 4 & trial.trial_type === "span")? current_letter : "";
-  
 
 
   // Display stimulus

@@ -12,20 +12,21 @@
     <script src="jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-instructions.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-resize.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-survey-text-duration.js"></script>
     
     <script src="jspsych-6.3.1/plugins/jspsych-operation-span-recall.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link href="jspsych-6.3.1/css/jspsych_operationspan.css" rel="stylesheet" type="text/css"></link>
     
-    <script src="ospan_0_functions.js"></script>
-    <script src="ospan_1_setup.js"></script>
-    <script src="ospan_2_adapted.js"></script>
-    <script src="ospan_3_standard.js"></script>
+    <script src="0_ospan_functions.js"></script>
+    <script src="1_ospan_instructions.js"></script>
+    <script src="2_ospan_setup.js"></script>
+    <script src="3_ospan_adapted.js"></script>
+    <script src="4_ospan_standard.js"></script>
     
-    <script src="sspan_1_setup.js"></script>
-    <script src="sspan_2_adapted.js"></script>
-    <script src="sspan_3_standard.js"></script>
+    <script src="5_aut.js"></script>
     
     <link href="jspsych-6.3.1/css/jspsych_grid.css" rel="stylesheet" type="text/css"></link>
 
@@ -33,54 +34,52 @@
   </head>
   <body></body>
   <script>
- 
- 
- 
- var task_choice = {
-   type: "html-button-response",
-   stimulus: "Which game do you want to try?<br><br>",
-   choices: ["ospan - standard", "ospan - adapted"],
- }
- 
 
- var ospan_std = {
-   timeline: [ospan_standard_procedure],
-   conditional_function: function(){
-     var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
-     if(selected_task == 0){
-       return true;
-     } else {
-       return false;
-       }
-   }
-};
+// Specify all possible condition orders. Includes function to save counterbalancing code to data when test order is randomly chosen below.
+  var test_order1 = [
+    {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
+    ospan_adapted_procedure, ospan_standard_procedure, //aut
+  ]
 
- var ospan_adp = {
-   timeline: [ospan_adapted_procedure],
-   conditional_function: function(){
-     var selected_task = jsPsych.data.getLastTrialData().values()[0].response;
-     console.log(selected_task);
-     if(selected_task == 1){
-       return true;
-     } else {
-       return false;
-       }
-   }
-};
+  var test_order2 = [
+    {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
+    ospan_standard_procedure, ospan_adapted_procedure,// aut
+  ]
 
 
-   
+counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1, test_order2], 1)[0] 
+
+  var full_experiment_timeline = [
+    fullscreenmode,
+    resize_screen,
+    counterbalance,
+    ].flat(2)
+
 
 
 jsPsych.init({
   timeline: [
-    fullscreenmode,
-    task_choice,
-    ospan_std,
-    ospan_adp,
+    fullscreenmode, resize_screen, ospan_adapted_procedure, ospan_standard_procedure
   ],
   on_finish: function() {
-    jsPsych.data.displayData(); // comment out if you do not want to display results at the end of task
+    tasks_start                 = jsPsych.startTime();
+    //data_ospan_practice         = 
+    data_ospan_standard         = jsPsych.data.get().filter({task_version: 'standard'});
+    data_ospan_adapted          = jsPsych.data.get().filter({task_version: 'adapted'});
+    data_aut_fork               = jsPsych.data.get().filter({variable: "aut_fork_responses"}).ignore('aut_stim').ignore('preamble').ignore('stimulus').ignore("responses");
+    data_aut_paperclip          = jsPsych.data.get().filter({variable: "aut_paperclip_responses"}).ignore('aut_stim').ignore('preamble').ignore('stimulus').ignore("responses");
+    data_resize                 = jsPsych.data.get().filter({task: 'resize'});
+    tasks_browser               = jsPsych.data.getInteractionData().json();
+    window.parent.postMessage([
+      tasks_start, 
+      data_ospan_standard.json(),
+      data_ospan_adapted.json(),
+      data_aut_fork.json(),
+      data_aut_paperclip.json(),
+      data_resize.json(),
+      tasks_browser
+      ],
+      "https://survey.uu.nl/jfe/form/SV_aXdJqbMcCbmNxDU")
   }
 });
 </script>
