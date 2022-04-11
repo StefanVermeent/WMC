@@ -185,10 +185,10 @@ var ospan_standard_procedure = {
      type: 'operation-span-recall',
      correct_order: jsPsych.timelineVariable('selection'),
      data: function(){
-       return {set_size: setSizes[n]};
+       return {set_size: 5};
      },
      on_finish: function(){
-       nLetters = setSizes[n];
+       nLetters = 5;
        nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
      }
    },
