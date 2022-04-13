@@ -130,8 +130,8 @@ jsPsych.plugins["ospan-trial"] = (function() {
       var letter1 = trial.stimulus[0];
       var letter2 = trial.stimulus[1];
       var letter3 = trial.stimulus[2];
-      var letter4 = trial.stimulus[3];
-      var letter5 = trial.stimulus[4];
+      var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
+      var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
     }
   }
   
@@ -144,8 +144,8 @@ jsPsych.plugins["ospan-trial"] = (function() {
       var letter1 = trial.stimulus[0];
       var letter2 = trial.stimulus[1];
       var letter3 = trial.stimulus[2];
-      var letter4 = trial.stimulus[3];
-      var letter5 = trial.stimulus[4];
+      var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
+      var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";;
     }
     if(trial.trial_type === "span") {
       
@@ -154,8 +154,8 @@ jsPsych.plugins["ospan-trial"] = (function() {
       var letter1 = trial.stimulus[0];
       var letter2 = trial.stimulus[1];
       var letter3 = trial.stimulus[2];
-      var letter4 = trial.stimulus[3];
-      var letter5 = trial.stimulus[4];
+      var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
+      var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
     }
   }
     

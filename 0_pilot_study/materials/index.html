@@ -14,15 +14,18 @@
     <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-resize.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-survey-text-duration.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-call-function.js"></script>
     
     <script src="jspsych-6.3.1/plugins/jspsych-operation-span-recall.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link href="jspsych-6.3.1/css/jspsych_operationspan.css" rel="stylesheet" type="text/css"></link>
     
-    <script src="0_ospan_functions.js"></script>
-    <script src="1_ospan_instructions.js"></script>
+    <script src="0_ospan_functions.js"></script> 
     <script src="2_ospan_setup.js"></script>
+    <script src="1_ospan_instructions.js"></script>
+    <script src="1_ospan_practice.js"></script>   
+   
     <script src="3_ospan_adapted.js"></script>
     <script src="4_ospan_standard.js"></script>
     
@@ -35,32 +38,69 @@
   <body></body>
   <script>
 
+// Initiate timeline
+var timeline = [];
+
+
 // Specify all possible condition orders. Includes function to save counterbalancing code to data when test order is randomly chosen below.
-  var test_order1 = [
-    {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
-    ospan_adapted_procedure, ospan_standard_procedure, //aut
-  ]
+var test_order1 = [
+  {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
+  ospan_adapted_procedure, ospan_standard_procedure
+]
+var test_order2 = [
+  {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
+  ospan_standard_procedure, ospan_adapted_procedure
+]
 
-  var test_order2 = [
-    {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
-    ospan_standard_procedure, ospan_adapted_procedure,// aut
-  ]
 
 
-counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1, test_order2], 1)[0] 
+var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1, test_order2], 1)[0]
 
-  var full_experiment_timeline = [
-    fullscreenmode,
-    resize_screen,
-    counterbalance,
-    ].flat(2)
 
+    
+timeline.push(
+  ospan_standard_procedure,
+  ospan_welcome,
+  ospan_instructions_letters,
+  ospan_practice_letters,
+  ospan_instructions_math,
+  ospan_practice_math,
+  ospan_instructions_full,
+  ospan_practice_full,
+  ospan_start,
+  ospan_standard_procedure,
+  ospan_adapted_procedure,
+  ospan_end,
+  aut_welcome,
+  aut_fork_instruction)
+
+timeline.push({
+    timeline: [aut_fork_task],
+    loop_function: function(data){
+        if(jsPsych.data.get().last(1).values()[0].timed_out){
+            return false;
+        } else {
+            return true;
+        }
+    }
+});
+
+timeline.push(aut_paperclip_instruction)
+
+timeline.push({
+    timeline: [aut_fork_task],
+    loop_function: function(data){
+        if(jsPsych.data.get().last(1).values()[0].timed_out){
+            return false;
+        } else {
+            return true;
+        }
+    }
+});
 
 
 jsPsych.init({
-  timeline: [
-    fullscreenmode, resize_screen, ospan_adapted_procedure, ospan_standard_procedure
-  ],
+  timeline: timeline,
   on_finish: function() {
     tasks_start                 = jsPsych.startTime();
     //data_ospan_practice         = 

@@ -1,5 +1,5 @@
 
-var aut_welcome {
+var aut_welcome = {
       type: 'instructions',
       pages: [
         "<div style = 'text-align: left; margin: 20px 10%;'>"+
@@ -16,12 +16,11 @@ var aut_welcome {
       key_backward: -1,
       button_label_next: "continue",
       data: {variable: 'welcome'}
-    }
+    };
     
 
-var aut_fork
+var aut_fork_instruction = {
     // Trial 1: Fork instructions
-    {
       type: 'instructions',
       pages: [
         "<div style = 'text-align: left; margin: 20px 10%;'>"+
@@ -36,10 +35,11 @@ var aut_fork
       key_backward: -1,
       button_label_next: "start the task",
       data: {variable: 'aut_key_instructions'}
-    },
+    };
     
-    // Trial 1: Fork responses
-    {
+  
+  
+var aut_fork_task = {
       type: 'ethan-survey-text-duration',
       preamble: '<img src="img/fork.jpeg" height = "300px"><br>Your responses:<br><br><div style="margin: 10px 10%; line-height: 40px;">',
       questions: [{prompt: 'Type your creative use here and hit enter to add it:', required: true}],
@@ -65,17 +65,11 @@ var aut_fork
           jsPsych.data.get().last(1).values()[0].use +
           "</span>";
       },
-      loop_function: function(data){
-       if(jsPsych.data.get().last(1).values()[0].timed_out){
-           return false;
-       } else {
-           return true;
-       }
-    }
-    },
+    };
     
+    
+var aut_paperclip_instruction = {
     // Trial 2: Paperclip instructions
-    {
       type: 'instructions',
       pages: [
         "<div style = 'text-align: left; margin: 20px 10%;'>"+
@@ -90,10 +84,10 @@ var aut_fork
       key_backward: -1,
       button_label_next: "start the task",
       data: {variable: 'aut_key_instructions'}
-    },
-    
+    };
+
+var aut_paperclip_task = {
     // Trial 2: Paperclip responses
-    {
       type: 'ethan-survey-text-duration',
       preamble: '<img src="img/paperclip.jpeg" height = "300px" ><br>Your responses:<br><br><div style="margin: 10px 10%; line-height: 40px;">',
       questions: [{prompt: 'Type your creative use here and hit enter to add it:', required: true}],
@@ -118,15 +112,6 @@ var aut_fork
           "<span style='background-color: #F0F0F0; border-radius: 6px; padding: 6px 6px; margin: 3px; display: inline-flex;'>" + 
           jsPsych.data.get().last(1).values()[0].use +
           "</span>";
-      },
-      loop_function: function(data){
-       if(jsPsych.data.get().last(1).values()[0].timed_out){
-           return false;
-       } else {
-           return true;
-       }
-    }
-        }
-        ]
-};
+      }
+        };
 

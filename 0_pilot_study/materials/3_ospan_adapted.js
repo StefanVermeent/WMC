@@ -1,6 +1,5 @@
-var ospan_adapted_procedure = {
+var ospan_adapted_stimuli = {
   timeline: [
-    
     // First Cue
     {
       type: 'ospan-cue',
@@ -24,7 +23,7 @@ var ospan_adapted_procedure = {
     // First equation
     {
      type: 'ospan-trial',
-      task_version: "adapted",
+     task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 0,
@@ -43,11 +42,11 @@ var ospan_adapted_procedure = {
       stimulus: "",
       trial_number: 1,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 500,
+      trial_duration: 500
     },
-    
-    // Second Letter
-    {
+
+   // Second Letter
+   {
       type: 'ospan-trial',
       task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
@@ -56,11 +55,11 @@ var ospan_adapted_procedure = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
-    
-    // Second equation
-    {
+   
+   // Second equation
+   {
      type: 'ospan-trial',
-      task_version: "adapted",
+     task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 1,
@@ -79,11 +78,11 @@ var ospan_adapted_procedure = {
       stimulus: "",
       trial_number: 2,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 500,
+      trial_duration: 500
     },
-    
-    // Third Letter
-    {
+
+   // Third Letter
+   {
       type: 'ospan-trial',
       task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
@@ -92,11 +91,11 @@ var ospan_adapted_procedure = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
-    
-    // Third equation
-    {
+   
+   // Third equation
+   {
      type: 'ospan-trial',
-      task_version: "adapted",
+     task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 2,
@@ -106,6 +105,10 @@ var ospan_adapted_procedure = {
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
+        
+        if(jsPsych.timelineVariable('selection').length < 4) {
+          jsPsych.endCurrentTimeline();
+      }
       }
     },
     
@@ -115,11 +118,11 @@ var ospan_adapted_procedure = {
       stimulus: "",
       trial_number: 3,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 500,
-    },
-    
-    // Fourth Letter
-    {
+      trial_duration: 500
+      },
+   
+   // Fourth Letter
+   {
       type: 'ospan-trial',
       task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
@@ -128,11 +131,11 @@ var ospan_adapted_procedure = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
-    
-    // Fourth equation
-    {
+   
+   // Fourth equation
+   {
      type: 'ospan-trial',
-      task_version: "adapted",
+     task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 3,
@@ -142,6 +145,10 @@ var ospan_adapted_procedure = {
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
         }
+        
+        if(jsPsych.timelineVariable('selection').length < 5) {
+          jsPsych.endCurrentTimeline();
+      }
       }
     },
     
@@ -152,10 +159,15 @@ var ospan_adapted_procedure = {
       trial_number: 4,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      on_start: function() {
+        if(jsPsych.timelineVariable('selection').length < 4) {
+          jsPsych.endCurrentTimeline();
+        }
+      }
     },
-    
-    // Fifth Letter
-    {
+   
+   // Fifth Letter
+   {
       type: 'ospan-trial',
       task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
@@ -164,11 +176,11 @@ var ospan_adapted_procedure = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000
     },
-    
-    // Fifth equation
-    {
+   
+   // Fifth equation
+   {
      type: 'ospan-trial',
-      task_version: "adapted",
+     task_version: "adapted",
       stimulus: jsPsych.timelineVariable('selection'),
       trial_type: "cog_load",
       trial_number: 4,
@@ -179,46 +191,51 @@ var ospan_adapted_procedure = {
           nMathAcc+=1;
         }
       }
-    },
-    
-    // Recall phase
-    {
-      type: 'operation-span-recall',
-      correct_order: jsPsych.timelineVariable('selection'),
-      data: function(){
-        return {set_size: 5};
-      },
-      on_finish: function(){
-        nLetters = 5;
-        nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
-      }
-    },
-    
-    // Trial Feedback
-    {
-      type: 'instructions',
-      pages: function(){
-        pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of 5</font> letters in their correct order.</b><br><br>";
-        pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of 5</font> math problems accurately.<br><br></div>";
-        
-        return [pageOne];
-      },
-      allow_backward: false,
-      button_label_next: "Next Trial",
-      show_clickable_nav: true,
-      on_finish: function(){
-        nMathAcc = 0;
-      }
     }
-  ],
+    ]
+};
+   
+
+var ospan_adapted_recall = {
+  timeline: [
+   // Recall phase
+   {
+     type: 'operation-span-recall',
+     correct_order: jsPsych.timelineVariable('selection'),
+     data: function(){
+       return {set_size: 5};
+     },
+     on_finish: function(){
+       nLetters = 5;
+       nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
+     }
+   },
+   
+   // Trial Feedback
+   {
+     type: 'instructions',
+     pages: function(){
+       pageOne = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of " + jsPsych.timelineVariable('selection').length + "</font> letters in their correct order.</b><br><br>";
+       pageOne+= "You solved <font color='blue'>"+nMathAcc+" out of " + jsPsych.timelineVariable('selection').length + "</font> math problems accurately.<br><br></div>";
+       
+       return [pageOne];
+     },
+     allow_backward: false,
+     button_label_next: "Next Trial",
+     show_clickable_nav: true,
+     on_finish: function(){
+       nMathAcc = 0;
+     }
+   }
+  ]
+};
+
+var ospan_adapted_procedure = {
+  timeline: [ospan_adapted_stimuli, ospan_adapted_recall],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), block: 1},
-   // {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), block: 2},
-   // {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), block: 3},
-   // {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), block: 4},
-   // {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), block: 5}
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
   ],
-  on_finish: function() {
-        jsPsych.data.displayData();
-    }
+  repetitions: 4
 };
