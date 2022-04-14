@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Working Memory Capacity</title>
+    <title>Letters and Numbers Game</title>
     <script src="jspsych-6.3.1/jspsych.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jspsych-6.3.1/plugins/jspsych-html-button-response.js"></script>
@@ -59,18 +59,24 @@ var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1
 
     
 timeline.push(
-  ospan_standard_procedure,
   ospan_welcome,
   ospan_instructions_letters,
-  ospan_practice_letters,
+  ospan_practice_letters_procedure,
   ospan_instructions_math,
-  ospan_practice_math,
+  ospan_practice_math_procedure,
   ospan_instructions_full,
-  ospan_practice_full,
+  ospan_practice_standard_procedure,
+  
   ospan_start,
   ospan_standard_procedure,
+  
+  ospan_transition_to_adapted,
+  ospan_practice_adapted_procedure,
+  
+  ospan_start,
   ospan_adapted_procedure,
   ospan_end,
+  
   aut_welcome,
   aut_fork_instruction)
 

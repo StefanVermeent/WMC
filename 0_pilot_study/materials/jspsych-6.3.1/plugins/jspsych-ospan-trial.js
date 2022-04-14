@@ -127,9 +127,9 @@ jsPsych.plugins["ospan-trial"] = (function() {
       
       var boxes = ["black","black","black","black","black"];
       
-      var letter1 = trial.stimulus[0];
-      var letter2 = trial.stimulus[1];
-      var letter3 = trial.stimulus[2];
+      var letter1 = (trial.stimulus.length > 0)? trial.stimulus[0] : "";
+      var letter2 = (trial.stimulus.length > 1)? trial.stimulus[1] : "";
+      var letter3 = (trial.stimulus.length > 2)? trial.stimulus[2] : "";
       var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
       var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
     }
@@ -141,19 +141,19 @@ jsPsych.plugins["ospan-trial"] = (function() {
     if(trial.trial_type === "cog_load") {
       var boxes = ["black", "black", "black", "black", "black"];
       
-      var letter1 = trial.stimulus[0];
-      var letter2 = trial.stimulus[1];
-      var letter3 = trial.stimulus[2];
+      var letter1 = (trial.stimulus.length > 0)? trial.stimulus[0] : "";
+      var letter2 = (trial.stimulus.length > 1)? trial.stimulus[1] : "";
+      var letter3 = (trial.stimulus.length > 2)? trial.stimulus[2] : "";
       var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
-      var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";;
+      var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
     }
     if(trial.trial_type === "span") {
       
       var boxes = ["black","black","black","black","black"];
       
-      var letter1 = trial.stimulus[0];
-      var letter2 = trial.stimulus[1];
-      var letter3 = trial.stimulus[2];
+      var letter1 = (trial.stimulus.length > 0)? trial.stimulus[0] : "";
+      var letter2 = (trial.stimulus.length > 1)? trial.stimulus[1] : "";
+      var letter3 = (trial.stimulus.length > 2)? trial.stimulus[2] : "";
       var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
       var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
     }
@@ -251,6 +251,9 @@ jsPsych.plugins["ospan-trial"] = (function() {
       // gather the data to store for the trial
       var trial_data = {
         "type": trial.trial_type,
+        "version": trial.version,
+        "set_size": trial.stimulus.length,
+        "trial": trial.trial_number,
         "rt": response.rt,
         "stimulus": stim_log,
         "key_press": response.key,
