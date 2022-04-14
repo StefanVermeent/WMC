@@ -2,7 +2,7 @@
 
 
 var possibleLetters = ["F","H","J","K","L","N","P","Q","R","S","T","V"];
-var block = 1; // Keep track of block number
+var block = 0; // Keep track of block number
 
 var nLetterRecalled = 0; // feedback
 var nMathAcc = 0; // feedback
@@ -37,30 +37,34 @@ var resize_screen = {
 
 // Recall of Letters
 var ospan_letter_recall = {
-     type: 'operation-span-recall',
-     correct_order: jsPsych.timelineVariable('selection'),
-     data: {
-       set_size: jsPsych.timelineVariable('selection').length
-     },
-     on_finish: function(){
-       nLetters = 5;
-       nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
-     }
+  type: 'operation-span-recall',
+  correct_order: jsPsych.timelineVariable('selection'),
+  data: {
+    set_size: jsPsych.timelineVariable('selection').length,
+    block: block,
+    variable: "task",
+    version: jsPsych.timelineVariable('version'),
+  },
+  on_finish: function(){
+    nLetters = 5;
+    nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
+  }
 };
 
 
 // Feedback for Letter Only Practice Trials
 var ospan_practice_letters_feedback = {  
   type: 'html-keyboard-response',
-     stimulus: function(){
-       stim = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of " + jsPsych.timelineVariable('selection').length + "</font> letters in their correct order.</b><br><br><br>";
-       stim += "Press any key to start the next trial.";
+  stimulus: function(){
+    stim = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of " + jsPsych.timelineVariable('selection').length + "</font> letters in their correct order.</b><br><br><br>";
+    stim += "Press the <strong>Spacebar</strong> to start the next trial.";
        
-       return stim;
-     },
-     on_finish: function(){
-       nMathAcc = 0;
-     }
+    return stim;
+  },
+  choices: [' '],
+  on_finish: function(){
+    nMathAcc = 0;
+  }
 };
 
 
@@ -69,7 +73,7 @@ var ospan_practice_math_feedback = {
   type: 'html-keyboard-response',
      stimulus: function(){
        stim = "You solved <font color='blue'>"+nMathAcc+" out of " + jsPsych.timelineVariable('selection').length + "</font> math problems accurately.<br><br></div><br><br><br>";
-       stim += "Press any key to start the next trial.";
+       stim += "Press the <strong>Spacebar</strong> to continue.";
        
        return stim;
      },

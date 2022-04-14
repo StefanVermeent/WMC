@@ -7,9 +7,12 @@ var ospan_standard_stimuli = {
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      on_start: function() {
+        block += 1;
+      },
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
     
@@ -24,7 +27,7 @@ var ospan_standard_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
     
@@ -39,7 +42,7 @@ var ospan_standard_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
@@ -57,7 +60,7 @@ var ospan_standard_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
 
@@ -72,7 +75,7 @@ var ospan_standard_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
    
@@ -87,7 +90,7 @@ var ospan_standard_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
@@ -110,7 +113,7 @@ var ospan_standard_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
 
@@ -125,7 +128,7 @@ var ospan_standard_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
    
@@ -140,7 +143,7 @@ var ospan_standard_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
@@ -148,7 +151,6 @@ var ospan_standard_stimuli = {
         }
         
         if(jsPsych.timelineVariable('selection').length < 4) {
-          block += 1;
           jsPsych.endCurrentTimeline();
       }
       }
@@ -163,7 +165,7 @@ var ospan_standard_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
       },
       
@@ -179,7 +181,7 @@ var ospan_standard_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
    
@@ -194,7 +196,7 @@ var ospan_standard_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
@@ -202,7 +204,6 @@ var ospan_standard_stimuli = {
         }
         
         if(jsPsych.timelineVariable('selection').length < 5) {
-          block += 1;
           jsPsych.endCurrentTimeline();
       }
       }
@@ -217,7 +218,7 @@ var ospan_standard_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_start: function() {
         if(jsPsych.timelineVariable('selection').length < 4) {
@@ -237,7 +238,7 @@ var ospan_standard_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
    
@@ -252,12 +253,11 @@ var ospan_standard_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
-          block += 1;
         }
       }
     }
@@ -281,9 +281,9 @@ var ospan_practice_standard_procedure = {
 var ospan_standard_procedure = {
   timeline: [ospan_standard_stimuli, ospan_letter_recall, ospan_full_feedback],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'standard'},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'standard'},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'standard'},
   ],
-  repetitions: 4
+  repetitions: 1
 };

@@ -156,7 +156,7 @@ var ospan_instructions_letters = {
       //page 4
       "<p style = 'text-align: center;'>"+ 
       "For example, you might first see an 'S', than an 'F', and then a 'Q'.<br><br>" +
-      "After the last letter, you select the letters that you saw in the correct order."
+      "After the last letter, you select the letters that you saw <strong>in the correct order</strong>."
       ],
       show_clickable_nav: true,
       allow_backward: true,
@@ -241,18 +241,19 @@ var ospan_instructions_full = {
          
       //page 2
       "<p style = 'text-align: center;'>"+ 
-      "In the full game, you will switch <strong>back and forth<br>between the two tasks, like this:<br><br><br>" +
+      "In the full game, you will switch <strong>back and forth<br></strong>between the two tasks.<br><br><br>" +
+      "You will see a letter, then an equation, then a letter, then an equation, and so on:<br><br>" +
       "Letter &rarr; Equation &rarr; Letter &rarr; Equation ...",
       
       //page 3
+      
       "<p style = 'text-align: center;'>"+ 
-      "It is important that you try your best on both tasks!<br><br>" +
-      "At the end of each round, you will see how many<br> letters and math equations you got right.",
+      "After seeing all letters and equations,<br>you select the letters that you saw <strong>in the correct order</strong>.",
       
       //page 4
       "<p style = 'text-align: center;'>"+ 
-      "Let's practice both tasks at the same time! <br><br>" +
-      "Press any key to start when you are ready to practice."
+      "It is important that you try your best on both tasks!<br><br>" +
+      "At the end of each round, you will see how many<br>letters and math equations you got right.",
  
       ],
       show_clickable_nav: true,
@@ -360,9 +361,15 @@ var ospan_transition_to_adapted = {
 var ospan_end = {
   type: "instructions",
   pages: [
-    "<p style = 'text-align: center;'>"+ 
+     "<p style = 'text-align: center;'>"+ 
     "You are now finished playing the <strong>Letters and Numbers</strong> game.<br><br>" +
     "Click continue to move on to the next game.",
   ],
-  data: {variable: 'instruction', task_version: "introduction"}
+      show_clickable_nav: true,
+      allow_backward: true,
+      key_forward: -1,
+      key_backward: -1,
+      button_label_next: "continue",
+      button_label_previous: "go back",
+      data: {variable: 'instruction', task_version: "introduction"}
 };

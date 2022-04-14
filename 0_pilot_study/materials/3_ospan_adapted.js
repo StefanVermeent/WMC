@@ -9,7 +9,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
     
@@ -24,7 +24,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
     
@@ -39,7 +39,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
@@ -57,7 +57,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
 
@@ -72,7 +72,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
    
@@ -87,7 +87,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
@@ -95,7 +95,6 @@ var ospan_adapted_stimuli = {
         }
         
         if(jsPsych.timelineVariable('selection').length < 3) {
-          block += 1;
           jsPsych.endCurrentTimeline();
       }
       }
@@ -110,7 +109,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
 
@@ -125,7 +124,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
    
@@ -140,7 +139,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
@@ -148,7 +147,6 @@ var ospan_adapted_stimuli = {
         }
         
         if(jsPsych.timelineVariable('selection').length < 4) {
-          block += 1;
           jsPsych.endCurrentTimeline();
       }
       }
@@ -163,7 +161,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
       },
    
@@ -178,7 +176,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
    
@@ -193,7 +191,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
@@ -201,7 +199,6 @@ var ospan_adapted_stimuli = {
         }
         
         if(jsPsych.timelineVariable('selection').length < 5) {
-          block += 1;
           jsPsych.endCurrentTimeline();
       }
       }
@@ -216,7 +213,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
     },
    
@@ -231,7 +228,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       }
     },
    
@@ -246,11 +243,10 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: 'task',
-        block: block
+        block: function() {return block}
       },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
-          block += 1;
           nMathAcc+=1;
         }
       }
@@ -275,9 +271,9 @@ var ospan_practice_adapted_procedure = {
 var ospan_adapted_procedure = {
   timeline: [ospan_adapted_stimuli, ospan_letter_recall, ospan_full_feedback],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'adapted'},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'adapted'},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'adapted'},
   ],
-  repetitions: 4
+  repetitions: 1
 };

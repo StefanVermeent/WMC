@@ -59,50 +59,51 @@ var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1
 
     
 timeline.push(
-  ospan_welcome,
-  ospan_instructions_letters,
-  ospan_practice_letters_procedure,
-  ospan_instructions_math,
-  ospan_practice_math_procedure,
-  ospan_instructions_full,
-  ospan_practice_standard_procedure,
+ // ospan_welcome,
+ // ospan_instructions_letters,
+ // ospan_practice_letters_procedure,
+ // ospan_instructions_math,
+ // ospan_practice_math_procedure,
+ // ospan_instructions_full,
+ // ospan_practice_standard_procedure,
   
   ospan_start,
   ospan_standard_procedure,
   
-  ospan_transition_to_adapted,
-  ospan_practice_adapted_procedure,
-  
-  ospan_start,
-  ospan_adapted_procedure,
-  ospan_end,
-  
-  aut_welcome,
-  aut_fork_instruction)
+ // ospan_transition_to_adapted,
+ // ospan_practice_adapted_procedure,
+ // 
+ // ospan_start,
+ // ospan_adapted_procedure,
+ // ospan_end,
+ // 
+ // aut_welcome,
+ // aut_fork_instruction
+ )
 
-timeline.push({
-    timeline: [aut_fork_task],
-    loop_function: function(data){
-        if(jsPsych.data.get().last(1).values()[0].timed_out){
-            return false;
-        } else {
-            return true;
-        }
-    }
-});
-
-timeline.push(aut_paperclip_instruction)
-
-timeline.push({
-    timeline: [aut_fork_task],
-    loop_function: function(data){
-        if(jsPsych.data.get().last(1).values()[0].timed_out){
-            return false;
-        } else {
-            return true;
-        }
-    }
-});
+//timeline.push({
+//    timeline: [aut_fork_task],
+//    loop_function: function(data){
+//        if(jsPsych.data.get().last(1).values()[0].timed_out){
+//            return false;
+//        } else {
+//            return true;
+//        }
+//    }
+//});
+//
+//timeline.push(aut_paperclip_instruction)
+//
+//timeline.push({
+//    timeline: [aut_paperclip_task],
+//    loop_function: function(data){
+//        if(jsPsych.data.get().last(1).values()[0].timed_out){
+//            return false;
+//        } else {
+//            return true;
+//        }
+//    }
+//});
 
 
 jsPsych.init({
@@ -116,16 +117,18 @@ jsPsych.init({
     data_aut_paperclip          = jsPsych.data.get().filter({variable: "aut_paperclip_responses"}).ignore('aut_stim').ignore('preamble').ignore('stimulus').ignore("responses");
     data_resize                 = jsPsych.data.get().filter({task: 'resize'});
     tasks_browser               = jsPsych.data.getInteractionData().json();
-    window.parent.postMessage([
-      tasks_start, 
-      data_ospan_standard.json(),
-      data_ospan_adapted.json(),
-      data_aut_fork.json(),
-      data_aut_paperclip.json(),
-      data_resize.json(),
-      tasks_browser
-      ],
-      "https://survey.uu.nl/jfe/form/SV_aXdJqbMcCbmNxDU")
+    
+    jsPsych.data.displayData()
+  //  window.parent.postMessage([
+  //    tasks_start, 
+  //    data_ospan_standard.json(),
+  //    data_ospan_adapted.json(),
+  //    data_aut_fork.json(),
+  //    data_aut_paperclip.json(),
+  //    data_resize.json(),
+  //    tasks_browser
+  //    ],
+  //    "https://survey.uu.nl/jfe/form/SV_aXdJqbMcCbmNxDU")
   }
 });
 </script>
