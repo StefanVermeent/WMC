@@ -1,13 +1,8 @@
 //----- CUSTOMIZABLE VARIABLES -----------------------------------------
 
-    minSetSize = 4; // starting length of each trial (i.e., min number of letters in a trial)
-    maxSetSize = 7; // ending length of each trial (i.e., max number of letters in a trial)
-    repSet = 3; // number of times each set size should be repeated
 
 var possibleLetters = ["F","H","J","K","L","N","P","Q","R","S","T","V"];
-
-var n = 0; //keeps track of number of trials gone by
-var selection_id = 0; //keeps track of recall items within a test stack
+var block = 1; // Keep track of block number
 
 var nLetterRecalled = 0; // feedback
 var nMathAcc = 0; // feedback
@@ -36,3 +31,74 @@ var resize_screen = {
   data: {
     task: 'resize',
 }};
+
+
+//----------------Recall and Performance Feedback Trials
+
+// Recall of Letters
+var ospan_letter_recall = {
+     type: 'operation-span-recall',
+     correct_order: jsPsych.timelineVariable('selection'),
+     data: {
+       set_size: jsPsych.timelineVariable('selection').length
+     },
+     on_finish: function(){
+       nLetters = 5;
+       nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
+     }
+};
+
+
+// Feedback for Letter Only Practice Trials
+var ospan_practice_letters_feedback = {  
+  type: 'html-keyboard-response',
+     stimulus: function(){
+       stim = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of " + jsPsych.timelineVariable('selection').length + "</font> letters in their correct order.</b><br><br><br>";
+       stim += "Press any key to start the next trial.";
+       
+       return stim;
+     },
+     on_finish: function(){
+       nMathAcc = 0;
+     }
+};
+
+
+// Feedback for Math Only Practice Trials
+var ospan_practice_math_feedback = {
+  type: 'html-keyboard-response',
+     stimulus: function(){
+       stim = "You solved <font color='blue'>"+nMathAcc+" out of " + jsPsych.timelineVariable('selection').length + "</font> math problems accurately.<br><br></div><br><br><br>";
+       stim += "Press any key to start the next trial.";
+       
+       return stim;
+     },
+     on_finish: function(){
+       nMathAcc = 0;
+     }
+};
+
+
+// Feedback for Full trials (Letter and Math Combined)
+var ospan_full_feedback = {  
+     type: 'html-keyboard-response',
+     stimulus: function(){
+       stim = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of " + jsPsych.timelineVariable('selection').length + "</font> letters in their correct order.</b><br><br>";
+       stim += "You solved <font color='blue'>"+nMathAcc+" out of " + jsPsych.timelineVariable('selection').length + "</font> math problems accurately.<br><br></div><br><br><br>";
+       stim += "Press any key to start the next trial.";
+       
+       return stim;
+     },
+     on_finish: function(){
+       nMathAcc = 0;
+     }
+};
+
+
+
+
+
+
+
+
+
