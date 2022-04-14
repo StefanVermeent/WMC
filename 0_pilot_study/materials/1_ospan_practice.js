@@ -8,6 +8,7 @@ var ospan_practice_letters_stimuli = {
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      hide_prompt: true
     },
     
     {
@@ -17,7 +18,8 @@ var ospan_practice_letters_stimuli = {
       trial_type: "span",
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
-      trial_duration: 1000
+      trial_duration: 1000,
+      hide_prompt: true
     },
     
     {
@@ -26,6 +28,7 @@ var ospan_practice_letters_stimuli = {
       trial_number: 1,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      hide_prompt: true
     },
     
     {
@@ -36,6 +39,7 @@ var ospan_practice_letters_stimuli = {
       trial_number: 1,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
+      hide_prompt: true,
       on_finish: function() {
         
         if(jsPsych.timelineVariable('selection').length < 3) {
@@ -50,6 +54,7 @@ var ospan_practice_letters_stimuli = {
       trial_number: 2,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      hide_prompt: true
     },
     
     {
@@ -60,6 +65,7 @@ var ospan_practice_letters_stimuli = {
       trial_number: 2,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
+      hide_prompt: true,
       on_finish: function() {
         
         if(jsPsych.timelineVariable('selection').length < 4) {
@@ -74,6 +80,7 @@ var ospan_practice_letters_stimuli = {
       trial_number: 3,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      hide_prompt: true,
     },
     
     {
@@ -84,6 +91,7 @@ var ospan_practice_letters_stimuli = {
       trial_number: 3,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
+      hide_prompt: true,
       on_finish: function() {
         
         if(jsPsych.timelineVariable('selection').length < 5) {

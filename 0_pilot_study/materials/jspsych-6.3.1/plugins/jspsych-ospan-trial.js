@@ -57,6 +57,13 @@ jsPsych.plugins["ospan-trial"] = (function() {
         default: true,
         description: 'If true, trial will end when subject makes a response.'
       },
+      
+      hide_prompt: {
+        type: jsPsych.plugins.parameterType.BOOL,
+        pretty_name: 'Hide response options?',
+        default: false,
+        description: 'If true, the correct responses are not shown.'
+      }
     }
   };
   
@@ -217,7 +224,10 @@ jsPsych.plugins["ospan-trial"] = (function() {
   html += "</div>";
   html += "</div></div>";
   html += "<div class='grid-item' style = 'font-size: 70px; color: black'><br><br><br><br><br><br>" + equation + "<br><br><br><br><br><br><br><br></div>"; 
-  html += "<div style = 'font-size: 30px'><span>&larr; CORRECT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INCORRECT &rarr;</span></div>";
+  
+  if(trial.hide_prompt === false) {
+    html += "<div style = 'font-size: 30px'><span>&larr; CORRECT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INCORRECT &rarr;</span></div>";
+  }
   html += "</div>";
   
   
