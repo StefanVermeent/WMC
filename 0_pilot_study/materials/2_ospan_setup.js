@@ -8,6 +8,11 @@ var nLetterRecalled = 0; // feedback
 var nMathAcc = 0; // feedback
 
 
+var trial_count = 0;
+var overall_acc = 0; // keep track of overal accuracy; if accuracy is < 75% halfway through, participants get a probe urging them to spend more effort on the math trials
+var booster_given = false;
+
+
 var fullscreenmode = {
   type: 'fullscreen',
   fullscreen_mode: true
@@ -46,7 +51,7 @@ var ospan_letter_recall = {
     version: jsPsych.timelineVariable('version'),
   },
   on_finish: function(){
-    nLetters = 5;
+    //nLetters = 5;
     nLettersRecalled = jsPsych.data.get().last(1).values()[0].accuracy;
   }
 };
@@ -95,6 +100,31 @@ var ospan_full_feedback = {
      },
      on_finish: function(){
        nMathAcc = 0;
+     }
+};
+
+
+var ospan_midpoint_accuracy = {  
+     type: 'html-keyboard-response',
+     stimulus: function(){
+       stim = "<div style='font-size:20px;'>So far, you have correctly solved <font color='blue'>"+Math.round((overall_acc/trial_count)*100)+" %</font> of math problems</div><br><br><br>";
+       stim += "Try to take some more time on the remaining math problems to increase your accuracy.<br><br>";
+       stim += "Press any key to start the next trial.";
+
+       return stim;
+     }   
+};
+
+
+
+var ospan_reset_counters = {  
+     type: 'html-keyboard-response',
+     stimulus: "",
+     trial_duration: 0,
+     on_finish: function(){
+       trial_count = 0;
+       overall_acc = 0;
+       booster_given = false
      }
 };
 

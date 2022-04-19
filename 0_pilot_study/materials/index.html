@@ -45,11 +45,11 @@ var timeline = [];
 // Specify all possible condition orders. Includes function to save counterbalancing code to data when test order is randomly chosen below.
 var test_order1 = [
   {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
-  ospan_adapted_procedure, ospan_standard_procedure
+  ospan_adapted_procedure, ospan_reset_counters, ospan_standard_procedure
 ]
 var test_order2 = [
   {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
-  ospan_standard_procedure, ospan_adapted_procedure
+  ospan_standard_procedure, ospan_reset_counters, ospan_adapted_procedure
 ]
 
 
@@ -59,51 +59,51 @@ var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1
 
     
 timeline.push(
- // ospan_welcome,
- // ospan_instructions_letters,
- // ospan_practice_letters_procedure,
- // ospan_instructions_math,
- // ospan_practice_math_procedure,
- // ospan_instructions_full,
- // ospan_practice_standard_procedure,
+//  ospan_welcome,
+//  ospan_instructions_letters,
+//  ospan_practice_letters_procedure,
+//  ospan_instructions_math,
+//  ospan_practice_math_procedure,
+//  ospan_instructions_full,
+//  ospan_practice_standard_procedure,
   
   ospan_start,
   ospan_standard_procedure,
   
- // ospan_transition_to_adapted,
- // ospan_practice_adapted_procedure,
- // 
- // ospan_start,
- // ospan_adapted_procedure,
- // ospan_end,
- // 
- // aut_welcome,
- // aut_fork_instruction
+  ospan_transition_to_adapted,
+  ospan_practice_adapted_procedure,
+  
+  ospan_start,
+  ospan_adapted_procedure,
+  ospan_end,
+  
+  aut_welcome,
+  aut_fork_instruction
  )
 
-//timeline.push({
-//    timeline: [aut_fork_task],
-//    loop_function: function(data){
-//        if(jsPsych.data.get().last(1).values()[0].timed_out){
-//            return false;
-//        } else {
-//            return true;
-//        }
-//    }
-//});
-//
-//timeline.push(aut_paperclip_instruction)
-//
-//timeline.push({
-//    timeline: [aut_paperclip_task],
-//    loop_function: function(data){
-//        if(jsPsych.data.get().last(1).values()[0].timed_out){
-//            return false;
-//        } else {
-//            return true;
-//        }
-//    }
-//});
+timeline.push({
+    timeline: [aut_fork_task],
+    loop_function: function(data){
+        if(jsPsych.data.get().last(1).values()[0].timed_out){
+            return false;
+        } else {
+            return true;
+        }
+    }
+});
+
+timeline.push(aut_paperclip_instruction)
+
+timeline.push({
+    timeline: [aut_paperclip_task],
+    loop_function: function(data){
+        if(jsPsych.data.get().last(1).values()[0].timed_out){
+            return false;
+        } else {
+            return true;
+        }
+    }
+});
 
 
 jsPsych.init({
@@ -119,16 +119,16 @@ jsPsych.init({
     tasks_browser               = jsPsych.data.getInteractionData().json();
     
     jsPsych.data.displayData()
-  //  window.parent.postMessage([
-  //    tasks_start, 
-  //    data_ospan_standard.json(),
-  //    data_ospan_adapted.json(),
-  //    data_aut_fork.json(),
-  //    data_aut_paperclip.json(),
-  //    data_resize.json(),
-  //    tasks_browser
-  //    ],
-  //    "https://survey.uu.nl/jfe/form/SV_aXdJqbMcCbmNxDU")
+    window.parent.postMessage([
+      tasks_start, 
+      data_ospan_standard.json(),
+      data_ospan_adapted.json(),
+      data_aut_fork.json(),
+      data_aut_paperclip.json(),
+      data_resize.json(),
+      tasks_browser
+      ],
+      "https://survey.uu.nl/jfe/form/SV_aXdJqbMcCbmNxDU")
   }
 });
 </script>

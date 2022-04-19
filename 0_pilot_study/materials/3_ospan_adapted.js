@@ -44,6 +44,8 @@ var ospan_adapted_stimuli = {
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
+          overall_acc += 1;
+          trial_count += 1;
         }
       }
     },
@@ -92,6 +94,8 @@ var ospan_adapted_stimuli = {
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
+          overall_acc += 1;
+          trial_count += 1;
         }
         
         if(jsPsych.timelineVariable('selection').length < 3) {
@@ -144,6 +148,8 @@ var ospan_adapted_stimuli = {
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
+          overall_acc += 1;
+          trial_count += 1;
         }
         
         if(jsPsych.timelineVariable('selection').length < 4) {
@@ -196,6 +202,8 @@ var ospan_adapted_stimuli = {
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
+          overall_acc += 1;
+          trial_count += 1;
         }
         
         if(jsPsych.timelineVariable('selection').length < 5) {
@@ -248,6 +256,8 @@ var ospan_adapted_stimuli = {
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
+          overall_acc += 1;
+          trial_count += 1;
         }
       }
     }
@@ -257,7 +267,7 @@ var ospan_adapted_stimuli = {
 
 
 var ospan_practice_adapted_procedure = {
-  timeline: [ospan_adapted_stimuli, ospan_letter_recall, ospan_full_feedback],
+  timeline: [ospan_adapted_stimuli, ospan_letter_recall, ospan_full_feedback, ospan_performance_booster],
   timeline_variables: [
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 2)},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3)},
@@ -269,11 +279,12 @@ var ospan_practice_adapted_procedure = {
 
 
 var ospan_adapted_procedure = {
-  timeline: [ospan_adapted_stimuli, ospan_letter_recall, ospan_full_feedback],
+  timeline: [ospan_adapted_stimuli, ospan_letter_recall, ospan_full_feedback, ospan_performance_booster],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'adapted'},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'adapted'},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'adapted'},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
   ],
-  repetitions: 1
+  repetitions: 4,
+  randomize: true
 };

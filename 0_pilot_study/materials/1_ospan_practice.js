@@ -1,5 +1,3 @@
-
-
 var ospan_practice_letters_stimuli = {
   timeline: [
     {
@@ -8,7 +6,14 @@ var ospan_practice_letters_stimuli = {
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
-      hide_prompt: true
+      hide_prompt: true,
+      on_start: function() {
+        block += 1;
+      },
+      data: {
+        variable: 'practice',
+        block: function() {return block}
+      }
     },
     
     {
@@ -19,7 +24,11 @@ var ospan_practice_letters_stimuli = {
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
-      hide_prompt: true
+      hide_prompt: true,
+      data: {
+        variable: 'practice',
+        block: function() {return block}
+      }
     },
     
     {
@@ -28,7 +37,11 @@ var ospan_practice_letters_stimuli = {
       trial_number: 1,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
-      hide_prompt: true
+      hide_prompt: true,
+      data: {
+        variable: 'practice',
+        block: function() {return block}
+      }
     },
     
     {
@@ -40,6 +53,10 @@ var ospan_practice_letters_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
       hide_prompt: true,
+      data: {
+        variable: 'practice',
+        block: function() {return block}
+      },
       on_finish: function() {
         
         if(jsPsych.timelineVariable('selection').length < 3) {
@@ -54,7 +71,11 @@ var ospan_practice_letters_stimuli = {
       trial_number: 2,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
-      hide_prompt: true
+      hide_prompt: true,
+      data: {
+        variable: 'practice',
+        block: function() {return block}
+      }
     },
     
     {
@@ -66,6 +87,10 @@ var ospan_practice_letters_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
       hide_prompt: true,
+      data: {
+        variable: 'practice',
+        block: function() {return block}
+      },
       on_finish: function() {
         
         if(jsPsych.timelineVariable('selection').length < 4) {
@@ -81,6 +106,10 @@ var ospan_practice_letters_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       hide_prompt: true,
+      data: {
+        variable: 'practice',
+        block: function() {return block}
+      }
     },
     
     {
@@ -92,6 +121,10 @@ var ospan_practice_letters_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
       hide_prompt: true,
+      data: {
+        variable: 'practice',
+        block: function() {return block}
+      },
       on_finish: function() {
         
         if(jsPsych.timelineVariable('selection').length < 5) {
@@ -120,6 +153,10 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       post_trial_gap: 500,
+      data: {
+        variable: 'practice',
+        block: 1
+      },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
@@ -136,6 +173,10 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       post_trial_gap: 500,
+      data: {
+        variable: 'practice',
+        block: 1
+      },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
@@ -152,6 +193,10 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       post_trial_gap: 500,
+      data: {
+        variable: 'practice',
+        block: 1
+      },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
@@ -168,6 +213,10 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       post_trial_gap: 500,
+      data: {
+        variable: 'practice',
+        block: 1
+      },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
@@ -183,6 +232,10 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       post_trial_gap: 500,
+      data: {
+        variable: 'practice',
+        block: 1
+      },
       on_finish: function(){
         if (jsPsych.data.get().last(1).values()[0].accuracy == 1){
           nMathAcc+=1;
