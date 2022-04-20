@@ -7,7 +7,7 @@ Preregistration Pilot 1
 
 ### Q1. Working title
 
-Working memory capacity in people from harsh environments.
+The role of present-oriented attention control in working memory capacity performance for people from harsh environments.
 
 ### Q2. Authors
 
