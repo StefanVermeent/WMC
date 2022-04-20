@@ -116,6 +116,21 @@ var ospan_midpoint_accuracy = {
 };
 
 
+// Performance booster in case performance is < 75% after half of the trials
+var ospan_performance_booster = {  
+  timeline: [ospan_midpoint_accuracy],
+  conditional_function: function() {
+       // The performance booster is provided roughly halfway through the trials if performance is below 75% (and only once, if booster_given == false)
+       if (trial_count >= 24 & booster_given === false & (overall_acc / trial_count) < 0.75) {
+         booster_given = true;
+         return true;
+       } else {
+         return false;
+       }
+     }     
+};
+
+
 
 var ospan_reset_counters = {  
      type: 'html-keyboard-response',
@@ -124,9 +139,10 @@ var ospan_reset_counters = {
      on_finish: function(){
        trial_count = 0;
        overall_acc = 0;
-       booster_given = false
+       booster_given = false;
      }
 };
+
 
 
 

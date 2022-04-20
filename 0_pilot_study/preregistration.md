@@ -1,13 +1,11 @@
 Preregistration Pilot 1
 ================
 
-*Last updated on dinsdag, april 05, 2022 at 03:20 *
-
-## Overview
+*Last updated on woensdag, april 20, 2022 at 12:15 *
 
 ## Part 1 - Study Information
 
-### Q1. Working title (required)
+### Q1. Working title
 
 Working memory capacity in people from harsh environments.
 
@@ -22,40 +20,60 @@ Working memory capacity in people from harsh environments.
 -   [Willem E.
     Frankenhuis](http://www.willem.maartenfrankenhuis.nl/)<sup>1,2</sup>[<img src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID logo" width="16" height="16"/>](https://orcid.org/0000-0002-4628-1712)
 
-*<sup>1</sup>Utrecht University*
+<sup>1</sup>Utrecht University
 
-*<sup>2</sup>Max Planck Institute for the Study of Crime, Security and
-Law*
+<sup>2</sup>Max Planck Institute for the Study of Crime, Security and
+Law
 
-*<sup>3</sup>Leiden University*
+<sup>3</sup>Leiden University
 
 ### Q3. Description
 
 This preregistration covers the first pilot study of this project. The
 purpose of the project is to understand performance differences on
-working memory capacity as a function of early-life adversity. We
+working memory capacity (WMC) as a function of early-life adversity. We
 include two versions of the Operation Span (Ospan) task: a standard
 version and and a more present-oriented version.
 
 ### Q4. Research questions
 
-1.  How does early-life violence exposure affect working memory capacity
-    performance?
-2.  Do people with more early-life violence exposure perform better on a
-    more present-oriented version of a working memory capacity task?
+1.  Is early life adversity exposure associated with lower WMC
+    performance, and can performance be improved on a more
+    present-oriented version of the task?
+2.  What are the cognitive mechanisms underlying performance differences
+    on the WMC task?
 
-### Q5. Hypotheses
+### Q5. Hypotheses and Causal Models
 
-General hypotheses 1. Individuals with more early-life violence exposure
-have worse letter recall than individuals with less violence exposure on
-the standard version of the Ospan, but benefit comparatively more from
-the present-oriented version of the Ospan.
+The two candidate Directed Acyclic Graphs (DAG) representing the causal
+model connecting all variables of interest is depicted in the figure
+below.
+
+<p align="center">
+<img src="figures/prereg_fig1.png" title="Overall DAG connecting all the variables of interest.">
+</p>
+
+Each hypothesis tests a part of this overall DAG. We present the DAG
+corresponding to each hypotheses below.
+
+1.  Individuals with more early-life violence exposure have a lower WMC
+    (i.e., letter recall) than individuals with less violence exposure
+    on the standard version of the Ospan, but benefit comparatively more
+    from the present-oriented version of the Ospan.
+
+<p align="center">
+<img src="figures/prereg_fig2.png" title="DAG for hypothesis 1.">
+</p>
 
 2.  Individuals with more early-life violence exposure process the math
     equations more slowly (operationalized through the [Drift
     Rate](#DDM)) than individuals with less violence exposure on the
     standard version of the Ospan. We have no a-priori expectations
     about a moderation by task version.
+
+<p align="center">
+<img src="figures/prereg_fig3.png" title="DAG for hypothesis 2.">
+</p>
 
 3.  Individuals with more early-life violence exposure allocate less
     time to the maintenance of letters in working memory
@@ -64,25 +82,15 @@ the present-oriented version of the Ospan.
     the Ospan, but show a comparatively bigger increase in non-decision
     time on the present-oriented version of the Ospan.
 
-### Q6. Causal Model
-
-The Directed Acyclic Graph (DAG) of the causal model that underlies our
-hypotheses is depicted in the Figure below. Based on this DAG, we
-control for socio-economic status (SES) in all main statistical models,
-in order to account for the effect of SES and its “descendants” (i.e.,
-education level and task anxiety) on the association between Adversity
-and the different task performance indices (i.e., math processing speed,
-attention allocation, and working memory capacity).
-
 <p align="center">
-<img src="fig1.png" title="DAG">
+<img src="figures/prereg_fig4.png" title="Two candidate DAGs for hypothesis 3.">
 </p>
 
 ## Part 2 - Design Plan
 
 ### Q1. Study type
 
-Experimental/cross-sectional
+cross-sectional with experimental manipulation.
 
 ### Q2. Study design
 
@@ -104,14 +112,14 @@ part of Prolific’s pre-screening questions, we make sure that 50% of the
 sample consists of participants who indicated their current perceived
 socio-economic status (SES) to be relatively low (between 1 and 4 on a
 10-point scale), and 50% consists of participants who have a high
-perceived SES (between 5 and 10). The experiment is expected to take 30
-minutes on average and participants will be paid 3.75 pounds.
+perceived SES (between 5 and 10).
 
 ### Q2. Sample size
 
-Our target sample size is 500 people. We oversample with 50 participants
-to account for people who fail inclusion criteria or encounter technical
-issues for a total of 550 participants.
+Our target sample size is 500 people. Based on previous experiences with
+similar online studies, we expect to exclude around 50 participants who
+fail inclusion criteria or encounter technical issues. Therefore, we
+sample a total of 550 participants.
 
 ### Q3. Sample size rationale
 
@@ -120,7 +128,7 @@ We conducted a power simulation using the *faux* package in R
 of participants to include (more information including all simulation
 code on
 [Github](https://github.com/StefanVermeent/attention_project/tree/preregistration1/preregistrations/1_pilot/scripts)).
-Assuming an effect size of *β* = 0.1 and a [DDM](#DDM) parameter
+Assuming a small effect size of *β* = 0.1 and a [DDM](#DDM) parameter
 recovery accuracy of *r* = .85, we estimated that we would need 500
 participants to achieve at least 80% power. We sampled a total of 550
 participants to account for necessary exclusions (based on our
@@ -133,15 +141,20 @@ experiences in the pilot study).
 Ospan task condition: all participants complete a standard version and a
 newly developed ‘present-oriented’ version of the Ospan task. In the
 Ospan task, participants have to perform two tasks simultaneously: 1)
-remember an increasingly long sequence of letters; 2) solve mathematical
-equations. The two tasks alternate, meaning people have to maintain and
-rehearse the letters in working memory while solving the equations. In
-the standard version, both task components are presented in the center
-of the screen. In the present-oriented version, the letters are
-spatially laid out from left to right at the top of the screen, while
-the equations are presented in the center of the screen. The letters are
-covered by black boxes and appear one by one by removing a specific box.
-See LINK for task materials and LINK for a working version of the task.
+remember an increasingly long sequence of letters (between 3 and 5); 2)
+determine whether the outcome of a mathematical equation is correct or
+incorrect. The two tasks alternate, meaning people have to maintain and
+rehearse the letters in working memory while solving the equations. Both
+versions have the same basic visual structure: the letters spatially
+laid out from left to right in the upper portion of the screen and
+covered by black squares. The math equations are presented below the
+letters. In the standard version, the letters and covering boxes
+disappear whenever the math equation is shown. In the present-oriented
+version, the boxes and most recently uncovered letter remain on the
+screen when the math equation is shown. See [The Github
+Repository](https://github.com/StefanVermeent/WMC/tree/main/0_pilot_study/materials)
+for task materials and [here](https://wmc-tasks.netlify.app) for a
+working version of the task.
 
 ### Q2. Measured variables
 
@@ -165,7 +178,8 @@ Non-decision time across all math trials.
 1.  `vio_comp`: Violence exposure composite score. Consists of the
     unweighted average of two measures:
     -   `nvs_mean`: mean score on items of the Neighborhood Violence
-        Scale (REFERENCE).
+        Scale Frankenhuis et al.
+        ([2020](#ref-frankenhuis_deVries_2020)).
     -   Fighting_mean: The unweighted average of two items related to
         witnessing and participating in fights before age 13. `nvs_mean`
         and `fighting_mean` are z-transformed prior to averaging.
@@ -250,10 +264,21 @@ Non-decision time across all math trials.
 
 ### Q4. Covariates
 
-1.  `ses_comp`: Socio-economic status (SES) composite score. Consists of
-    the unweighted average of subjective SES (`ses_subj`) and objective
-    SES (`ses_obj`), both of which are scaled before averaging. These
-    measures consist of:
+In our [DAGs](#hypotheses), we expect that task anxiety and education
+level are causal factors on WMC performance, but that both are in turn
+caused by SES. Under this DAG, therefore, controlling for SES would also
+account for the effects of task anxiety and education level. We will
+test these assumptions prior to fitting the main models using Pearson
+correlations and linear regressions. If we find that task anxiety and/or
+education level are not associated with SES or retain a significant
+association with task performance after controlling for SES, we will
+also include them as covariates.
+
+1.  `ses_comp`: Childhood socio-economic status (SES) composite score.
+    Consists of the unweighted average of subjective SES (`ses_subj`)
+    and objective SES (`ses_obj`), both of which are scaled before
+    averaging. These measures consist of:
+
     -   Subjective SES. Each of the following measures was z-tranformed
         and then combined into a single scale through unweighted
         averaging:
@@ -281,6 +306,17 @@ Non-decision time across all math trials.
             25k/year’, ‘$25k - $49k/year,’$50 - $74k/year’, ‘$75 -
             $99k/year’, ‘$100 - $149k/year’, ‘more than $150k/year’.
 
+2.  `edu`: Highest education of the participant. on an 8-point scale:
+    ‘some high school’, ‘GED’, ‘high school diploma’, ‘some college but
+    no college degree’, associate’s degree’, ‘bachelor’s degree’,
+    ‘master’s degree’, or ‘doctoral or lab degree’. The variable will be
+    treated as a continuous variable.
+
+3.  `task_anxiety`: A single item after completing both versions of the
+    WMC task: “How anxious did you feel about playing the Letters and
+    Numbers game?”, rated on a scale of 1 (“not at all anxious”) to 5
+    (“Very anxious”).
+
 ## Part 5 - Analysis Plan
 
 ### Q1. Drift Diffusion Modeling (DDM)
@@ -297,62 +333,82 @@ indicates a potential response bias towards one of the two options.
 
 DDM models are fit to the RT/accuracy data of the math subtask,
 separately for each task version (standard and present-oriented) and
-separately for each participant. We use the Fast-dm software to fit the
-models ([Voss & Voss, 2007](#ref-voss_2007)). We use Maximum Likelihood
-estimation as it has been shown to provide reliable estimates with
-relatively few trials ([Lerche et al., 2017](#ref-lerche_2017)).
+separately for each participant. The models are fit with the Fast-dm
+software ([Voss & Voss, 2007](#ref-voss_2007)). We use Maximum
+Likelihood estimation as it has been shown to provide reliable estimates
+with relatively few trials ([Lerche et al., 2017](#ref-lerche_2017)).
 Parameters *a*, *v* and *T0* are freely estimated and *z* is fixed to
 0.5 (the midpoint, indicating no response bias). In addition, all
 inter-trial variability parameters are fixed to 0 to increase model
 parsimony.
 
-The model fit for all participants will be assessed through QQ-plots
-comparing the empirical data with the model predictions following
-([**grange_2020?**](#ref-grange_2020)). Using each participant’s
-best-fitting parameters, we simulate RTs and accuracy for 50,000 trials
-of each Ospan version. We calculate the total proportion accuracy and
-the 25th, 50th, and 75th quantile of the response time distribution
-(correct trials only) for both the simulated data and the empirical
-data. The outcomes for all participants were plotted against each other.
-The closer the points are to the diagonal line, the better the models
-fit the participants’ data.
+The model fit for all participants will be assessed visually through
+QQ-plots comparing the empirical data with the model predictions
+following Grange & Rydon-Grange ([2020](#ref-grange_2020)). Using each
+participant’s best-fitting parameters, we simulate RTs and accuracy for
+50,000 trials of each Ospan version. We calculate the total proportion
+accuracy and the 25th, 50th, and 75th quantile of the response time
+distribution (correct trials only) for both the simulated data and the
+empirical data. The outcomes for all participants were plotted against
+each other. The closer the points are to the diagonal line, the better
+the models fit the participants’ data.
+
+While our main [statistical models](#analyses) are focused on DDM
+parameters recovered using maximum likelihood estimation, we will also
+explore the hierarchical Bayesian implementation of the DDM \[HDDM;
+Wiecki et al. ([2013](#ref-wiecki_2013))\] as an alternative. Both
+approaches have been shown to perform well when the number of trials is
+low (\< 50) and in situations where there are “slow contaminants”, i.e.,
+trials with relatively long reaction times that are not produced by a
+diffusion process (e.g., a participant who is guessing or gets
+distracted). However, the HDDM might produce slightly more robust
+estimates as it allows for the use of group-level information when
+estimating DDM parameters. This is particularly useful in situations
+with a small number of trials but a relatively large number of
+participants. We will compare the recovered DDM parameters using maximum
+likelihood estimation and HDDM estimation to see to what extent they
+converge.
+
+Finally, we plan to explore the use of the Time-Based Resource Sharing
+(TBRS) model of working memory to assess the way in which participants
+focus their attention on the task. Specifically, we plan to use the
+measurement model based on TBRS as developed by Gauvrit & Mathy
+([2018](#ref-gauvrit_2018)) (TBRS2). This model extracts four parameters
+summarizing participants’ performance: 1) decay rate *d*, which
+specifies the rate at which memory items decay over time; 2) refreshment
+rate *r*, which is the speed with which memory items are refreshed in
+working memory by re-attending to them; 3) baseline *β*, which is the
+activation of an item when it is presented; 4) duration of item
+refreshing. We plan to use this pilot study to develop an optimal model
+fitting routine.
 
 ### Q2. Statistical models
 
-All main models include SES as a covariate. We expect SES to have a
-quadratic effect on violence exposure and unpredictability, such that
-these types of adversity are most strongly associated to SES at the
-lowest levels of SES, and less so at moderate and high levels of SES.
-Prior to running the models below, we test whether the quadratic effect
-holds or whether the association is better captured by a linear
-effect. - `lm(vio_comp ~ ses_comp + ses_comp_squared)` -
-`lm(unp_comp ~ ses_comp + ses_comp_squared)`
+As discussed under [Covariates](#covariates), all models will include
+SES as a covariate, as well as education level and task anxiety if
+necessary.
 
-If the quadratic effect of SES is statistically significant, we include
-it in the models below. If not, we only include the linear effect of
-SES.
-
-1.  Individuals with more early-life violence exposure have worse letter
-    recall than individuals with less violence exposure on the standard
-    version of the Ospan, but benefit comparatively more from the
-    present-oriented version of the Ospan.
+1.  Individuals with more early-life violence exposure have a lower WMC
+    (i.e., letter recall) than individuals with less violence exposure
+    on the standard version of the Ospan, but benefit comparatively more
+    from the present-oriented version of the Ospan.
     -   Linear mixed model:
-        `lmer(ospan_cap ~ vio_comp * task_version + ses_comp + ses_comp_squared)`
+        `lmer(ospan_cap ~ vio_comp * task_version + ses_comp + (1|id))`
 2.  Individuals with more early-life violence exposure process the math
-    equations more slowly (operationalized through the Drift Rate) than
-    individuals with less violence exposure on the standard version of
-    the Ospan. We have no a-priori expectations about a moderation by
-    task version.
+    equations more slowly (operationalized through the [Drift
+    Rate](#DDM)) than individuals with less violence exposure on the
+    standard version of the Ospan. We have no a-priori expectations
+    about a moderation by task version.
     -   Linear mixed model:
-        `lmer(ospan_math_v ~ vio_comp * task_version + ses_comp + ses_comp_squared)`
+        `lmer(ospan_math_v ~ vio_comp * task_version + ses_comp + (1|id))`
 3.  Individuals with more early-life violence exposure allocate less
     time to the maintenance of letters in working memory
-    (operationalized through the non-decision time) than individuals
-    with less violence exposure on the standard version of the Ospan,
-    but show a comparatively bigger increase in non-decision time on the
-    present-oriented version of the Ospan.
+    (operationalized through the [non-decision time](#DDM)) than
+    individuals with less violence exposure on the standard version of
+    the Ospan, but show a comparatively bigger increase in non-decision
+    time on the present-oriented version of the Ospan.
     -   Linear mixed model:
-        `lmer(ospan_math_t0 ~ vio_comp * task_version + ses_comp + ses_comp_squared)`
+        `lmer(ospan_math_t0 ~ vio_comp * task_version + ses_comp + (1|id))`
 
 ### Q3. Multiverse analyses
 
@@ -362,52 +418,55 @@ over the environment in which they do so. It is largely unclear which
 factors affect performance and how strong these effects are. We used
 multiverse analysis for all main analysis to assess the robustness of
 the results against various environmental factors and situations during
-the experiment. We identified four arbitrary analytic decisions,
+the experiment. We identified six arbitrary analytic decisions,
 including or excluding 1) participants who had a recaptcha score below
 0.5 (possibly indicating bots); 2) participants who did not enter
-fullscreen mode prior to starting the Flanker Task; 3) participants who
-exited fullscreen mode at any point during the task; 4) participants who
-indicated high levels of noise in their environment; participants who
-indicated extreme interruptions during the experiment
+fullscreen mode prior to starting the task; 3) participants who exited
+fullscreen mode at any point during the task; 4) participants who did
+not resize the screen at the start of the experiment; 5) participants
+who indicated high levels of noise in their environment; 6) participants
+who indicated extreme interruptions during the experiment.
 
 For each analysis, we report the median *β*, 95% confidence intervals,
 proportion of *p*-values \< .05 across all analytic decisions. For the
 primary analyses, we used a bootstrapping technique to compute overall
 *p*-values to assess whether the obtained median *β* is significantly
-larger than zero ([**simonsohn_2020?**](#ref-simonsohn_2020)).
+larger than zero ([Simonsohn et al., 2020](#ref-simonsohn_2020)).
 
-### Q4. Transformations
+### Q4. Participant-level exclusions
 
-### Q5. Data exclusion
-
-Participant-level exclusions First, we excluded participants who did not
-complete the full study and those who did not complete both versions of
-the Ospan. Second, we analyzed responses to the attention checks and
-reversed coded items in the questionnaire part of the experiment. We
-excluded participants if they missed both attention check items or if
-they had suspicious response patterns (e.g., consistently endorsing high
-response options even when some items were reverse coded). Third, we
-excluded participants whose screen height was \< 700 pixels, or whose
-screen height was bigger than their screen width (suggesting that they
-did not complete the experiment on a laptop or desktop pc). Finally, we
+First, we excluded participants who did not complete the full study and
+those who did not complete both versions of the Ospan. Second, we
+analyzed responses to the attention checks and reversed coded items in
+the questionnaire part of the experiment. We excluded participants if
+they missed both attention check items or if they had suspicious
+response patterns (e.g., consistently endorsing high response options
+even when some items were reverse coded). Third, we excluded
+participants whose screen height was \< 700 pixels, or whose screen
+height was bigger than their screen width (suggesting that they did not
+complete the experiment on a laptop or desktop pc). In addition, we
 exclude participants whose accuracy on the math subtask is lower than
 75% across all blocks in order to ensure that participants engaged
-seriously with the task.
+seriously with the task. Finally, we use the open-ended participant
+feedback and manual data checks to determine potential additional
+participants to exclude.
 
-### Q6. Trial-level exclusions
+### Q5. Trial-level exclusions
 
-trials with reaction times \< 250 ms or \> 3500 ms ([Ratcliff &
-Childers, 2015](#ref-ratcliff_2015)) were excluded from the analyses.
+trials with reaction times \< 300 ms ([Ratcliff & Childers,
+2015](#ref-ratcliff_2015)) were excluded from the analyses. The math
+trials have a maximum duration of 6000 ms if no response is provided. We
+do not have an *a-priori* cut-off point for trials (such as the
+typically used 3500 ms). In addition, trials with a log-transformed
+reaction time \> 3.2 SDs above the subject-level mean are excluded.
+
 Participants with more than 10 removed trials were excluded from the
 analyses. Finally, we logged whether participants exited full-screen
 mode and/or engaged with other browser tabs (i.e., blur events) at any
-point during the Flanker Task. We excluded participants for whom blur
-events occurred while a Flanker block was ongoing (but not while reading
-instructions or taking breaks in between conditions). Full-screen exits
-were included in the [multiverse analysis](#multiverse).
-
-After applying the participant-level and trial-level exclusions listed
-above, we check
+point during the Task. We excluded participants for whom blur events
+occurred while the task was ongoing (but not while reading instructions
+or taking breaks in between versions). Full-screen exits were included
+in the [multiverse analysis](#multiverse).
 
 ## References
 
@@ -421,6 +480,32 @@ DeBruine, L. (2021). *Faux: Simulation for factorial designs*. Zenodo.
 
 </div>
 
+<div id="ref-frankenhuis_2018" class="csl-entry">
+
+Frankenhuis, W. E., & Bijlstra, G. (2018). Does exposure to hostile
+environments predict enhanced emotion detection? *Collabra: Psychology*,
+*4*(1), 18. https://doi.org/<https://doi.org/10.1525/collabra.127>
+
+</div>
+
+<div id="ref-frankenhuis_deVries_2020" class="csl-entry">
+
+Frankenhuis, W. E., Vries, S. A. de, Bianchi, J., & Ellis, B. J. (2020).
+Hidden talents in harsh conditions? A preregistered study of memory and
+reasoning about social dominance. *Developmental Science*, *23*(4),
+e12835. https://doi.org/<https://doi.org/10.1111/desc.12835>
+
+</div>
+
+<div id="ref-gauvrit_2018" class="csl-entry">
+
+Gauvrit, N., & Mathy, F. (2018). Mathematical transcription of the
+“time-based resource sharing” theory of working memory. *British Journal
+of Mathematical and Statistical Psychology*, *71*(1), 146–166.
+<https://doi.org/10.1111/bmsp.12112>
+
+</div>
+
 <div id="ref-glynn_2019" class="csl-entry">
 
 Glynn, L. M., Stern, H. S., Howland, M. A., Risbrough, V. B., Baker, D.
@@ -428,6 +513,15 @@ G., Nievergelt, C. M., Baram, T. Z., & Davis, E. P. (2019). Measuring
 novel antecedents of mental illness: The Questionnaire of
 Unpredictability in Childhood. *Neuropsychopharmacology*, *44*(5),
 876–882. <https://doi.org/10.1038/s41386-018-0280-9>
+
+</div>
+
+<div id="ref-grange_2020" class="csl-entry">
+
+Grange, J. A., & Rydon-Grange, M. (2020). Computational modelling of
+attentional selectivity in depression reveals perceptual deficits.
+*Psychological Medicine*, 1–10.
+<https://doi.org/10.1017/S0033291720002652>
 
 </div>
 
@@ -459,11 +553,27 @@ https://doi.org/<https://doi.org/10.1037/dec0000030>
 
 </div>
 
+<div id="ref-simonsohn_2020" class="csl-entry">
+
+Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2020). Specification
+curve analysis. *Nature Human Behaviour*, *4*(11), 1208–1214.
+<https://doi.org/10.1038/s41562-020-0912-z>
+
+</div>
+
 <div id="ref-voss_2007" class="csl-entry">
 
 Voss, A., & Voss, J. (2007). Fast-dm: A free program for efficient
 diffusion model analysis. *Behavior Research Methods*, *39*(4), 767–775.
 https://doi.org/<https://doi.org/10.3758/BF03192967>
+
+</div>
+
+<div id="ref-wiecki_2013" class="csl-entry">
+
+Wiecki, T. V., Sofer, I., & Frank, M. J. (2013). HDDM: Hierarchical
+Bayesian estimation of the Drift-Diffusion Model in Python. *Frontiers
+in Neuroinformatics*, *7*. <https://doi.org/10.3389/fninf.2013.00014>
 
 </div>
 
