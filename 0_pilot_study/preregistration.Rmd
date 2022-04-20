@@ -97,15 +97,19 @@ Ospan task condition: all participants complete a standard version and a newly d
 
 
 ### Q2.	Measured variables {#vars_measured}
-Dependent variables (raw)
+
+**Dependent variables (raw)**
+
 Each version of the Ospan provides the following DVs:
+
 1.	ospan_cap: total number of letters recalled in the correct order on the standard task version.
 2.	ospan_math_acc: total number of math equations solved correctly on the standard task version.
 
 3.	ospan_math_acc: total number of math equations solved correctly on the present-oriented task version.
 4.	ospan_math_rt: Mean reaction time (in seconds) on the correct math equation trials.
 
-Dependent variables ([Drift Diffusion parameters](#DDM))
+**Dependent variables ([Drift Diffusion parameters](#DDM))**
+
 5.	Ospan_math_v: Drift rate across all math trials.
 6.	Ospan_math_a: Boundary separation across all math trials.
 7.	Ospan_math_t0: Non-decision time across all math trials.
@@ -113,14 +117,14 @@ Dependent variables ([Drift Diffusion parameters](#DDM))
 
 ### Q3. Independent variables {#ivs}
 1. `vio_comp`: Violence exposure composite score. Consists of the unweighted average of two measures:
-    + `nvs_mean`: mean score on items of the Neighborhood Violence Scale [@frankenhuis_2018, @frankenhuis_deVries_2020]. 
+    + `nvs_mean`: mean score on items of the Neighborhood Violence Scale [@frankenhuis_2018; @frankenhuis_deVries_2020]. 
     + Fighting_mean: The unweighted average of two items related to witnessing and participating in fights before age 13. `nvs_mean` and `fighting_mean` are z-transformed prior to averaging.
 
 2. `unp_comp`: Unpredictability composite score. Consists of the unweighted average of subjective unpredictability (`unp_subj`) and objective unpredictability (`unp_obj`), both of which are scaled before averaging. These measures consist of:
     + Subjective unpredictability. Each of the following measures was z-transformed and then combined into a single scale through unweighted averaging:
-        + Questionnaire of Unpredictability in Childhood [QUIC (adapted); @glynn_2019]: We made three general changes to the original scale as described in Glynn et al. (2019; See [Table S2](#appendix)). First, we adapted all items to refer to experiences before age 13. This was done to reduce cognitive load from having to go back-and-forth between different time scales. Second, most items were rated on a scale of 1 (never true) to 5 (very often true) instead of the original yes/no answer format. An exception was made for four items of the parental environment scale which asked for more specific experiences (e.g., "I experienced changes in my custody arrangement"). For these items, we adopted a response scale with the options "never", "only once", "a couple times", "several times", "many times". Third, quantifiers such as "frequently", "often", and "There was a period of time when [...]" were dropped to better match the response scale. We excluded the item "My parents got divorced" because it did not fit the response format and was captured by one of the items of the perceived unpredictability scale. An overall QUIC variable is computed by averaging all unweighted items.
-        + Perceived Unpredictability Scale (NVS): Consists of eight items measuring perceived unpredictability before age 13 (e.g, "My family life was generally inconsistent and unpredictable from day-to-day"; See [Table S3](#appendix) for an overview of all items). Participants rated each on a scale from 1 (never true) to 5 (very often true).
-        + Confusion, Hubbub, and Order Scale [CHAOS (adapted); @matheny_1995]: Consists of 15 items measuring the level of chaos in the household (e.g., "No matter how hard we tried, we always seemed to be running late"; See [Table S4](#appendix) for an overview of all items). We make two changes to the original scale as described in @matheny_1995. First, all items are converted from the present tense to the past tense, and are endorsed as applying to participants' lives before age 13. Second, all items are rated on a scale of 1 (never true) to 5 (very often true) instead of the original yes/no answer format. An overall household chaos variable is computed by averaging the 15 unweighted items.
+        + Questionnaire of Unpredictability in Childhood [QUIC (adapted); @glynn_2019]: We made three general changes to the original scale as described in Glynn et al. (2019). First, we adapted all items to refer to experiences before age 13. This was done to reduce cognitive load from having to go back-and-forth between different time scales. Second, most items were rated on a scale of 1 (never true) to 5 (very often true) instead of the original yes/no answer format. An exception was made for four items of the parental environment scale which asked for more specific experiences (e.g., "I experienced changes in my custody arrangement"). For these items, we adopted a response scale with the options "never", "only once", "a couple times", "several times", "many times". Third, quantifiers such as "frequently", "often", and "There was a period of time when [...]" were dropped to better match the response scale. We excluded the item "My parents got divorced" because it did not fit the response format and was captured by one of the items of the perceived unpredictability scale. An overall QUIC variable is computed by averaging all unweighted items.
+        + Perceived Unpredictability Scale (NVS): Consists of eight items measuring perceived unpredictability before age 13 (e.g, "My family life was generally inconsistent and unpredictable from day-to-day"). Participants rated each on a scale from 1 (never true) to 5 (very often true).
+        + Confusion, Hubbub, and Order Scale [CHAOS (adapted); @matheny_1995]: Consists of 15 items measuring the level of chaos in the household (e.g., "No matter how hard we tried, we always seemed to be running late"). We make two changes to the original scale as described in @matheny_1995. First, all items are converted from the present tense to the past tense, and are endorsed as applying to participants' lives before age 13. Second, all items are rated on a scale of 1 (never true) to 5 (very often true) instead of the original yes/no answer format. An overall household chaos variable is computed by averaging the 15 unweighted items.
 
     + Objective unpredictability. Each of the following measures was z-transformed and then combined into a single scale through unweighted averaging:
         + Four items measuring the stability of the family and social environment. On a scale of 1 (the same all the time) to 5 (constant and rapid changes), participants indicated how often the following aspects of their family and social environment changed before age 13: 1) economic status, 2) family environment, 3) childhood neighborhood environment, and 4) childhood school environment. The four items were averaged together.
@@ -133,13 +137,13 @@ In our [DAGs](#hypotheses), we expect that task anxiety and education level are 
 
 1. `ses_comp`: Childhood socio-economic status (SES) composite score. Consists of the unweighted average of subjective SES (`ses_subj`) and objective SES (`ses_obj`), both of which are scaled before averaging. These measures consist of:
     + Subjective SES. Each of the following measures was z-tranformed and then combined into a single scale through unweighted averaging:
-        + Perceived level of resource scarcity. Consists of seven items (e.g., "Your family had enough money to afford the kind of home you all needed"; See [Table S6](#appendix)). The items are averaged together to create an unweighted composite score.
+        + Perceived level of resource scarcity. Consists of seven items (e.g., "Your family had enough money to afford the kind of home you all needed"). The items are averaged together to create an unweighted composite score.
         + Childhood social class. Participants answered the question "Which of these classes would you say your family belonged to **when you were growing up**?" on a 5-point scale: 'Poor', 'Working class', 'Middle class', 'Upper-middle class', 'Upper class'.
     + Objective SES. Each of the following measures was z-tranformed and then combined into a single scale through unweighted averaging:
         + Highest education of caregivers/parents. Separate items for each caregiver, on an 8-point scale: 'some high school', 'GED', 'high school diploma', 'some college but no college degree', associate's  degree', 'bachelor's degree', 'master's  degree', or 'doctoral or lab degree'. The caregivers' education levels are averaged to create an overall unweighted parental education composite.
         + Childhood household income. six-point scale: 'less than \$ 25k/year', '\$25k - \$49k/year, '\$50 - \$74k/year', '\$75 - \$99k/year', '\$100 - \$149k/year', 'more than \$150k/year'.
         
-2. `edu`: Highest education of the participant. on an 8-point scale: 'some high school', 'GED', 'high school diploma', 'some college but no college degree', associate's  degree', 'bachelor's degree', 'master's  degree', or 'doctoral or lab degree'. The variable will be treated as a continuous variable.
+2. `education`: Highest education of the participant. on an 8-point scale: 'some high school', 'GED', 'high school diploma', 'some college but no college degree', associate's  degree', 'bachelor's degree', 'master's  degree', or 'doctoral or lab degree'. The variable will be treated as a continuous variable.
 
 3. `task_anxiety`: A single item after completing both versions of the WMC task: "How anxious did you feel about playing the Letters and Numbers game?", rated on a scale of 1 ("not at all anxious") to 5 ("Very anxious"). 
 

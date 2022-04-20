@@ -1,7 +1,7 @@
 Preregistration Pilot 1
 ================
 
-*Last updated on woensdag, april 20, 2022 at 12:15 *
+*Last updated on woensdag, april 20, 2022 at 12:24 *
 
 ## Part 1 - Study Information
 
@@ -158,28 +158,36 @@ working version of the task.
 
 ### Q2. Measured variables
 
-Dependent variables (raw) Each version of the Ospan provides the
-following DVs: 1. ospan_cap: total number of letters recalled in the
-correct order on the standard task version. 2. ospan_math_acc: total
-number of math equations solved correctly on the standard task version.
+**Dependent variables (raw)**
+
+Each version of the Ospan provides the following DVs:
+
+1.  ospan_cap: total number of letters recalled in the correct order on
+    the standard task version.
+
+2.  ospan_math_acc: total number of math equations solved correctly on
+    the standard task version.
 
 3.  ospan_math_acc: total number of math equations solved correctly on
     the present-oriented task version.
+
 4.  ospan_math_rt: Mean reaction time (in seconds) on the correct math
     equation trials.
 
-Dependent variables ([Drift Diffusion parameters](#DDM)) 5.
-Ospan_math_v: Drift rate across all math trials. 6. Ospan_math_a:
-Boundary separation across all math trials. 7. Ospan_math_t0:
-Non-decision time across all math trials.
+**Dependent variables ([Drift Diffusion parameters](#DDM))**
+
+5.  Ospan_math_v: Drift rate across all math trials.
+6.  Ospan_math_a: Boundary separation across all math trials.
+7.  Ospan_math_t0: Non-decision time across all math trials.
 
 ### Q3. Independent variables
 
 1.  `vio_comp`: Violence exposure composite score. Consists of the
     unweighted average of two measures:
     -   `nvs_mean`: mean score on items of the Neighborhood Violence
-        Scale Frankenhuis et al.
-        ([2020](#ref-frankenhuis_deVries_2020)).
+        Scale ([Frankenhuis et al.,
+        2020](#ref-frankenhuis_deVries_2020); [Frankenhuis & Bijlstra,
+        2018](#ref-frankenhuis_2018)).
     -   Fighting_mean: The unweighted average of two items related to
         witnessing and participating in fights before age 13. `nvs_mean`
         and `fighting_mean` are z-transformed prior to averaging.
