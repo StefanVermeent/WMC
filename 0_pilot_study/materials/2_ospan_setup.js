@@ -131,7 +131,7 @@ var ospan_performance_booster = {
 };
 
 
-
+// Reset performance-tracking counters at the end of an ospan version
 var ospan_reset_counters = {  
      type: 'html-keyboard-response',
      stimulus: "",

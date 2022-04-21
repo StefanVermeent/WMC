@@ -38,48 +38,57 @@
   <body></body>
   <script>
 
-// Initiate timeline
-var timeline = [];
-
 
 // Specify all possible condition orders. Includes function to save counterbalancing code to data when test order is randomly chosen below.
 var test_order1 = [
   {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
-  ospan_adapted_procedure, ospan_reset_counters, ospan_standard_procedure
+  ospan_instructions_letters_adapted,
+  ospan_practice_letters_procedure,
+  ospan_instructions_math,
+  ospan_practice_math_procedure,
+  ospan_instructions_full,
+  ospan_practice_adapted_procedure, 
+  ospan_start, 
+  ospan_adapted_procedure, 
+  ospan_reset_counters, 
+  ospan_transition_to_standard, 
+  ospan_practice_standard_procedure, 
+  ospan_start, 
+  ospan_standard_procedure
 ]
 var test_order2 = [
   {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
-  ospan_standard_procedure, ospan_reset_counters, ospan_adapted_procedure
+  ospan_instructions_letters_standard,
+  ospan_practice_letters_procedure,
+  ospan_instructions_math,
+  ospan_practice_math_procedure,
+  ospan_instructions_full,
+  ospan_practice_standard_procedure, 
+  ospan_start, 
+  ospan_standard_procedure, 
+  ospan_reset_counters, 
+  ospan_transition_to_adapted, 
+  ospan_practice_adapted_procedure, 
+  ospan_start, 
+  ospan_adapted_procedure
 ]
-
 
 
 var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1, test_order2], 1)[0]
 
+var full_experiment_timeline = [
+    fullscreenmode,
+    resize_screen,
+    ospan_welcome,
+    counterbalance,
+    aut_welcome,
+    aut_fork_instruction
+    ].flat(2)
 
     
-timeline.push(
-//  ospan_welcome,
-//  ospan_instructions_letters,
-//  ospan_practice_letters_procedure,
-//  ospan_instructions_math,
-//  ospan_practice_math_procedure,
-//  ospan_instructions_full,
-//  ospan_practice_standard_procedure,
-  
-  ospan_start,
-  ospan_standard_procedure,
-  
-  ospan_transition_to_adapted,
-  ospan_practice_adapted_procedure,
-  
-  ospan_start,
-  ospan_adapted_procedure,
-  ospan_end,
-  
-  aut_welcome,
-  aut_fork_instruction
- )
+
+var timeline = full_experiment_timeline
+
 
 timeline.push({
     timeline: [aut_fork_task],

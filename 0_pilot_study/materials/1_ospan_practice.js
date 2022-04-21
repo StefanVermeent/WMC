@@ -2,6 +2,7 @@ var ospan_practice_letters_stimuli = {
   timeline: [
     {
       type: 'ospan-cue',
+      task_version: "standard",
       stimulus: "",
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
@@ -33,6 +34,7 @@ var ospan_practice_letters_stimuli = {
     
     {
       type: 'ospan-cue',
+      task_version: "standard",
       stimulus: "",
       trial_number: 1,
       choices: jsPsych.NO_KEYS,
@@ -67,6 +69,7 @@ var ospan_practice_letters_stimuli = {
     
     {
       type: 'ospan-cue',
+      task_version: "standard",
       stimulus: "",
       trial_number: 2,
       choices: jsPsych.NO_KEYS,
@@ -101,6 +104,7 @@ var ospan_practice_letters_stimuli = {
     
     {
       type: 'ospan-cue',
+      task_version: "standard",
       stimulus: "",
       trial_number: 3,
       choices: jsPsych.NO_KEYS,

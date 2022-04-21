@@ -14,7 +14,133 @@ var ospan_welcome = {
 
 
 //-------------------- Instructions
-var ospan_instructions_letters = {
+
+// If participants start with the standard Ospan version, they will be introduced with the letter task in the standard visual appearance
+var ospan_instructions_letters_standard = {
+  timeline: [
+    {
+      type: 'instructions',
+      pages: [
+      //Page 1
+      "<p style = 'text-align: center;'>"+ 
+      "In this game, you will have to do two things:<br><br>" +
+      "1. Remember <strong>letters</strong> that are presented on the screen.<br><br>" +
+      "2. Solve <strong>math equations</strong>.",
+      
+      //page 2
+      "<p style = 'text-align: center;'>"+ 
+      "<strong>Task 1: Remember letters</strong><br><br>" +
+      "You will see a couple of letters, one after the other.<br><br>" +
+      "Your job is to remember all letters <strong>in the correct order</strong>.",
+      
+      //page 3
+      "<style>" +
+      ".grid-container {" +
+      "display: grid;" +
+      "grid-template-columns: auto;" +
+      "grid-template-rows: auto auto;" +
+      "padding: 0px;" +
+      "position:relative;" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      ".grid-item {" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      "</style>" +
+  
+      '<div id="jspsych-html-keyboard-response-stimulus">' +
+
+      "<div class='grid-container' style = 'height:400px';>"+
+      "<div class='grid-item'>"+
+      "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
+      "<div style = 'margin: auto; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span>J</span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "</div></div><br><br><br>" +
+      
+      "One by one, letters are presented from left to right.<br><br>",
+      
+      //page 5
+      "<style>" +
+      ".grid-container {" +
+      "display: grid;" +
+      "grid-template-columns: auto;" +
+      "grid-template-rows: auto auto;" +
+      "padding: 0px;" +
+      "position:relative;" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      ".grid-item {" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      "</style>" +
+  
+      '<div id="jspsych-html-keyboard-response-stimulus">' +
+
+      "<div class='grid-container' style = 'height:400px';>"+
+      "<div class='grid-item'>"+
+      "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "</div></div><br><br><br>" +
+      "You will see a red box in the position of the next letter just before it appears.",
+      
+      //page 4
+      "<p style = 'text-align: center;'>"+ 
+      "For example, you might first see an 'S', than an 'F', and then a 'Q'.<br><br>" +
+      "After the last letter, you select the letters that you saw <strong>in the correct order</strong>."
+      ],
+      show_clickable_nav: true,
+      allow_backward: true,
+      key_forward: -1,
+      key_backward: -1,
+      button_label_next: "continue",
+      button_label_previous: "go back",
+      data: {variable: 'instruction', task_version: "introduction"}
+    },
+    
+    {
+      type: 'html-keyboard-response',
+      stimulus: "<p style = 'text-align: center;'>"+ 
+      "Let's practice this task a couple of times! <br><br>" +
+      "Press the <strong>Spacebar</strong> to start when you are ready to practice.",
+      choices: [" "]
+    }
+  ]
+};
+
+
+// If participants start with the standard Ospan version, they will be introduced with the letter task in the standard visual appearance
+var ospan_instructions_letters_adapted = {
   timeline: [
     {
       type: 'instructions',
@@ -57,19 +183,19 @@ var ospan_instructions_letters = {
       "<div style = 'margin: auto; padding: 25px 0px'><span>J</span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
-      "<div style = 'margin: auto; padding: 25px 0px'><span>Q</span></div>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
-      "<div style = 'margin: auto; padding: 25px 0px'><span>S</span></div>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
-      "<div style = 'margin: auto; padding: 25px 0px'><span>P</span></div>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
-      "<div style = 'margin: auto; padding: 25px 0px'><span>F</span></div>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "<p style = 'text-align: center;'>"+ 
+      
       "Each letter will be covered by a black box.<br><br>",
       
       //page 4
@@ -98,20 +224,20 @@ var ospan_instructions_letters = {
       "<div style = 'margin: auto; padding: 25px 0px'><span>J</span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
-      "<div style = 'margin: auto; padding: 25px 0px'><span>Q</span></div>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
-      "<div style = 'margin: auto; padding: 25px 0px'><span>S</span></div>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
-      "<div style = 'margin: auto; padding: 25px 0px'><span>P</span></div>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
-      "<div style = 'margin: auto; padding: 25px 0px'><span>F</span></div>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
       
-      "One by one, the boxes disappear to reveal each letter.<br><br>",
+      "One by one, the boxes disappear to show each letter.<br><br>",
       
       //page 5
       "<style>" +
@@ -151,7 +277,7 @@ var ospan_instructions_letters = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "Boxes will turn red just before they disappear.",
+      "You will see a red box in the position of the next letter just before it appears.",
       
       //page 4
       "<p style = 'text-align: center;'>"+ 
@@ -295,9 +421,83 @@ var ospan_transition_to_standard = {
       [
        "<p style = 'text-align: center;'>"+ 
       "Well done!<br><br>" +
-      "You will now play a second version of the same game.<br><br>" +
-      "This time, the boxes and most recent letter will disappear each time you solve the math equation.<br><br>" +
-      "After you solve the math equation, the boxes reappear to show the next letter.<br><br>" +
+      "You will now play a second version of the same game.<br><br>",
+      
+      "<style>" +
+      ".grid-container {" +
+      "display: grid;" +
+      "grid-template-columns: auto;" +
+      "grid-template-rows: auto auto;" +
+      "padding: 0px;" +
+      "position:relative;" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      ".grid-item {" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      "</style>" +
+      '<div id="jspsych-html-keyboard-response-stimulus">' +
+      "<div class='grid-container' style = 'height:400px';>"+
+      "<div class='grid-item'>"+
+      "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
+      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "</div></div><br><br><br>" +
+      "This time, the letters will not be covered by black boxes.<br><br>" +
+      "Instead, a single red box will show the position of the next letter just before it appears.",
+      
+       "<style>" +
+      ".grid-container {" +
+      "display: grid;" +
+      "grid-template-columns: auto;" +
+      "grid-template-rows: auto auto;" +
+      "padding: 0px;" +
+      "position:relative;" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      ".grid-item {" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      "</style>" +
+  
+      '<div id="jspsych-html-keyboard-response-stimulus">' +
+
+      "<div class='grid-container' style = 'height:400px';>"+
+      "<div class='grid-item'>"+
+      "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
+      "<div style = 'margin: auto; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span>Q</span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "</div></div><br><br><br>" +
       "Everything else about the game will be identical."
       ],
       show_clickable_nav: true,
@@ -330,8 +530,163 @@ var ospan_transition_to_adapted = {
       [
       "<p style = 'text-align: center;'>"+ 
       "Well done!<br><br>" +
-      "You will now play a second version of the same game.<br><br>" +
-      "This time, the boxes and most recent letter will stay on the screen while you solve the math equation.<br><br>" +
+      "You will now play a second version of the same game.<br><br>",
+      
+      "<style>" +
+      ".grid-container {" +
+      "display: grid;" +
+      "grid-template-columns: auto;" +
+      "grid-template-rows: auto auto;" +
+      "padding: 0px;" +
+      "position:relative;" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      ".grid-item {" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      "</style>" +
+  
+      '<div id="jspsych-html-keyboard-response-stimulus">' +
+
+      "<div class='grid-container' style = 'height:400px';>"+
+      "<div class='grid-item'>"+
+      "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "</div></div><br><br><br>" +
+      "This time, the letters will be covered by black boxes.<br><br>",
+      
+      "<style>" +
+      ".grid-container {" +
+      "display: grid;" +
+      "grid-template-columns: auto;" +
+      "grid-template-rows: auto auto;" +
+      "padding: 0px;" +
+      "position:relative;" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      ".grid-item {" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      "</style>" +
+  
+      '<div id="jspsych-html-keyboard-response-stimulus">' +
+
+      "<div class='grid-container' style = 'height:400px';>"+
+      "<div class='grid-item'>"+
+      "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
+      "<div style = 'margin: auto; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span>J</span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "</div></div><br><br><br>" +
+      "One by one, the boxes disappear to show the next letter.<br><br>",
+      
+      "<style>" +
+      ".grid-container {" +
+      "display: grid;" +
+      "grid-template-columns: auto;" +
+      "grid-template-rows: auto auto;" +
+      "padding: 0px;" +
+      "position:relative;" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      ".grid-item {" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      "</style>" +
+  
+      '<div id="jspsych-html-keyboard-response-stimulus">' +
+
+      "<div class='grid-container' style = 'height:400px';>"+
+      "<div class='grid-item'>"+
+      "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "</div></div><br><br><br>" +
+      "Each box will turn red just before the letter underneath is shown.<br><br>",
+      
+      
+       "<style>" +
+      ".grid-container {" +
+      "display: grid;" +
+      "grid-template-columns: auto;" +
+      "grid-template-rows: auto auto;" +
+      "padding: 0px;" +
+      "position:relative;" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      ".grid-item {" +
+      "justify-content: center;" +
+      "text-align: center;" +
+      "}" +
+      "</style>" +
+  
+      '<div id="jspsych-html-keyboard-response-stimulus">' +
+
+      "<div class='grid-container' style = 'height:400px';>"+
+      "<div class='grid-item'>"+
+      "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span>Q</span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
+      "</div>"+
+      "</div></div><br><br><br>" +
       "Everything else about the game will be identical."
       ],
       show_clickable_nav: true,

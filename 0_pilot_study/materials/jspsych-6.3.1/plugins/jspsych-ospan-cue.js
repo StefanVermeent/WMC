@@ -15,6 +15,11 @@ jsPsych.plugins["ospan-cue"] = (function() {
     name: 'ospan-cue',
     description: '',
     parameters: {
+      task_version: {
+        type: jsPsych.plugins.parameterType.STRING,
+        default: undefined,
+        description: 'Version of the Ospan. Should be one of "standard", "adapted"'
+      },
       stimulus: {
         type: jsPsych.plugins.parameterType.HTML_STRING,
         pretty_name: 'Stimulus',
@@ -57,8 +62,13 @@ jsPsych.plugins["ospan-cue"] = (function() {
   
   plugin.trial = function(display_element, trial) {
   
-  // Boxes that cover the letters; are only shown on the letter trials
-  var boxes = ["black","black","black","black","black"];
+  if(trial.task_version === "standard") {
+    var boxes = ["white", "white", "white", "white", "white"];
+  }
+  
+  if(trial.task_version === "adapted") {
+    var boxes = ["black","black","black","black","black"];
+  }
   
   // Determine which letter is reveiled during the letter encoding phase
     if(trial.trial_number === 0) {

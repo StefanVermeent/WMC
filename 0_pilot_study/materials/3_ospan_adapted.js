@@ -3,12 +3,13 @@ var ospan_adapted_stimuli = {
     // First Cue
     {
       type: 'ospan-cue',
+      task_version: "adapted",
       stimulus: "",
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
     },
@@ -23,7 +24,7 @@ var ospan_adapted_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
     },
@@ -38,7 +39,7 @@ var ospan_adapted_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -53,12 +54,13 @@ var ospan_adapted_stimuli = {
     // Second Cue
     {
       type: 'ospan-cue',
+      task_version: "adapted",
       stimulus: "",
       trial_number: 1,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
     },
@@ -73,7 +75,7 @@ var ospan_adapted_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
     },
@@ -88,7 +90,7 @@ var ospan_adapted_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -107,12 +109,13 @@ var ospan_adapted_stimuli = {
     // Third Cue
     {
       type: 'ospan-cue',
+      task_version: "adapted",
       stimulus: "",
       trial_number: 2,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
     },
@@ -127,7 +130,7 @@ var ospan_adapted_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
     },
@@ -142,7 +145,7 @@ var ospan_adapted_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -161,12 +164,13 @@ var ospan_adapted_stimuli = {
     // Fourth Cue
     {
       type: 'ospan-cue',
+      task_version: "adapted",
       stimulus: "",
       trial_number: 3,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
       },
@@ -181,7 +185,7 @@ var ospan_adapted_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
     },
@@ -196,7 +200,7 @@ var ospan_adapted_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -215,12 +219,13 @@ var ospan_adapted_stimuli = {
     // Fifth Cue
     {
       type: 'ospan-cue',
+      task_version: "adapted",
       stimulus: "",
       trial_number: 4,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       },
     },
@@ -235,7 +240,7 @@ var ospan_adapted_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       }
     },
@@ -250,7 +255,7 @@ var ospan_adapted_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'task',
+        variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -285,6 +290,6 @@ var ospan_adapted_procedure = {
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4)},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5)},
   ],
-  repetitions: 4,
+  repetitions: 2,
   randomize: true
 };

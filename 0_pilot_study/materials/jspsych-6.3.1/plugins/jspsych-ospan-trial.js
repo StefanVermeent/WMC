@@ -132,13 +132,19 @@ jsPsych.plugins["ospan-trial"] = (function() {
     }
     if(trial.trial_type === "span") {
       
-      var boxes = ["black","black","black","black","black"];
+      var boxes = ["white", "white", "white", "white", "white"];
       
-      var letter1 = (trial.stimulus.length > 0)? trial.stimulus[0] : "";
-      var letter2 = (trial.stimulus.length > 1)? trial.stimulus[1] : "";
-      var letter3 = (trial.stimulus.length > 2)? trial.stimulus[2] : "";
-      var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
-      var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
+      var letter1 = (trial.trial_number === 0)? trial.stimulus[0] : "";
+      var letter2 = (trial.trial_number === 1)? trial.stimulus[1] : "";
+      var letter3 = (trial.trial_number === 2)? trial.stimulus[2] : "";
+      var letter4 = (trial.trial_number === 3)? trial.stimulus[3] : "";
+      var letter5 = (trial.trial_number === 4)? trial.stimulus[4] : "";
+      
+    //  var letter1 = (trial.stimulus.length > 0)? trial.stimulus[0] : "";
+    //  var letter2 = (trial.stimulus.length > 1)? trial.stimulus[1] : "";
+    //  var letter3 = (trial.stimulus.length > 2)? trial.stimulus[2] : "";
+    //  var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
+    //  var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
     }
   }
   
@@ -163,26 +169,43 @@ jsPsych.plugins["ospan-trial"] = (function() {
       var letter3 = (trial.stimulus.length > 2)? trial.stimulus[2] : "";
       var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
       var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
+      
+      // Determine which letter is reveiled during the letter encoding phase
+      if(trial.trial_number === 0) {
+        boxes[0] = "white";
+      }
+      if(trial.trial_number == 1) {
+        boxes[1] = "white";
+      }
+      if(trial.trial_number == 2) {
+        boxes[2] = "white";
+      }
+      if(trial.trial_number == 3) {
+        boxes[3] = "white";
+      }
+      if(trial.trial_number == 4) {
+        boxes[4] = "white";
+      }
     }
   }
     
   
-  // Determine which letter is reveiled during the letter encoding phase
-    if(trial.trial_number === 0) {
-      boxes[0] = "white";
-    }
-    if(trial.trial_number == 1) {
-      boxes[1] = "white";
-    }
-    if(trial.trial_number == 2) {
-      boxes[2] = "white";
-    }
-    if(trial.trial_number == 3) {
-      boxes[3] = "white";
-    }
-    if(trial.trial_number == 4) {
-      boxes[4] = "white";
-    }
+ //// Determine which letter is reveiled during the letter encoding phase
+ //  if(trial.trial_number === 0) {
+ //    boxes[0] = "white";
+ //  }
+ //  if(trial.trial_number == 1) {
+ //    boxes[1] = "white";
+ //  }
+ //  if(trial.trial_number == 2) {
+ //    boxes[2] = "white";
+ //  }
+ //  if(trial.trial_number == 3) {
+ //    boxes[3] = "white";
+ //  }
+ //  if(trial.trial_number == 4) {
+ //    boxes[4] = "white";
+ //  }
 
 
   // Display stimulus
