@@ -31,6 +31,11 @@ jsPsych.plugins["ospan-cue"] = (function() {
         default: undefined,
         description: 'Trial number.'
       },
+      trial_type: {
+        type: jsPsych.plugins.parameterType.STRING,
+        default: [""],
+        description: 'Should be one of "span", "load"',      
+      },
       choices: {
         type: jsPsych.plugins.parameterType.KEYCODE,
         array: true,
@@ -63,29 +68,123 @@ jsPsych.plugins["ospan-cue"] = (function() {
   plugin.trial = function(display_element, trial) {
   
   if(trial.task_version === "standard") {
-    var boxes = ["white", "white", "white", "white", "white"];
+    
+    if(trial.trial_type === "span") {
+      var boxes = ["white", "white", "white", "white", "white"];
+      var box_border = ["white", "white", "white", "white", "white"];
+      var equation_cue = "";
+      
+      // Determine which letter is reveiled during the letter encoding phase
+    if(trial.trial_number === 0) {
+      boxes[0] = "black";
+      box_border[0] = "solid red";
+    }
+    if(trial.trial_number == 1) {
+      boxes[1] = "black";
+      box_border[1] = "solid red";
+    }
+    if(trial.trial_number == 2) {
+      boxes[2] = "black";
+      box_border[2] = "solid red";
+    }
+    if(trial.trial_number == 3) {
+      boxes[3] = "black";
+      box_border[3] = "solid red";
+    }
+    if(trial.trial_number == 4) {
+      boxes[4] = "black";
+      box_border[4] = "solid red";
+    }
+    }
+    
+    if(trial.trial_type === "cog_load") {
+      var boxes = ["white", "white", "white", "white", "white"];
+      var box_border = ["white", "white", "white", "white", "white"];
+      var equation_cue = "+"
+    }
+  
   }
   
   if(trial.task_version === "adapted") {
-    var boxes = ["black","black","black","black","black"];
-  }
-  
-  // Determine which letter is reveiled during the letter encoding phase
+    
+    if(trial.trial_type === "span") {
+      var boxes = ["black","black","black","black","black"];
+      var box_border = ["solid black","solid black","solid black","solid black","solid black"];
+      var equation_cue = "";
+      
+      // Determine which letter is reveiled during the letter encoding phase
     if(trial.trial_number === 0) {
-      boxes[0] = "red";
+      boxes[0] = "black";
+      box_border[0] = "solid red";
     }
     if(trial.trial_number == 1) {
-      boxes[1] = "red";
+      boxes[1] = "black";
+      box_border[1] = "solid red";
     }
     if(trial.trial_number == 2) {
-      boxes[2] = "red";
+      boxes[2] = "black";
+      box_border[2] = "solid red";
     }
     if(trial.trial_number == 3) {
-      boxes[3] = "red";
+      boxes[3] = "black";
+      box_border[3] = "solid red";
     }
     if(trial.trial_number == 4) {
-      boxes[4] = "red";
+      boxes[4] = "black";
+      box_border[4] = "solid red";
     }
+    }
+    
+    if(trial.trial_type === "cog_load") {
+      var boxes = ["black","black","black","black","black"];
+      var box_border = ["solid black","solid black","solid black","solid black","solid black"];
+      var equation_cue = "+";
+      
+      // Determine which letter is reveiled during the letter encoding phase
+    if(trial.trial_number === 0) {
+      boxes[0] = "black";
+      box_border[0] = "solid red";
+    }
+    if(trial.trial_number == 1) {
+      boxes[1] = "black";
+      box_border[1] = "solid red";
+    }
+    if(trial.trial_number == 2) {
+      boxes[2] = "black";
+      box_border[2] = "solid red";
+    }
+    if(trial.trial_number == 3) {
+      boxes[3] = "black";
+      box_border[3] = "solid red";
+    }
+    if(trial.trial_number == 4) {
+      boxes[4] = "black";
+      box_border[4] = "solid red";
+    }
+    }
+  }
+  
+ // // Determine which letter is reveiled during the letter encoding phase
+ //   if(trial.trial_number === 0) {
+ //     boxes[0] = "black";
+ //     box_border[0] = "solid red";
+ //   }
+ //   if(trial.trial_number == 1) {
+ //     boxes[1] = "black";
+ //     box_border[1] = "solid red";
+ //   }
+ //   if(trial.trial_number == 2) {
+ //     boxes[2] = "black";
+ //     box_border[2] = "solid red";
+ //   }
+ //   if(trial.trial_number == 3) {
+ //     boxes[3] = "black";
+ //     box_border[3] = "solid red";
+ //   }
+ //   if(trial.trial_number == 4) {
+ //     boxes[4] = "black";
+ //     box_border[4] = "solid red";
+ //   }
 
 
   // Display stimulus
@@ -110,23 +209,23 @@ jsPsych.plugins["ospan-cue"] = (function() {
   html += "<div class='grid-container' style = 'height:400px';>";
   html += "<div class='grid-item'>";
   html += "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>";
-  html += "<div style = 'margin: auto; background: " + boxes[0] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_border[0] + "; background: " + boxes[0] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>";
   html += "</div>";
-  html += "<div style = 'margin: auto; background: " + boxes[1] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_border[1] + "; background: " + boxes[1] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>";
   html += "</div>";
-  html += "<div style = 'margin: auto; background: " + boxes[2] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_border[2] + "; background: " + boxes[2] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>";
   html += "</div>";
-  html += "<div style = 'margin: auto; background: " + boxes[3] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_border[3] + "; background: " + boxes[3] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>";
   html += "</div>";
-  html += "<div style = 'margin: auto; background: " + boxes[4] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_border[4] + "; background: " + boxes[4] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>";
   html += "</div>";
   html += "</div></div>";
-  html += "<div class='grid-item' style = 'font-size: 70px; color: black'><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>"; 
+  html += "<div class='grid-item' style = 'font-size: 70px; color: black'><br><br><br><br><br><br>" + equation_cue + "<br><br><br><br><br><br><br><br></div>"; 
   
   if(trial.hide_prompt === false) {
     html += "<div style = 'font-size: 30px'><span>&larr; CORRECT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INCORRECT &rarr;</span></div>";

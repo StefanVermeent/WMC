@@ -1,10 +1,11 @@
 var ospan_standard_stimuli = {
   timeline: [
-    // First Cue
+    // First Letter Cue
     {
       type: 'ospan-cue',
       stimulus: "",
       task_version: "standard",
+      trial_type: "span",
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
@@ -26,6 +27,21 @@ var ospan_standard_stimuli = {
       trial_number: 0,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
+      data: {
+        variable: jsPsych.timelineVariable('variable'),
+        block: function() {return block}
+      }
+    },
+    
+    // First Equation Cue
+    {
+      type: 'ospan-cue',
+      stimulus: "",
+      task_version: "standard",
+      trial_type: "cog_load",
+      trial_number: 0,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
@@ -60,6 +76,7 @@ var ospan_standard_stimuli = {
       task_version: "standard",
       stimulus: "",
       trial_number: 1,
+      trial_type: "span",
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
@@ -77,6 +94,21 @@ var ospan_standard_stimuli = {
       trial_number: 1,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
+      data: {
+        variable: jsPsych.timelineVariable('variable'),
+        block: function() {return block}
+      }
+    },
+    
+    // Second Equation Cue
+    {
+      type: 'ospan-cue',
+      stimulus: "",
+      task_version: "standard",
+      trial_type: "cog_load",
+      trial_number: 1,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
@@ -117,6 +149,7 @@ var ospan_standard_stimuli = {
       task_version: "standard",
       stimulus: "",
       trial_number: 2,
+      trial_type: "span",
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
@@ -134,6 +167,21 @@ var ospan_standard_stimuli = {
       trial_number: 2,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
+      data: {
+        variable: jsPsych.timelineVariable('variable'),
+        block: function() {return block}
+      }
+    },
+    
+    // Third Equation Cue
+    {
+      type: 'ospan-cue',
+      stimulus: "",
+      task_version: "standard",
+      trial_type: "cog_load",
+      trial_number: 2,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
@@ -176,6 +224,7 @@ var ospan_standard_stimuli = {
       trial_number: 3,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      trial_type: "span",
       data: {
         variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
@@ -192,6 +241,21 @@ var ospan_standard_stimuli = {
       trial_number: 3,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
+      data: {
+        variable: jsPsych.timelineVariable('variable'),
+        block: function() {return block}
+      }
+    },
+    
+    // Fourth Equation Cue
+    {
+      type: 'ospan-cue',
+      stimulus: "",
+      task_version: "standard",
+      trial_type: "cog_load",
+      trial_number: 3,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
@@ -233,6 +297,7 @@ var ospan_standard_stimuli = {
       trial_number: 4,
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      trial_type: "span",
       data: {
         variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
@@ -253,6 +318,21 @@ var ospan_standard_stimuli = {
       trial_number: 4,
       choices: jsPsych.NO_KEYS,
       trial_duration: 1000,
+      data: {
+        variable: jsPsych.timelineVariable('variable'),
+        block: function() {return block}
+      }
+    },
+    
+    // Fifth Equation Cue
+    {
+      type: 'ospan-cue',
+      stimulus: "",
+      task_version: "standard",
+      trial_type: "cog_load",
+      trial_number: 0,
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
         block: function() {return block}
@@ -300,12 +380,12 @@ var ospan_practice_standard_procedure = {
 
 
 var ospan_standard_procedure = {
-  timeline: [ospan_standard_stimuli, ospan_letter_recall, ospan_full_feedback, ospan_performance_booster],
+  timeline: [ospan_standard_stimuli, ospan_letter_recall, ospan_performance_booster, ospan_interblock],
   timeline_variables: [
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'standard', variable: "task"},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'standard', variable: "task"},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'standard', variable: "task"},
   ],
-  repetitions: 2,
+  repetitions: 1,
   randomize: true
 };

@@ -123,6 +123,7 @@ jsPsych.plugins["ospan-trial"] = (function() {
   if(trial.task_version == "standard") {
     if(trial.trial_type === "cog_load") {
       var boxes = ["white","white","white","white","white"];
+      var box_borders = ["solid white", "solid white", "solid white", "solid white", "solid white"]
       
       var letter1 = "";
       var letter2 = "";
@@ -133,6 +134,7 @@ jsPsych.plugins["ospan-trial"] = (function() {
     if(trial.trial_type === "span") {
       
       var boxes = ["white", "white", "white", "white", "white"];
+      var box_borders = ["solid white", "solid white", "solid white", "solid white", "solid white"]
       
       var letter1 = (trial.trial_number === 0)? trial.stimulus[0] : "";
       var letter2 = (trial.trial_number === 1)? trial.stimulus[1] : "";
@@ -153,16 +155,35 @@ jsPsych.plugins["ospan-trial"] = (function() {
   if(trial.task_version == "adapted") {
     if(trial.trial_type === "cog_load") {
       var boxes = ["black", "black", "black", "black", "black"];
+      var box_borders = ["solid black", "solid black", "solid black", "solid black", "solid black"];
       
       var letter1 = (trial.stimulus.length > 0)? trial.stimulus[0] : "";
       var letter2 = (trial.stimulus.length > 1)? trial.stimulus[1] : "";
       var letter3 = (trial.stimulus.length > 2)? trial.stimulus[2] : "";
       var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
       var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
+      
+      
+      if(trial.trial_number === 0) {
+        box_borders[0] = "solid red";
+      }
+      if(trial.trial_number == 1) {
+        box_borders[1] = "solid red";
+      }
+      if(trial.trial_number == 2) {
+        box_borders[2] = "solid red";
+      }
+      if(trial.trial_number == 3) {
+        box_borders[3] = "solid red";
+      }
+      if(trial.trial_number == 4) {
+        box_borders[4] = "solid red";
+      }
     }
     if(trial.trial_type === "span") {
       
       var boxes = ["black","black","black","black","black"];
+      var box_borders = ["solid black","solid black","solid black","solid black","solid black"];
       
       var letter1 = (trial.stimulus.length > 0)? trial.stimulus[0] : "";
       var letter2 = (trial.stimulus.length > 1)? trial.stimulus[1] : "";
@@ -173,39 +194,26 @@ jsPsych.plugins["ospan-trial"] = (function() {
       // Determine which letter is reveiled during the letter encoding phase
       if(trial.trial_number === 0) {
         boxes[0] = "white";
+        box_borders[0] = "solid white";
       }
       if(trial.trial_number == 1) {
         boxes[1] = "white";
+        box_borders[1] = "solid white";
       }
       if(trial.trial_number == 2) {
         boxes[2] = "white";
+        box_borders[2] = "solid white";
       }
       if(trial.trial_number == 3) {
         boxes[3] = "white";
+        box_borders[3] = "solid white";
       }
       if(trial.trial_number == 4) {
         boxes[4] = "white";
+        box_borders[4] = "solid white";
       }
     }
   }
-    
-  
- //// Determine which letter is reveiled during the letter encoding phase
- //  if(trial.trial_number === 0) {
- //    boxes[0] = "white";
- //  }
- //  if(trial.trial_number == 1) {
- //    boxes[1] = "white";
- //  }
- //  if(trial.trial_number == 2) {
- //    boxes[2] = "white";
- //  }
- //  if(trial.trial_number == 3) {
- //    boxes[3] = "white";
- //  }
- //  if(trial.trial_number == 4) {
- //    boxes[4] = "white";
- //  }
 
 
   // Display stimulus
@@ -230,19 +238,19 @@ jsPsych.plugins["ospan-trial"] = (function() {
   html += "<div class='grid-container' style = 'height:400px';>";
   html += "<div class='grid-item'>";
   html += "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>";
-  html += "<div style = 'margin: auto; background: " + boxes[0] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_borders[0] + "; background: " + boxes[0] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span>" + letter1 + "</span></div>";
   html += "</div>";
-  html += "<div style = 'margin: auto; background: " + boxes[1] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_borders[1] + "; background: " + boxes[1] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span>" + letter2 + "</span></div>";
   html += "</div>";
-  html += "<div style = 'margin: auto; background: " + boxes[2] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_borders[2] + "; background: " + boxes[2] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span>" + letter3 + "</span></div>";
   html += "</div>";
-  html += "<div style = 'margin: auto; background: " + boxes[3] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_borders[3] + "; background: " + boxes[3] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span>" + letter4 + "</span></div>";
   html += "</div>";
-  html += "<div style = 'margin: auto; background: " + boxes[4] + "; width: 90px; height: 90px;'>";
+  html += "<div style = 'margin: auto; border: " + box_borders[4] + "; background: " + boxes[4] + "; width: 90px; height: 90px;'>";
   html += "<div style = 'margin: auto; padding: 25px 0px'><span>" + letter5 + "</span></div>";
   html += "</div>";
   html += "</div></div>";

@@ -99,7 +99,7 @@ var ospan_instructions_letters_standard = {
       "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
-      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; border: solid red; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
@@ -112,7 +112,7 @@ var ospan_instructions_letters_standard = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "You will see a red box in the position of the next letter just before it appears.",
+      "You will see a black box with a red outline in the position of the next letter just before it appears.",
       
       //page 4
       "<p style = 'text-align: center;'>"+ 
@@ -264,7 +264,7 @@ var ospan_instructions_letters_adapted = {
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
-      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; border: solid red; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
@@ -277,7 +277,7 @@ var ospan_instructions_letters_adapted = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "You will see a red box in the position of the next letter just before it appears.",
+      "Just before the next letter appears, the box covering it will get a red outline.",
       
       //page 4
       "<p style = 'text-align: center;'>"+ 
@@ -442,7 +442,7 @@ var ospan_transition_to_standard = {
       "<div class='grid-container' style = 'height:400px';>"+
       "<div class='grid-item'>"+
       "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
-      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; border: solid red; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
@@ -459,7 +459,7 @@ var ospan_transition_to_standard = {
       "</div>"+
       "</div></div><br><br><br>" +
       "This time, the letters will not be covered by black boxes.<br><br>" +
-      "Instead, a single red box will show the position of the next letter just before it appears.",
+      "Instead, a single black box with a red outline will show the position of the next letter just before it appears.",
       
        "<style>" +
       ".grid-container {" +
@@ -553,19 +553,19 @@ var ospan_transition_to_adapted = {
       "<div class='grid-container' style = 'height:400px';>"+
       "<div class='grid-item'>"+
       "<div style = 'display: inline-grid; width: 800px; height: 90px; font-size: 70px; grid: 70px / auto auto auto auto auto;'>"+
-      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
-      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
-      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
-      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
-      "<div style = 'margin: auto; border: none;border: 1px dotted black; background: white; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
@@ -634,7 +634,7 @@ var ospan_transition_to_adapted = {
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
-      "<div style = 'margin: auto; background: red; width: 90px; height: 90px;'>"+
+      "<div style = 'margin: auto; border: solid red; background: black; width: 90px; height: 90px;'>"+
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "<div style = 'margin: auto; background: black; width: 90px; height: 90px;'>"+
@@ -647,7 +647,7 @@ var ospan_transition_to_adapted = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "Each box will turn red just before the letter underneath is shown.<br><br>",
+      "The border of a box will turn red just before the letter underneath is shown.<br><br>",
       
       
        "<style>" +

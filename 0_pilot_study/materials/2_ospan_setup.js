@@ -104,6 +104,13 @@ var ospan_full_feedback = {
 };
 
 
+var ospan_interblock = {
+  type: 'html-keyboard-response',
+  stimulus: "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) to start the next block.",
+  choices: ["ArrowLeft", "ArrowRight"]
+};
+
+
 var ospan_midpoint_accuracy = {  
      type: 'html-keyboard-response',
      stimulus: function(){
