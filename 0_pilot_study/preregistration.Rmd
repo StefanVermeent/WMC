@@ -45,19 +45,19 @@ The two candidate Directed Acyclic Graphs (DAG) representing the causal model co
 Each hypothesis tests a part of this overall DAG. We present the DAG corresponding to each hypotheses below.
 
 
-1.	Individuals with more early-life violence exposure have a lower WMC (i.e., letter recall) than individuals with less violence exposure on the standard version of the Ospan, but benefit comparatively more from the present-oriented version of the Ospan.
+1.	Individuals with more early-life adversity have a lower WMC (i.e., letter recall) than individuals with less early-life adversity on the standard version of the Ospan, but benefit comparatively more from the present-oriented version of the Ospan.
 
 <p align="center">
   <img src="figures/prereg_fig2.png" title="DAG for hypothesis 1.">
 </p>
 
-2.	Individuals with more early-life violence exposure process the math equations more slowly (operationalized through the [Drift Rate](#DDM)) than individuals with less violence exposure on the standard version of the Ospan. We have no a-priori expectations about a moderation by task version.
+2.	Individuals with more early-life adversity process the math equations more slowly (operationalized through the [Drift Rate](#DDM)) than individuals with less early-life adversity on the standard version of the Ospan. We have no a-priori expectations about a moderation by task version.
 
 <p align="center">
   <img src="figures/prereg_fig3.png" title="DAG for hypothesis 2.">
 </p>
 
-3.	Individuals with more early-life violence exposure allocate less time to the maintenance of letters in working memory (operationalized through the [non-decision time](#DDM)) than individuals with less violence exposure on the standard version of the Ospan, but show a comparatively bigger increase in non-decision time on the present-oriented version of the Ospan.
+3.	Individuals with more early-life adversity allocate less time to the maintenance of letters in working memory (operationalized through the [non-decision time](#DDM)) than individuals with less early-life adversity on the standard version of the Ospan, but show a comparatively bigger increase in non-decision time on the present-oriented version of the Ospan.
 
 <p align="center">
   <img src="figures/prereg_fig4.png" title="Two candidate DAGs for hypothesis 3.">
@@ -92,7 +92,7 @@ We conducted a power simulation using the *faux* package in R [@debruine_2021] t
 ## Part 4 - Variables {#part4}
 
 ### Q1.	Manipulated variables {#vars_manipulated}
-Ospan task condition: all participants complete a standard version and a newly developed ‘present-oriented’ version of the Ospan task. In the Ospan task, participants have to perform two tasks simultaneously: 1) remember an increasingly long sequence of letters (between 3 and 5); 2) determine whether the outcome of a mathematical equation is correct or incorrect. The two tasks alternate, meaning people have to maintain and rehearse the letters in working memory while solving the equations. Both versions have the same basic visual structure: the letters spatially laid out from left to right in the upper portion of the screen and covered by black squares. The math equations are presented below the letters. In the standard version, the letters and covering boxes disappear whenever the math equation is shown. In the present-oriented version, the boxes and most recently uncovered letter remain on the screen when the math equation is shown. See [The Github Repository](https://github.com/StefanVermeent/WMC/tree/main/0_pilot_study/materials) for task materials and [here](https://wmc-tasks.netlify.app) for a working version of the task.
+Ospan task condition: all participants complete a standard version and a newly developed ‘present-oriented’ version of the Ospan task. In the Ospan task, participants have to perform two tasks simultaneously: 1) remember an increasingly long sequence of letters (between 3 and 5); 2) determine whether the outcome of a mathematical equation is correct or incorrect. The two tasks alternate, meaning people have to maintain and rehearse the letters in working memory while solving the equations. Both versions have the same basic visual structure: the letters spatially laid out from left to right in the upper portion of the screen and covered by black squares. The math equations are presented below the letters. In the standard version, the letters and covering boxes disappear whenever the math equation is shown. In the present-oriented version, the boxes remain on the screen when the math equation is shown. See [The Github Repository](https://github.com/StefanVermeent/WMC/tree/main/0_pilot_study/materials) for task materials and [here](https://wmc-tasks.netlify.app) for a working version of the task.
 
 
 ### Q2.	Measured variables {#vars_measured}
@@ -101,17 +101,12 @@ Ospan task condition: all participants complete a standard version and a newly d
 
 Each version of the Ospan provides the following DVs:
 
-1.	ospan_cap: total number of letters recalled in the correct order on the standard task version.
-2.	ospan_math_acc: total number of math equations solved correctly on the standard task version.
-
-3.	ospan_math_acc: total number of math equations solved correctly on the present-oriented task version.
-4.	ospan_math_rt: Mean reaction time (in seconds) on the correct math equation trials.
+1.	ospan_cap: performance on letter recall. Scored using partial-credit unit scoring, which calculates the average proportion correct across all blocks and all span lengths [@conway_2005]
 
 **Dependent variables ([Drift Diffusion parameters](#DDM))**
 
-5.	Ospan_math_v: Drift rate across all math trials.
-6.	Ospan_math_a: Boundary separation across all math trials.
-7.	Ospan_math_t0: Non-decision time across all math trials.
+2.	Ospan_math_v: Drift rate across all math trials.
+4.	Ospan_math_t0: Non-decision time across all math trials.
 
 
 ### Q3. Independent variables {#ivs}
@@ -167,14 +162,17 @@ Finally, we plan to explore the use of the Time-Based Resource Sharing (TBRS) mo
 As discussed under [Covariates](#covariates), all models will include SES as a covariate, as well as education level and task anxiety if necessary.
 
 
-1.	Individuals with more early-life violence exposure have a lower WMC (i.e., letter recall) than individuals with less violence exposure on the standard version of the Ospan, but benefit comparatively more from the present-oriented version of the Ospan.
+1.	Individuals with more early-life adversity have a lower WMC (i.e., letter recall) than individuals with less early-life adversity on the standard version of the Ospan, but benefit comparatively more from the present-oriented version of the Ospan.
     + Linear mixed model: `lmer(ospan_cap ~ vio_comp * task_version + ses_comp + (1|id))`
+    + Linear mixed model: `lmer(ospan_cap ~ unp_comp * task_version + ses_comp + (1|id))`
 
-2.	Individuals with more early-life violence exposure process the math equations more slowly (operationalized through the [Drift Rate](#DDM)) than individuals with less violence exposure on the standard version of the Ospan. We have no a-priori expectations about a moderation by task version.
+2.	Individuals with more early-life adversity process the math equations more slowly (operationalized through the [Drift Rate](#DDM)) than individuals with less early-life adversity on the standard version of the Ospan. We have no a-priori expectations about a moderation by task version.
     + Linear mixed model: `lmer(ospan_math_v ~ vio_comp * task_version + ses_comp + (1|id))`
+    + Linear mixed model: `lmer(ospan_math_v ~ unp_comp * task_version + ses_comp + (1|id))`
 
-3.	Individuals with more early-life violence exposure allocate less time to the maintenance of letters in working memory (operationalized through the [non-decision time](#DDM)) than individuals with less violence exposure on the standard version of the Ospan, but show a comparatively bigger increase in non-decision time on the present-oriented version of the Ospan.
+3.	Individuals with more early-life adversity allocate less time to the maintenance of letters in working memory (operationalized through the [non-decision time](#DDM)) than individuals with less early-life adversity on the standard version of the Ospan, but show a comparatively bigger increase in non-decision time on the present-oriented version of the Ospan.
     + Linear mixed model: `lmer(ospan_math_t0 ~ vio_comp * task_version + ses_comp + (1|id))`
+    + Linear mixed model: `lmer(ospan_math_t0 ~ unp_comp * task_version + ses_comp + (1|id))`
 
 
 ### Q3.	Multiverse analyses {#multiverse}
@@ -184,7 +182,9 @@ Online experiments come at the trade-off of having less experimental control ove
 For each analysis, we report the median $\beta$, 95% confidence intervals, proportion of *p*-values < .05 across all analytic decisions. For the primary analyses, we used a bootstrapping technique to compute overall *p*-values to assess whether the obtained median $\beta$ is significantly larger than zero [@simonsohn_2020].
 
 ### Q4.	Participant-level exclusions {#participant_exclusions}
-First, we excluded participants who did not complete the full study and those who did not complete both versions of the Ospan. Second, we analyzed responses to the attention checks and reversed coded items in the questionnaire part of the experiment. We excluded participants if they missed both attention check items or if they had suspicious response patterns (e.g., consistently endorsing high response options even when some items were reverse coded). Third, we excluded participants whose screen height was < 700 pixels, or whose screen height was bigger than their screen width (suggesting that they did not complete the experiment on a laptop or desktop pc). In addition, we exclude participants whose accuracy on the math subtask is lower than 75% across all blocks in order to ensure that participants engaged seriously with the task. Finally, we use the open-ended participant feedback and manual data checks to determine potential additional participants to exclude.
+First, we exclude participants who do not complete the full study and those who do not complete both versions of the Ospan. Second, we analyze responses to the attention checks and reversed coded items in the questionnaire part of the experiment. We exclude participants if they miss both attention check items or if they have suspicious response patterns (e.g., consistently endorsing high response options even when some items were reverse coded). Third, we exclude participants whose screen height is < 700 pixels, or whose screen height is bigger than their screen width (suggesting that they do not complete the experiment on a laptop or desktop pc). Finally, we use the open-ended participant feedback and manual data checks to determine potential additional participants to exclude.
+
+Typically, participants are excluded when their accuracy on the secondary task is below ~80% to ensure adequate effort. However, because our sample is diverse and because we use novel versions of the O-span, we do not set a hard cut-off for performance *a-priori*. Instead, we plan to determine an adequate performance threshold based on the full distribution that we will find in our data.
 
 
 ### Q5. Trial-level exclusions {#trial_exclusions}

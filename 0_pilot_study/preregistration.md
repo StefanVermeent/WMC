@@ -1,13 +1,14 @@
 Preregistration Pilot 1
 ================
 
-*Last updated on woensdag, april 20, 2022 at 12:24 *
+*Last updated on vrijdag, april 22, 2022 at 03:18 *
 
 ## Part 1 - Study Information
 
 ### Q1. Working title
 
-The role of present-oriented attention control in working memory capacity performance for people from harsh environments.
+The role of present-oriented attention control in working memory
+capacity performance for people from harsh environments.
 
 ### Q2. Authors
 
@@ -56,18 +57,18 @@ below.
 Each hypothesis tests a part of this overall DAG. We present the DAG
 corresponding to each hypotheses below.
 
-1.  Individuals with more early-life violence exposure have a lower WMC
-    (i.e., letter recall) than individuals with less violence exposure
-    on the standard version of the Ospan, but benefit comparatively more
+1.  Individuals with more early-life adversity have a lower WMC (i.e.,
+    letter recall) than individuals with less early-life adversity on
+    the standard version of the Ospan, but benefit comparatively more
     from the present-oriented version of the Ospan.
 
 <p align="center">
 <img src="figures/prereg_fig2.png" title="DAG for hypothesis 1.">
 </p>
 
-2.  Individuals with more early-life violence exposure process the math
+2.  Individuals with more early-life adversity process the math
     equations more slowly (operationalized through the [Drift
-    Rate](#DDM)) than individuals with less violence exposure on the
+    Rate](#DDM)) than individuals with less early-life adversity on the
     standard version of the Ospan. We have no a-priori expectations
     about a moderation by task version.
 
@@ -75,12 +76,12 @@ corresponding to each hypotheses below.
 <img src="figures/prereg_fig3.png" title="DAG for hypothesis 2.">
 </p>
 
-3.  Individuals with more early-life violence exposure allocate less
-    time to the maintenance of letters in working memory
-    (operationalized through the [non-decision time](#DDM)) than
-    individuals with less violence exposure on the standard version of
-    the Ospan, but show a comparatively bigger increase in non-decision
-    time on the present-oriented version of the Ospan.
+3.  Individuals with more early-life adversity allocate less time to the
+    maintenance of letters in working memory (operationalized through
+    the [non-decision time](#DDM)) than individuals with less early-life
+    adversity on the standard version of the Ospan, but show a
+    comparatively bigger increase in non-decision time on the
+    present-oriented version of the Ospan.
 
 <p align="center">
 <img src="figures/prereg_fig4.png" title="Two candidate DAGs for hypothesis 3.">
@@ -150,8 +151,8 @@ laid out from left to right in the upper portion of the screen and
 covered by black squares. The math equations are presented below the
 letters. In the standard version, the letters and covering boxes
 disappear whenever the math equation is shown. In the present-oriented
-version, the boxes and most recently uncovered letter remain on the
-screen when the math equation is shown. See [The Github
+version, the boxes remain on the screen when the math equation is shown.
+See [The Github
 Repository](https://github.com/StefanVermeent/WMC/tree/main/0_pilot_study/materials)
 for task materials and [here](https://wmc-tasks.netlify.app) for a
 working version of the task.
@@ -162,23 +163,15 @@ working version of the task.
 
 Each version of the Ospan provides the following DVs:
 
-1.  ospan_cap: total number of letters recalled in the correct order on
-    the standard task version.
-
-2.  ospan_math_acc: total number of math equations solved correctly on
-    the standard task version.
-
-3.  ospan_math_acc: total number of math equations solved correctly on
-    the present-oriented task version.
-
-4.  ospan_math_rt: Mean reaction time (in seconds) on the correct math
-    equation trials.
+1.  ospan_cap: performance on letter recall. Scored using partial-credit
+    unit scoring, which calculates the average proportion correct across
+    all blocks and all span lengths ([Conway et al.,
+    2005](#ref-conway_2005))
 
 **Dependent variables ([Drift Diffusion parameters](#DDM))**
 
-5.  Ospan_math_v: Drift rate across all math trials.
-6.  Ospan_math_a: Boundary separation across all math trials.
-7.  Ospan_math_t0: Non-decision time across all math trials.
+2.  Ospan_math_v: Drift rate across all math trials.
+3.  Ospan_math_t0: Non-decision time across all math trials.
 
 ### Q3. Independent variables
 
@@ -201,18 +194,17 @@ Each version of the Ospan provides the following DVs:
         -   Questionnaire of Unpredictability in Childhood \[QUIC
             (adapted); Glynn et al. ([2019](#ref-glynn_2019))\]: We made
             three general changes to the original scale as described in
-            Glynn et al. (2019; See [Table S2](#appendix)). First, we
-            adapted all items to refer to experiences before age 13.
-            This was done to reduce cognitive load from having to go
-            back-and-forth between different time scales. Second, most
-            items were rated on a scale of 1 (never true) to 5 (very
-            often true) instead of the original yes/no answer format. An
-            exception was made for four items of the parental
-            environment scale which asked for more specific experiences
-            (e.g., “I experienced changes in my custody arrangement”).
-            For these items, we adopted a response scale with the
-            options “never”, “only once”, “a couple times”, “several
-            times”, “many times”. Third, quantifiers such as
+            Glynn et al. (2019). First, we adapted all items to refer to
+            experiences before age 13. This was done to reduce cognitive
+            load from having to go back-and-forth between different time
+            scales. Second, most items were rated on a scale of 1 (never
+            true) to 5 (very often true) instead of the original yes/no
+            answer format. An exception was made for four items of the
+            parental environment scale which asked for more specific
+            experiences (e.g., “I experienced changes in my custody
+            arrangement”). For these items, we adopted a response scale
+            with the options “never”, “only once”, “a couple times”,
+            “several times”, “many times”. Third, quantifiers such as
             “frequently”, “often”, and “There was a period of time when
             \[…\]” were dropped to better match the response scale. We
             excluded the item “My parents got divorced” because it did
@@ -222,15 +214,13 @@ Each version of the Ospan provides the following DVs:
         -   Perceived Unpredictability Scale (NVS): Consists of eight
             items measuring perceived unpredictability before age 13
             (e.g, “My family life was generally inconsistent and
-            unpredictable from day-to-day”; See [Table S3](#appendix)
-            for an overview of all items). Participants rated each on a
-            scale from 1 (never true) to 5 (very often true).
+            unpredictable from day-to-day”). Participants rated each on
+            a scale from 1 (never true) to 5 (very often true).
         -   Confusion, Hubbub, and Order Scale \[CHAOS (adapted);
             Matheny et al. ([1995](#ref-matheny_1995))\]: Consists of 15
             items measuring the level of chaos in the household (e.g.,
             “No matter how hard we tried, we always seemed to be running
-            late”; See [Table S4](#appendix) for an overview of all
-            items). We make two changes to the original scale as
+            late”). We make two changes to the original scale as
             described in Matheny et al. ([1995](#ref-matheny_1995)).
             First, all items are converted from the present tense to the
             past tense, and are endorsed as applying to participants’
@@ -292,9 +282,8 @@ also include them as covariates.
         averaging:
         -   Perceived level of resource scarcity. Consists of seven
             items (e.g., “Your family had enough money to afford the
-            kind of home you all needed”; See [Table S6](#appendix)).
-            The items are averaged together to create an unweighted
-            composite score.
+            kind of home you all needed”). The items are averaged
+            together to create an unweighted composite score.
         -   Childhood social class. Participants answered the question
             “Which of these classes would you say your family belonged
             to **when you were growing up**?” on a 5-point scale:
@@ -314,11 +303,11 @@ also include them as covariates.
             25k/year’, ‘$25k - $49k/year,’$50 - $74k/year’, ‘$75 -
             $99k/year’, ‘$100 - $149k/year’, ‘more than $150k/year’.
 
-2.  `edu`: Highest education of the participant. on an 8-point scale:
-    ‘some high school’, ‘GED’, ‘high school diploma’, ‘some college but
-    no college degree’, associate’s degree’, ‘bachelor’s degree’,
-    ‘master’s degree’, or ‘doctoral or lab degree’. The variable will be
-    treated as a continuous variable.
+2.  `education`: Highest education of the participant. on an 8-point
+    scale: ‘some high school’, ‘GED’, ‘high school diploma’, ‘some
+    college but no college degree’, associate’s degree’, ‘bachelor’s
+    degree’, ‘master’s degree’, or ‘doctoral or lab degree’. The
+    variable will be treated as a continuous variable.
 
 3.  `task_anxiety`: A single item after completing both versions of the
     WMC task: “How anxious did you feel about playing the Letters and
@@ -396,27 +385,33 @@ As discussed under [Covariates](#covariates), all models will include
 SES as a covariate, as well as education level and task anxiety if
 necessary.
 
-1.  Individuals with more early-life violence exposure have a lower WMC
-    (i.e., letter recall) than individuals with less violence exposure
-    on the standard version of the Ospan, but benefit comparatively more
+1.  Individuals with more early-life adversity have a lower WMC (i.e.,
+    letter recall) than individuals with less early-life adversity on
+    the standard version of the Ospan, but benefit comparatively more
     from the present-oriented version of the Ospan.
     -   Linear mixed model:
         `lmer(ospan_cap ~ vio_comp * task_version + ses_comp + (1|id))`
-2.  Individuals with more early-life violence exposure process the math
+    -   Linear mixed model:
+        `lmer(ospan_cap ~ unp_comp * task_version + ses_comp + (1|id))`
+2.  Individuals with more early-life adversity process the math
     equations more slowly (operationalized through the [Drift
-    Rate](#DDM)) than individuals with less violence exposure on the
+    Rate](#DDM)) than individuals with less early-life adversity on the
     standard version of the Ospan. We have no a-priori expectations
     about a moderation by task version.
     -   Linear mixed model:
         `lmer(ospan_math_v ~ vio_comp * task_version + ses_comp + (1|id))`
-3.  Individuals with more early-life violence exposure allocate less
-    time to the maintenance of letters in working memory
-    (operationalized through the [non-decision time](#DDM)) than
-    individuals with less violence exposure on the standard version of
-    the Ospan, but show a comparatively bigger increase in non-decision
-    time on the present-oriented version of the Ospan.
+    -   Linear mixed model:
+        `lmer(ospan_math_v ~ unp_comp * task_version + ses_comp + (1|id))`
+3.  Individuals with more early-life adversity allocate less time to the
+    maintenance of letters in working memory (operationalized through
+    the [non-decision time](#DDM)) than individuals with less early-life
+    adversity on the standard version of the Ospan, but show a
+    comparatively bigger increase in non-decision time on the
+    present-oriented version of the Ospan.
     -   Linear mixed model:
         `lmer(ospan_math_t0 ~ vio_comp * task_version + ses_comp + (1|id))`
+    -   Linear mixed model:
+        `lmer(ospan_math_t0 ~ unp_comp * task_version + ses_comp + (1|id))`
 
 ### Q3. Multiverse analyses
 
@@ -443,21 +438,25 @@ larger than zero ([Simonsohn et al., 2020](#ref-simonsohn_2020)).
 
 ### Q4. Participant-level exclusions
 
-First, we excluded participants who did not complete the full study and
-those who did not complete both versions of the Ospan. Second, we
-analyzed responses to the attention checks and reversed coded items in
-the questionnaire part of the experiment. We excluded participants if
-they missed both attention check items or if they had suspicious
-response patterns (e.g., consistently endorsing high response options
-even when some items were reverse coded). Third, we excluded
-participants whose screen height was \< 700 pixels, or whose screen
-height was bigger than their screen width (suggesting that they did not
-complete the experiment on a laptop or desktop pc). In addition, we
-exclude participants whose accuracy on the math subtask is lower than
-75% across all blocks in order to ensure that participants engaged
-seriously with the task. Finally, we use the open-ended participant
+First, we exclude participants who do not complete the full study and
+those who do not complete both versions of the Ospan. Second, we analyze
+responses to the attention checks and reversed coded items in the
+questionnaire part of the experiment. We exclude participants if they
+miss both attention check items or if they have suspicious response
+patterns (e.g., consistently endorsing high response options even when
+some items were reverse coded). Third, we exclude participants whose
+screen height is \< 700 pixels, or whose screen height is bigger than
+their screen width (suggesting that they do not complete the experiment
+on a laptop or desktop pc). Finally, we use the open-ended participant
 feedback and manual data checks to determine potential additional
 participants to exclude.
+
+Typically, participants are excluded when their accuracy on the
+secondary task is below \~80% to ensure adequate effort. However,
+because our sample is diverse and because we use novel versions of the
+O-span, we do not set a hard cut-off for performance *a-priori*.
+Instead, we plan to determine an adequate performance threshold based on
+the full distribution that we will find in our data.
 
 ### Q5. Trial-level exclusions
 
@@ -480,6 +479,15 @@ in the [multiverse analysis](#multiverse).
 
 <div id="refs" class="references csl-bib-body hanging-indent"
 line-spacing="2">
+
+<div id="ref-conway_2005" class="csl-entry">
+
+Conway, A. R. A., Kane, M. J., Bunting, M. F., Hambrick, D. Z., Wilhelm,
+O., & Engle, R. W. (2005). Working memory span tasks: A methodological
+review and user’s guide. *Psychonomic Bulletin & Review*, *12*(5),
+769–786. https://doi.org/<https://doi.org/10.3758/BF03196772>
+
+</div>
 
 <div id="ref-debruine_2021" class="csl-entry">
 

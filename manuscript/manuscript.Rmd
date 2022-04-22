@@ -44,8 +44,39 @@ ft <- fp_text(shading.color='#EFEFEF', bold = TRUE)
 # Introduction
 
 [Conceptual introduction to WMC]
+  - 
+
+[Typical findings of reduced WMC in people from adversity]
+[mechanistic explanations of WMC]
+  - Decay
+    - Phonological loop
+    - Attentional refreshing
+    - Time-based resource sharing model
+  - Executive attention as the core component underlying WMC performance
+    
+  - Adversity: from a decay hypothesis, two possible reasons why WMC might be lower:
+    - Secondary task provides a higher cognitive load, due to slower processing
+    - Present-oriented attention: people from harsh and unpredictable environments tend to focus       their attention on information that is currently available in the environment and useful         for goal-directed behavior.
+      - Indirect evidence for this comes from the finding that people from adversity tend to             perform better on Continuous counter tasks, a version of WM updating that requires a             singular attention on a stream of stimuli that are presented. 
+    - In this project, we investigate whether performance might be enhanced if the WMC task is made more in line with a present-oriented attention style. 
 
 Working memory capacity (WMC) refers to the ability to hold goal-relevant information available in working memory while under cognitive load. 
 
 []
+
+Although the exact mechanisms underlying WMC performance are still a topic of substantial debate [@oberauer_2016], recent accounts suggests that the key process determining performance on WMC is the ability to exert top-down attention control, a process through which people can maintain goal-relevant information in the face of distraction and disengage attention from information as necessary [@draheim_2021]. 
+
+@oberauer_2016 show that all three accounts 
+
+Time-based resource sharing model:
+1. Both components(processing and maintenance) of most WM span tasks require attention, and since attention is a limited resource it has to be shared between them.
+2. As soon as attention is switched away from the memory traces of the items to be recalled, their activation suffers from a time-related decay. Refreshing these decaying memory traces requires their retrieval from memory by attentional focusing.
+3. Attention sharing is achieved through rapid and frequent switching between processing and maintenance that occurs during the completion of the task.
+
+
+[Slower processing speed increases cognitive load]
+[Present-oriented attention leads to less rehearsal of memory items if the environment does not clearly mark the importance of doing so]
+
+
+
 
