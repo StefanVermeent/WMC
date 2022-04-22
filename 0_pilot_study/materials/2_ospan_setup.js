@@ -62,11 +62,11 @@ var ospan_practice_letters_feedback = {
   type: 'html-keyboard-response',
   stimulus: function(){
     stim = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of " + jsPsych.timelineVariable('selection').length + "</font> letters in their correct order.</b><br><br><br>";
-    stim += "Press the <strong>Spacebar</strong> to start the next trial.";
+    stim += "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) to start the next trial.";
        
     return stim;
   },
-  choices: [' '],
+  choices: ["arrowleft", "arrowright"],
   on_finish: function(){
     nMathAcc = 0;
   }
@@ -78,10 +78,11 @@ var ospan_practice_math_feedback = {
   type: 'html-keyboard-response',
      stimulus: function(){
        stim = "You solved <font color='blue'>"+nMathAcc+" out of " + jsPsych.timelineVariable('selection').length + "</font> math problems accurately.<br><br></div><br><br><br>";
-       stim += "Press the <strong>Spacebar</strong> to continue.";
+       stim += "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) to continue.";
        
        return stim;
      },
+     choices: ["arrowleft", "arrowright"],
      on_finish: function(){
        nMathAcc = 0;
      }
@@ -94,10 +95,11 @@ var ospan_full_feedback = {
      stimulus: function(){
        stim = "<div style='font-size:20px;'><b>You recalled <font color='blue'>"+nLettersRecalled+" out of " + jsPsych.timelineVariable('selection').length + "</font> letters in their correct order.</b><br><br>";
        stim += "You solved <font color='blue'>"+nMathAcc+" out of " + jsPsych.timelineVariable('selection').length + "</font> math problems accurately.<br><br></div><br><br><br>";
-       stim += "Press any key to start the next trial.";
+       stim += "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) to start the next trial.";
        
        return stim;
      },
+     choices: ["arrowleft", "arrowright"],
      on_finish: function(){
        nMathAcc = 0;
      }
@@ -107,7 +109,7 @@ var ospan_full_feedback = {
 var ospan_interblock = {
   type: 'html-keyboard-response',
   stimulus: "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) to start the next block.",
-  choices: ["ArrowLeft", "ArrowRight"]
+  choices: ["arrowleft", "arrowright"]
 };
 
 
@@ -116,10 +118,11 @@ var ospan_midpoint_accuracy = {
      stimulus: function(){
        stim = "<div style='font-size:20px;'>So far, you have correctly solved <font color='blue'>"+Math.round((overall_acc/trial_count)*100)+" %</font> of math problems</div><br><br><br>";
        stim += "Try to take some more time on the remaining math problems to increase your accuracy.<br><br>";
-       stim += "Press any key to start the next trial.";
+       stim += "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) to start the next block.";
 
        return stim;
-     }   
+     },
+     choices: ["arrowleft", "arrowright"],
 };
 
 
@@ -134,7 +137,8 @@ var ospan_performance_booster = {
        } else {
          return false;
        }
-     }     
+     },
+  choices: ["arrowleft", "arrowright"],
 };
 
 

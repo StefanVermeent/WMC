@@ -100,7 +100,7 @@ jsPsych.plugins["ospan-cue"] = (function() {
     if(trial.trial_type === "cog_load") {
       var boxes = ["white", "white", "white", "white", "white"];
       var box_border = ["white", "white", "white", "white", "white"];
-      var equation_cue = "+"
+      var equation_cue = "*"
     }
   
   }
@@ -138,7 +138,7 @@ jsPsych.plugins["ospan-cue"] = (function() {
     if(trial.trial_type === "cog_load") {
       var boxes = ["black","black","black","black","black"];
       var box_border = ["solid black","solid black","solid black","solid black","solid black"];
-      var equation_cue = "+";
+      var equation_cue = "*";
       
       // Determine which letter is reveiled during the letter encoding phase
     if(trial.trial_number === 0) {
@@ -163,28 +163,6 @@ jsPsych.plugins["ospan-cue"] = (function() {
     }
     }
   }
-  
- // // Determine which letter is reveiled during the letter encoding phase
- //   if(trial.trial_number === 0) {
- //     boxes[0] = "black";
- //     box_border[0] = "solid red";
- //   }
- //   if(trial.trial_number == 1) {
- //     boxes[1] = "black";
- //     box_border[1] = "solid red";
- //   }
- //   if(trial.trial_number == 2) {
- //     boxes[2] = "black";
- //     box_border[2] = "solid red";
- //   }
- //   if(trial.trial_number == 3) {
- //     boxes[3] = "black";
- //     box_border[3] = "solid red";
- //   }
- //   if(trial.trial_number == 4) {
- //     boxes[4] = "black";
- //     box_border[4] = "solid red";
- //   }
 
 
   // Display stimulus

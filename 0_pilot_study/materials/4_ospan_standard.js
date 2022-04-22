@@ -370,9 +370,9 @@ var ospan_standard_stimuli = {
 var ospan_practice_standard_procedure = {
   timeline: [ospan_standard_stimuli, ospan_letter_recall, ospan_full_feedback],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 2), variable: "practice"},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "practice"},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "practice"},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 2), version: 'standard', variable: "practice"},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'standard', variable: "practice"},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'standard', variable: "practice"},
   ],
   repetitions: 1
 };

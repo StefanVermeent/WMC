@@ -43,7 +43,7 @@
 var test_order1 = [
   {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
   ospan_instructions_letters_adapted,
-  ospan_practice_letters_procedure,
+  ospan_practice_letters_adapted_procedure,
   ospan_instructions_math,
   ospan_practice_math_procedure,
   ospan_instructions_full,
@@ -52,14 +52,14 @@ var test_order1 = [
   ospan_adapted_procedure, 
   ospan_reset_counters, 
   ospan_transition_to_standard, 
-  ospan_practice_standard_procedure, 
   ospan_start, 
-  ospan_standard_procedure
+  ospan_standard_procedure,
+  ospan_end
 ]
 var test_order2 = [
   {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
   ospan_instructions_letters_standard,
-  ospan_practice_letters_procedure,
+  ospan_practice_letters_standard_procedure,
   ospan_instructions_math,
   ospan_practice_math_procedure,
   ospan_instructions_full,
@@ -68,16 +68,15 @@ var test_order2 = [
   ospan_standard_procedure, 
   ospan_reset_counters, 
   ospan_transition_to_adapted, 
-  ospan_practice_adapted_procedure, 
   ospan_start, 
-  ospan_adapted_procedure
+  ospan_adapted_procedure,
+  ospan_end
 ]
 
 
 var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1, test_order2], 1)[0]
 
 var full_experiment_timeline = [
-    ospan_adapted_procedure,
     fullscreenmode,
     resize_screen,
     ospan_welcome,
