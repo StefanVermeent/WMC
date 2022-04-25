@@ -386,6 +386,6 @@ var ospan_standard_procedure = {
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'standard', variable: "task"},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'standard', variable: "task"},
   ],
-  repetitions: 1,
+  repetitions: 4,
   randomize: true
 };

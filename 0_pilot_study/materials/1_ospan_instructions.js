@@ -24,8 +24,8 @@ var ospan_instructions_letters_standard = {
       //Page 1
       "<p style = 'text-align: center;'>"+ 
       "In this game, you will have to do two things:<br><br>" +
-      "1. Remember <strong>letters</strong> that are presented on the screen.<br><br>" +
-      "2. Solve <strong>math equations</strong>.",
+      "1. Remember <strong>letters</strong>.<br><br>" +
+      "2. Solve <strong>simple equations</strong>.",
       
       //page 2
       "<p style = 'text-align: center;'>"+ 
@@ -112,7 +112,7 @@ var ospan_instructions_letters_standard = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "You will see a black box with a red outline in the position of the next letter just before it appears.",
+      "Just before the next letter appears, you will see a black box with a red outline in the same location.",
       
       //page 5
       "<style>" +
@@ -171,7 +171,7 @@ var ospan_instructions_letters_standard = {
     {
       type: 'html-keyboard-response',
       stimulus: "<p style = 'text-align: center;'>"+ 
-      "Let's practice this task a couple of times! <br><br>" +
+      "We will now practice this task 3 times.<br><br>" +
       "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) when you are ready to practice.",
       choices: ["arrowleft", "arrowright"]
     }
@@ -187,8 +187,8 @@ var ospan_instructions_letters_adapted = {
       //Page 1
       "<p style = 'text-align: center;'>"+ 
       "In this game, you will have to do two things:<br><br>" +
-      "1. Remember <strong>letters</strong> that are presented on the screen.<br><br>" +
-      "2. Solve <strong>math equations</strong>.",
+      "1. Remember <strong>letters</strong>.<br><br>" +
+      "2. Solve <strong>simple equations</strong>.",
       
       //page 2
       "<p style = 'text-align: center;'>"+ 
@@ -360,7 +360,7 @@ var ospan_instructions_math = {
       
       //page 2
       "<p style = 'text-align: center;'>"+ 
-      "On the second task, you will see math equations like the one below:<br><br><br><br>" +
+      "On the second task, you will see simple equations like the one below:<br><br><br><br>" +
       "<div style = 'font-size:70px'>5 + 3 = 8</div><br><br><br>",
       
       //page 3
@@ -391,7 +391,7 @@ var ospan_instructions_math = {
     {
       type: 'html-keyboard-response',
       stimulus: "<p style = 'text-align: center;'>"+ 
-      "Let's practice this task a couple of times! <br><br>" +
+      "We will now practice this task 5 times.<br><br>" +
       "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) when you are ready to practice.",
       choices: ["arrowleft", "arrowright"]
     }
@@ -422,7 +422,7 @@ var ospan_instructions_full = {
       //page 4
       "<p style = 'text-align: center;'>"+ 
       "It is important that you try your best on both tasks!<br><br>" +
-      "At the end of each round, you will see how many<br>letters and math equations you got right.",
+      "At the end of each round, you will see how many<br>letters and equations you got right.",
  
       ],
       show_clickable_nav: true,
@@ -437,7 +437,7 @@ var ospan_instructions_full = {
     {
     type: 'html-keyboard-response',
     stimulus: "<p style = 'text-align: center;'>"+ 
-      "Let's practice both tasks at the same time! <br><br>" +
+      "We will now practice the full game 3 times.<br><br>" +
       "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) when you are ready to practice.",
     choices: ["arrowleft", "arrowright"]
     }
@@ -448,6 +448,7 @@ var ospan_start = {
     type: "html-keyboard-response",
     stimulus: "<p style = 'text-align: center;'>"+ 
       "You will now play the full game.<br><br>" +
+      "From now on, you will not get feedback on your performance<br><br><br>" +
       "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) to start the next block.",
     choices: ["arrowleft", "arrowright"],
     data: {variable: 'ospan_start'},

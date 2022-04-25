@@ -370,6 +370,6 @@ var ospan_adapted_procedure = {
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'adapted', variable: "task"},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'adapted', variable: "task"},
   ],
-  repetitions: 1,
+  repetitions: 4,
   randomize: true
 };
