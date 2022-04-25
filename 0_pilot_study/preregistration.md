@@ -1,7 +1,7 @@
 Preregistration Pilot 1
 ================
 
-*Last updated on vrijdag, april 22, 2022 at 03:18 *
+*Last updated 2022-04-22 15:22:51*
 
 ## Part 1 - Study Information
 

@@ -354,9 +354,9 @@ var ospan_adapted_stimuli = {
 var ospan_practice_adapted_procedure = {
   timeline: [ospan_adapted_stimuli, ospan_letter_recall, ospan_full_feedback, ospan_performance_booster],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 2), version: 'adapted', variable: "practice"},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'adapted', variable: "practice"},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'adapted', variable: "practice"},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 2), version: 'adapted', variable: "practice_full"},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'adapted', variable: "practice_full"},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'adapted', variable: "practice_full"},
   ],
   repetitions: 1
 };

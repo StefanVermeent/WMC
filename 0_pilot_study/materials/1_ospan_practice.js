@@ -13,7 +13,7 @@ var ospan_practice_letters_stimuli = {
         block += 1;
       },
       data: {
-        variable: 'practice',
+        variable: 'practice_letters',
         block: function() {return block}
       }
     },
@@ -28,7 +28,7 @@ var ospan_practice_letters_stimuli = {
       trial_duration: 1000,
       hide_prompt: true,
       data: {
-        variable: 'practice',
+        variable: 'practice_letters',
         block: function() {return block}
       }
     },
@@ -43,7 +43,7 @@ var ospan_practice_letters_stimuli = {
       trial_duration: 500,
       hide_prompt: true,
       data: {
-        variable: 'practice',
+        variable: 'practice_letters',
         block: function() {return block}
       }
     },
@@ -58,7 +58,7 @@ var ospan_practice_letters_stimuli = {
       trial_duration: 1000,
       hide_prompt: true,
       data: {
-        variable: 'practice',
+        variable: 'practice_letters',
         block: function() {return block}
       },
       on_finish: function() {
@@ -79,7 +79,7 @@ var ospan_practice_letters_stimuli = {
       trial_type: "span",
       hide_prompt: true,
       data: {
-        variable: 'practice',
+        variable: 'practice_letters',
         block: function() {return block}
       }
     },
@@ -94,7 +94,7 @@ var ospan_practice_letters_stimuli = {
       trial_duration: 1000,
       hide_prompt: true,
       data: {
-        variable: 'practice',
+        variable: 'practice_letters',
         block: function() {return block}
       },
       on_finish: function() {
@@ -115,7 +115,7 @@ var ospan_practice_letters_stimuli = {
       trial_type: "span",
       hide_prompt: true,
       data: {
-        variable: 'practice',
+        variable: 'practice_letters',
         block: function() {return block}
       }
     },
@@ -130,7 +130,7 @@ var ospan_practice_letters_stimuli = {
       trial_duration: 1000,
       hide_prompt: true,
       data: {
-        variable: 'practice',
+        variable: 'practice_letters',
         block: function() {return block}
       },
       on_finish: function() {
@@ -162,7 +162,7 @@ var ospan_practice_math_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: function() {return block}
       }
     },
@@ -176,7 +176,7 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: 1
       },
       on_finish: function(){
@@ -195,7 +195,7 @@ var ospan_practice_math_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: function() {return block}
       }
     },
@@ -209,7 +209,7 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: 1
       },
       on_finish: function(){
@@ -228,7 +228,7 @@ var ospan_practice_math_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: function() {return block}
       }
     },
@@ -242,7 +242,7 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: 1
       },
       on_finish: function(){
@@ -261,7 +261,7 @@ var ospan_practice_math_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: function() {return block}
       }
     },
@@ -275,7 +275,7 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: 1
       },
       on_finish: function(){
@@ -294,7 +294,7 @@ var ospan_practice_math_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: function() {return block}
       }
     },
@@ -308,7 +308,7 @@ var ospan_practice_math_stimuli = {
       choices: ["arrowleft", "arrowright"],
       trial_duration: 6000,
       data: {
-        variable: 'practice',
+        variable: 'practice_math',
         block: 1
       },
       on_finish: function(){
