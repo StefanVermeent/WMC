@@ -171,6 +171,8 @@ var ospan_practice_math_stimuli = {
       type: 'ospan-trial',
       task_version: jsPsych.timelineVariable("version"),
       stimulus: jsPsych.timelineVariable('selection'),
+      equation: jsPsych.timelineVariable('equation'),
+      correct:  jsPsych.timelineVariable('correct'),
       trial_type: "cog_load",
       trial_number: 0,
       choices: ["arrowleft", "arrowright"],
@@ -204,6 +206,8 @@ var ospan_practice_math_stimuli = {
       type: 'ospan-trial',
       task_version: jsPsych.timelineVariable("version"),
       stimulus: jsPsych.timelineVariable('selection'),
+      equation: jsPsych.timelineVariable('equation'),
+      correct: jsPsych.timelineVariable('correct'),
       trial_type: "cog_load",
       trial_number: 1,
       choices: ["arrowleft", "arrowright"],
@@ -237,6 +241,8 @@ var ospan_practice_math_stimuli = {
       type: 'ospan-trial',
       task_version: jsPsych.timelineVariable("version"),
       stimulus: jsPsych.timelineVariable('selection'),
+      equation: jsPsych.timelineVariable('equation'),
+      correct: jsPsych.timelineVariable('correct'),
       trial_type: "cog_load",
       trial_number: 2,
       choices: ["arrowleft", "arrowright"],
@@ -270,6 +276,8 @@ var ospan_practice_math_stimuli = {
       type: 'ospan-trial',
       task_version: jsPsych.timelineVariable("version"),
       stimulus: jsPsych.timelineVariable('selection'),
+      equation: jsPsych.timelineVariable('equation'),
+      correct: jsPsych.timelineVariable('correct'),
       trial_type: "cog_load",
       trial_number: 3,
       choices: ["arrowleft", "arrowright"],
@@ -303,6 +311,8 @@ var ospan_practice_math_stimuli = {
       type: 'ospan-trial',
       task_version: jsPsych.timelineVariable("version"),
       stimulus: jsPsych.timelineVariable('selection'),
+      equation: jsPsych.timelineVariable('equation'),
+      correct: jsPsych.timelineVariable('correct'),
       trial_type: "cog_load",
       trial_number: 4,
       choices: ["arrowleft", "arrowright"],
@@ -344,7 +354,7 @@ var ospan_practice_letters_adapted_procedure = {
 var ospan_practice_math_procedure = {
   timeline: [ospan_practice_math_stimuli, ospan_practice_math_feedback],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: "standard"}
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: "standard", correct: correct_practice.slice(0, 5), equation: equations_practice.slice(0, 5)}
   ]
 };
 

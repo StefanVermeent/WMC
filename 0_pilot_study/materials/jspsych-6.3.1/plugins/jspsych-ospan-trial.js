@@ -26,6 +26,11 @@ jsPsych.plugins["ospan-trial"] = (function() {
         default: [""],
         description: 'The HTML string to be displayed'
       },
+      equation: {
+        type: jsPsych.plugins.parameterType.HTML_STRING,
+        default: [""],
+        description: "equation string."
+      },
       trial_type: {
         type: jsPsych.plugins.parameterType.STRING,
         default: [""],
@@ -36,7 +41,11 @@ jsPsych.plugins["ospan-trial"] = (function() {
         default: undefined,
         description: 'Trial number.'
       },
-      
+      correct: {
+        type: jsPsych.plugins.parameterType.STRING,
+        default: [""],
+        description: "is Equation correct or incorrect?"
+      },
       choices: {
         type: jsPsych.plugins.parameterType.KEYCODE,
         array: true,
@@ -72,50 +81,49 @@ jsPsych.plugins["ospan-trial"] = (function() {
   
   // ** FUNCTIONS **
   
-  // GENERATE MATH EQUATIONS
-  var cogloadf = function(correct){  // generates math questions
-  var possibleOperations = [" + ", " - "];
-  operation = jsPsych.randomization.sampleWithReplacement(possibleOperations, 1)[0];
-  if (operation==" + "){
-    num1 = Math.floor(jStat.uniform.sample(1, 5));
-    num2 =  Math.floor(jStat.uniform.sample(1, 5));
-    ans = num1 + num2;
-  } else if (operation==" - "){
-    num1 = Math.floor(jStat.uniform.sample(1, 5));
-    num2 = Math.floor(jStat.uniform.sample(1, num1));
-    ans = num1 - num2;
-  }
-  
-  if (!correct){   // generates incorrect answers
-    ansDiff = jsPsych.randomization.sampleWithReplacement([1,2],1)[0];
-    coinFlip = jsPsych.randomization.sampleWithReplacement([true, false],1)[0];
-    if (coinFlip){
-      ans += ansDiff;
-    } else {
-      ans -= ansDiff;
-    }
-    if (ans<0){
-      ans += 2*ansDiff; //ensuring no negative incorrect answers
-    }
-  }
-  
-  var equation = num1+operation+num2+' = '+ans;
-  
-  return equation;
-};
-  
-  
+//  // GENERATE MATH EQUATIONS
+//  var cogloadf = function(correct){  // generates math questions
+//  var possibleOperations = [" + ", " - "];
+//  operation = jsPsych.randomization.sampleWithReplacement(possibleOperations, 1)[0];
+//  if (operation==" + "){
+//    num1 = Math.floor(jStat.uniform.sample(1, 5));
+//    num2 =  Math.floor(jStat.uniform.sample(1, 5));
+//    ans = num1 + num2;
+//  } else if (operation==" - "){
+//    num1 = Math.floor(jStat.uniform.sample(1, 5));
+//    num2 = Math.floor(jStat.uniform.sample(1, num1));
+//    ans = num1 - num2;
+//  }
+//  
+//  if (!correct){   // generates incorrect answers
+//    ansDiff = jsPsych.randomization.sampleWithReplacement([1,2],1)[0];
+//    coinFlip = jsPsych.randomization.sampleWithReplacement([true, false],1)[0];
+//    if (coinFlip){
+//      ans += ansDiff;
+//    } else {
+//      ans -= ansDiff;
+//    }
+//    if (ans<0){
+//      ans += 2*ansDiff; //ensuring no negative incorrect answers
+//    }
+//  }
+//  
+//  var equation = num1+operation+num2+' = '+ans;
+//  
+//  return equation;
+//};
+
 
   // ** CURRENT STIMULUS TO PRESENT
   var current_letter = (trial.trial_type === "span")? trial.stimulus[trial.trial_number] : ""; 
   
-  
   // Is the math equation correct or incorrect?incorrect
-  var math_correct = jsPsych.randomization.sampleWithReplacement([true, false], 1)[0];
+  var math_correct = (trial.correct[trial.trial_number] === "correct")? true : false; //jsPsych.randomization.sampleWithReplacement([true, false], 1)[0];
   
   // Mathematical equation
-  var equation = (trial.trial_type === "cog_load")? cogloadf(math_correct) : "";
+  var equation = (trial.trial_type === "cog_load")? trial.equation[trial.trial_number] : ""; 
   
+ 
   
   // Logic flow that determines which boxes and letters are shown
   // On standard trials, boxes and trial letter are only shown on span trials, but disappear on cognitive load trials
@@ -123,7 +131,7 @@ jsPsych.plugins["ospan-trial"] = (function() {
   if(trial.task_version == "standard") {
     if(trial.trial_type === "cog_load") {
       var boxes = ["white","white","white","white","white"];
-      var box_borders = ["solid white", "solid white", "solid white", "solid white", "solid white"]
+      var box_borders = ["solid white", "solid white", "solid white", "solid white", "solid white"];
       
       var letter1 = "";
       var letter2 = "";
@@ -141,12 +149,6 @@ jsPsych.plugins["ospan-trial"] = (function() {
       var letter3 = (trial.trial_number === 2)? trial.stimulus[2] : "";
       var letter4 = (trial.trial_number === 3)? trial.stimulus[3] : "";
       var letter5 = (trial.trial_number === 4)? trial.stimulus[4] : "";
-      
-    //  var letter1 = (trial.stimulus.length > 0)? trial.stimulus[0] : "";
-    //  var letter2 = (trial.stimulus.length > 1)? trial.stimulus[1] : "";
-    //  var letter3 = (trial.stimulus.length > 2)? trial.stimulus[2] : "";
-    //  var letter4 = (trial.stimulus.length > 3)? trial.stimulus[3] : "";
-    //  var letter5 = (trial.stimulus.length > 4)? trial.stimulus[4] : "";
     }
   }
   

@@ -42,7 +42,7 @@ The two candidate Directed Acyclic Graphs (DAG) representing the causal model co
   <img src="figures/prereg_fig1.png" title="Overall DAG connecting all the variables of interest.">
 </p>
 
-Each hypothesis tests a part of this overall DAG. We present the DAG corresponding to each hypotheses below.
+Each hypothesis tests a part of this overall DAG. We present the DAG corresponding to each hypotheses below. Variables with a thick black border are identified as confounders that should be controlled for.
 
 
 1.	Individuals with more early-life adversity have a lower WMC (i.e., letter recall) than individuals with less early-life adversity on the standard version of the Ospan, but benefit comparatively more from the present-oriented version of the Ospan.

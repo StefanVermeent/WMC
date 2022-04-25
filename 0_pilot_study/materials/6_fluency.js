@@ -63,15 +63,3 @@ var fluency_animal = {
       "</span>";
   }
 };
-
-// Exectue the loop
-timeline.push({
-  timeline: [aut_fluency],
-  loop_function: function(data){
-    if(jsPsych.data.get().last(1).values()[0].timed_out){
-      return false;
-    } else {
-      return true;
-    }
-  }
-});

@@ -339,7 +339,7 @@ var ospan_instructions_letters_adapted = {
     {
       type: 'html-keyboard-response',
       stimulus: "<p style = 'text-align: center;'>"+ 
-      "Let's practice this task a couple of times! <br><br>" +
+      "We will now practice this task 3 times.<br><br>" +
       "Press the left-arrow key (&larr;) or right-arrow key (&rarr;) when you are ready to practice.",
       choices: ["arrowleft", "arrowright"]
     }
