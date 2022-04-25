@@ -407,5 +407,5 @@ var ospan_standard_procedure = {
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'standard', variable: "task", equation: equations_standard.slice(38, 43), correct: correct_standard.slice(38, 43)},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'standard', variable: "task", equation: equations_standard.slice(43, 48), correct: correct_standard.slice(43, 48)},
   ],
-  randomize: true
+  randomize_order: true
 };

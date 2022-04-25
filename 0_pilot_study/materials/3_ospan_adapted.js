@@ -391,5 +391,5 @@ var ospan_adapted_procedure = {
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'adapted', variable: "task", equation: equations_adapted.slice(38, 43), correct: correct_adapted.slice(38, 43)},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), version: 'adapted', variable: "task", equation: equations_adapted.slice(43, 48), correct: correct_adapted.slice(43, 48)},
   ],
-  randomize: true
+  randomize_order: true
 };
