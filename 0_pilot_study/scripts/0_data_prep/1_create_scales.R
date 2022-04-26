@@ -6,13 +6,13 @@ library(here)
 library(sjlabelled)
 
 # Functions ---------------------------------------------------------------
-source(here("preregistrations", "2_study1", "scripts", "custom_functions", "create_codebook.R"))
-source(here("preregistrations", "2_study1", "scripts", "custom_functions", "functions_exclusions.R"))
+source(here("0_pilot_study", "scripts", "custom_functions", "create_codebook.R"))
+source(here("0_pilot_study", "scripts", "custom_functions", "functions_exclusions.R"))
 
 # Data --------------------------------------------------------------------
 study_data <- 
   fetch_survey(
-    surveyID = "SV_dparQvRc5ViFyYe", 
+    surveyID = "SV_aXdJqbMcCbmNxDU", 
     verbose  = T,
     force_request = T,
     label = F,

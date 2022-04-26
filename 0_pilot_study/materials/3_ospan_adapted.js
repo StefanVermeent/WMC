@@ -9,6 +9,9 @@ var ospan_adapted_stimuli = {
       trial_type: "span",
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
+      on_start: function() {
+        block += 1;
+      },
       data: {
         block: function() {return block}
       }
