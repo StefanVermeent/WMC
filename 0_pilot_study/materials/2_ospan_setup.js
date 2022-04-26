@@ -75,7 +75,7 @@ var ospan_letter_recall = {
   correct_order: jsPsych.timelineVariable('selection'),
   data: {
     set_size: jsPsych.timelineVariable('selection').length,
-    block: block,
+    block: function() {return block},
     variable: jsPsych.timelineVariable('variable'),
   },
   on_finish: function(){
