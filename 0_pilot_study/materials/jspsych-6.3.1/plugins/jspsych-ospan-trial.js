@@ -294,7 +294,7 @@ jsPsych.plugins["ospan-trial"] = (function() {
       // gather the data to store for the trial
       var trial_data = {
         "type": trial.trial_type,
-        "version": trial.task_version,
+        "ospan_version": trial.task_version,
         "set_size": trial.stimulus.length,
         "trial": trial.trial_number,
         "rt": response.rt,

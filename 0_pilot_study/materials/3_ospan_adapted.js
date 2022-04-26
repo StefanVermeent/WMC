@@ -11,6 +11,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -26,6 +27,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -41,6 +43,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -58,6 +61,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -80,6 +84,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -95,6 +100,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -110,6 +116,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -127,6 +134,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -153,6 +161,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -168,6 +177,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -183,6 +193,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -200,6 +211,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -226,6 +238,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
       },
@@ -241,6 +254,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -256,6 +270,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -273,6 +288,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -299,6 +315,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       },
     },
@@ -314,6 +331,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 1000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -329,6 +347,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 500,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -346,6 +365,7 @@ var ospan_adapted_stimuli = {
       trial_duration: 6000,
       data: {
         variable: jsPsych.timelineVariable('variable'),
+        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       },
       on_finish: function(){
@@ -364,9 +384,9 @@ var ospan_adapted_stimuli = {
 var ospan_practice_adapted_procedure = {
   timeline: [ospan_adapted_stimuli, ospan_letter_recall, ospan_full_feedback, ospan_performance_booster],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 2), version: 'adapted', variable: "practice_full", equation: equations_practice.slice(5, 7), correct: correct_practice.slice(5,7)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'adapted', variable: "practice_full", equation: equations_practice.slice(7, 10), correct: correct_practice.slice(7,10)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'adapted', variable: "practice_full", equation: equations_practice.slice(10, 15), correct: correct_practice.slice(10,15)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 2), version: 'practice_adapted', variable: "practice_full", equation: equations_practice.slice(5, 7), correct: correct_practice.slice(5,7)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'practice_adapted', variable: "practice_full", equation: equations_practice.slice(7, 10), correct: correct_practice.slice(7,10)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'practice_adapted', variable: "practice_full", equation: equations_practice.slice(10, 15), correct: correct_practice.slice(10,15)},practice_
   ],
   repetitions: 1
 };

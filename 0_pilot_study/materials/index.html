@@ -133,18 +133,15 @@ jsPsych.init({
   timeline: timeline,
   on_finish: function() {
     tasks_start                 = jsPsych.startTime();
-    data_ospan_practice_letters = jsPsych.data.get().filter({task_version: 'practice_letters'});
-    data_ospan_practice_math    = jsPsych.data.get().filter({task_version: 'practice_math'});
-    data_ospan_practice_full    = jsPsych.data.get().filter({task_version: 'practice_full'});
-    data_ospan_standard         = jsPsych.data.get().filter({task_version: 'standard'});
-    data_ospan_adapted          = jsPsych.data.get().filter({task_version: 'adapted'});
+    data_ospan_practice_letters = jsPsych.data.get().filter({version: 'practice_letters'});
+    data_ospan_practice_math    = jsPsych.data.get().filter({version: 'practice_math'});
+    data_ospan_practice_full    = jsPsych.data.get().filter({version: 'practice_full'});
+    data_ospan_standard         = jsPsych.data.get().filter({version: 'standard'});
+    data_ospan_adapted          = jsPsych.data.get().filter({version: 'adapted'});
     data_fluency                = jsPsych.data.get().filter({variable: "fluency_responses"}).ignore('aut_stim').ignore('preamble').ignore('stimulus').ignore("responses");
-   // data_aut_fork               = jsPsych.data.get().filter({variable: "aut_fork_responses"}).ignore('aut_stim').ignore('preamble').ignore('stimulus').ignore("responses");
-   // data_aut_paperclip          = jsPsych.data.get().filter({variable: "aut_paperclip_responses"}).ignore('aut_stim').ignore('preamble').ignore('stimulus').ignore("responses");
     data_resize                 = jsPsych.data.get().filter({task: 'resize'});
     tasks_browser               = jsPsych.data.getInteractionData().json();
     
-    jsPsych.data.displayData()
     window.parent.postMessage([
       tasks_start, 
       data_ospan_practice_letters.json(),
@@ -153,8 +150,6 @@ jsPsych.init({
       data_ospan_standard.json(),
       data_ospan_adapted.json(),
       data_fluency.json(),
-     // data_aut_fork.json(),
-    //  data_aut_paperclip.json(),
       data_resize.json(),
       tasks_browser
       ],
