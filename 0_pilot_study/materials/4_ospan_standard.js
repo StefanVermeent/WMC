@@ -391,20 +391,20 @@ var ospan_practice_standard_procedure = {
 var ospan_standard_procedure = {
   timeline: [ospan_standard_stimuli, ospan_letter_recall, ospan_performance_booster, ospan_interblock],
   timeline_variables: [
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "task_standard", equation: equations_standard.slice(0, 3), correct: correct_standard.slice(0, 3)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "task_standard", equation: equations_standard.slice(3, 6), correct: correct_standard.slice(3, 6)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "task_standard", equation: equations_standard.slice(6, 9), correct: correct_standard.slice(6, 9)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "task_standard", equation: equations_standard.slice(9, 12), correct: correct_standard.slice(9, 12)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "task_standard1", equation: equations_standard.slice(0, 3), correct: correct_standard.slice(0, 3)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "task_standard1", equation: equations_standard.slice(3, 6), correct: correct_standard.slice(3, 6)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "task_standard2", equation: equations_standard.slice(6, 9), correct: correct_standard.slice(6, 9)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), variable: "task_standard2", equation: equations_standard.slice(9, 12), correct: correct_standard.slice(9, 12)},
   
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "task_standard", equation: equations_standard.slice(12, 16), correct: correct_standard.slice(12, 16)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "task_standard", equation: equations_standard.slice(16, 20), correct: correct_standard.slice(16, 20)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "task_standard", equation: equations_standard.slice(20, 24), correct: correct_standard.slice(20, 24)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "task_standard", equation: equations_standard.slice(24, 28), correct: correct_standard.slice(24, 28)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "task_standard1", equation: equations_standard.slice(12, 16), correct: correct_standard.slice(12, 16)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "task_standard1", equation: equations_standard.slice(16, 20), correct: correct_standard.slice(16, 20)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "task_standard2", equation: equations_standard.slice(20, 24), correct: correct_standard.slice(20, 24)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), variable: "task_standard2", equation: equations_standard.slice(24, 28), correct: correct_standard.slice(24, 28)},
  
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), variable: "task_standard", equation: equations_standard.slice(28, 33), correct: correct_standard.slice(28, 33)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), variable: "task_standard", equation: equations_standard.slice(33, 38), correct: correct_standard.slice(33, 38)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), variable: "task_standard", equation: equations_standard.slice(38, 43), correct: correct_standard.slice(38, 43)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), variable: "task_standard", equation: equations_standard.slice(43, 48), correct: correct_standard.slice(43, 48)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), variable: "task_standard1", equation: equations_standard.slice(28, 33), correct: correct_standard.slice(28, 33)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), variable: "task_standard1", equation: equations_standard.slice(33, 38), correct: correct_standard.slice(33, 38)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), variable: "task_standard2", equation: equations_standard.slice(38, 43), correct: correct_standard.slice(38, 43)},
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 5), variable: "task_standard2", equation: equations_standard.slice(43, 48), correct: correct_standard.slice(43, 48)},
   ],
   randomize_order: true
 };
