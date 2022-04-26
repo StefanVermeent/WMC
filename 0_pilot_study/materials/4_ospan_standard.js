@@ -13,8 +13,6 @@ var ospan_standard_stimuli = {
         block += 1;
       },
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -45,8 +43,6 @@ var ospan_standard_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -86,8 +82,6 @@ var ospan_standard_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -118,8 +112,6 @@ var ospan_standard_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -165,8 +157,6 @@ var ospan_standard_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -197,8 +187,6 @@ var ospan_standard_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -244,8 +232,6 @@ var ospan_standard_stimuli = {
       trial_duration: 500,
       trial_type: "span",
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
       },
@@ -277,8 +263,6 @@ var ospan_standard_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
@@ -323,8 +307,6 @@ var ospan_standard_stimuli = {
       trial_duration: 500,
       trial_type: "span",
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       },
       on_start: function() {
@@ -360,8 +342,6 @@ var ospan_standard_stimuli = {
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
       data: {
-        variable: jsPsych.timelineVariable('variable'),
-        version: jsPsych.timelineVariable('version'),
         block: function() {return block}
       }
     },
