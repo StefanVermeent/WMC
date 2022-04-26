@@ -386,7 +386,7 @@ var ospan_practice_adapted_procedure = {
   timeline_variables: [
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 2), version: 'practice_adapted', variable: "practice_full", equation: equations_practice.slice(5, 7), correct: correct_practice.slice(5,7)},
     {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 3), version: 'practice_adapted', variable: "practice_full", equation: equations_practice.slice(7, 10), correct: correct_practice.slice(7,10)},
-    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'practice_adapted', variable: "practice_full", equation: equations_practice.slice(10, 15), correct: correct_practice.slice(10,15)},practice_
+    {selection: jsPsych.randomization.sampleWithoutReplacement(possibleLetters, 4), version: 'practice_adapted', variable: "practice_full", equation: equations_practice.slice(10, 15), correct: correct_practice.slice(10,15)}
   ],
   repetitions: 1
 };
