@@ -133,11 +133,11 @@ jsPsych.init({
   timeline: timeline,
   on_finish: function() {
     tasks_start                 = jsPsych.startTime();
-    data_ospan_practice_letters = jsPsych.data.get().filter({version: 'practice_letters'});
-    data_ospan_practice_math    = jsPsych.data.get().filter({version: 'practice_math'});
-    data_ospan_practice_full    = jsPsych.data.get().filter({version: 'practice_full'});
-    data_ospan_standard         = jsPsych.data.get().filter({version: 'standard'});
-    data_ospan_adapted          = jsPsych.data.get().filter({version: 'adapted'});
+    data_ospan_practice_letters = jsPsych.data.get().filter({variable: 'practice_letters'});
+    data_ospan_practice_math    = jsPsych.data.get().filter({variable: 'practice_math'});
+    data_ospan_practice_full    = jsPsych.data.get().filter({variable: 'practice_full'});
+    data_ospan_standard         = jsPsych.data.get().filter({variable: 'task_standard'});
+    data_ospan_adapted          = jsPsych.data.get().filter({variable: 'task_adapted'});
     data_fluency                = jsPsych.data.get().filter({variable: "fluency_responses"}).ignore('aut_stim').ignore('preamble').ignore('stimulus').ignore("responses");
     data_resize                 = jsPsych.data.get().filter({task: 'resize'});
     tasks_browser               = jsPsych.data.getInteractionData().json();
