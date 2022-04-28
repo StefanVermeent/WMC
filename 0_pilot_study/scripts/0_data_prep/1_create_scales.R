@@ -419,9 +419,9 @@ vars11_admin <-
 
 
 
-# Attention Tasks ---------------------------------------------------------
+# WMC  ---------------------------------------------------------
 
-## Flanker data ----
+## Ospan data ----
 
 NA_placeholder <- tribble(
   ~rt,              ~stimulus,        ~response,         ~variable,
@@ -430,11 +430,15 @@ NA_placeholder <- tribble(
   NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA
 )
 
-flanker_data <- 
+ospan_data <- 
   study_data %>% 
-  select(id, data_flanker_std, data_flanker_enh, data_flanker_deg) %>% 
-  mutate(across(c(starts_with("data_flanker")), ~map_if(., .p =  ~!is.na(.x), .f = jsonlite::fromJSON))) %>%
-  mutate(across(c(starts_with("data_flanker")), ~ifelse(is.na(.), list(NA_placeholder), .))) %>%
+  filter(id %in% c(6,7,8)) %>%
+  select(id,meta_duration_tasks,data_ospan_standard1, data_ospan_standard2, data_ospan_adapted1, data_ospan_adapted2, data_fluency) %>% 
+  mutate(across(c(starts_with("data_ospan_standard1")), ~map_if(., .p =  ~!is.na(.x), .f = jsonlite::fromJSON))) %>%
+  mutate(across(c(starts_with("data_ospan_standard2")), ~map_if(., .p =  ~!is.na(.x), .f = jsonlite::fromJSON))) %>%
+  mutate(across(c(starts_with("data_ospan_adapted1")), ~map_if(., .p =  ~!is.na(.x), .f = jsonlite::fromJSON))) %>%
+  mutate(across(c(starts_with("data_ospan_adapted2")), ~map_if(., .p =  ~!is.na(.x), .f = jsonlite::fromJSON))) %>%
+  mutate(across(c(starts_with("data_fluency")), ~map_if(., .p =  ~!is.na(.x), .f = jsonlite::fromJSON))) %>%
   mutate(data_flanker = pmap(list(data_flanker_std, data_flanker_enh, data_flanker_deg), function(data_flanker_std, data_flanker_enh, data_flanker_deg) {
     bind_rows(data_flanker_std, data_flanker_enh, data_flanker_deg)})) %>%
   unnest(data_flanker) %>% 

@@ -28,13 +28,13 @@ The role of present-oriented attention control in working memory capacity perfor
 
 ### Q3.	Description  {#description}
 
-This preregistration covers the first pilot study of this project. The purpose of the project is to understand performance differences on working memory capacity (WMC) as a function of early-life adversity. We include two versions of the Operation Span (Ospan) task: a standard version and and a more present-oriented version.
+This preregistration covers the first pilot study of this project. The purpose of the project is to understand performance differences on working memory capacity (WMC) as a function of early-life adversity. We include two versions of the Operation Span (Ospan) task: a standard version and a more present-oriented version.
 
 ### Q4.	Research questions {#rq}
 1.    Is early life adversity exposure associated with lower WMC performance, and can performance be improved on a more present-oriented version of the task?
 2.    What are the cognitive mechanisms underlying performance differences on the WMC task?
 
-### Q5.	Hypotheses and Causal Models {#hypotheses}
+### Q5.	Hypotheses and causal models {#hypotheses}
 
 The two candidate Directed Acyclic Graphs (DAG) representing the causal model connecting all variables of interest is depicted in the figure below. 
 
@@ -67,17 +67,17 @@ Each hypothesis tests a part of this overall DAG. We present the DAG correspondi
 ## Part 2 - Design Plan {#part2}
 
 ### Q1.	Study type {#study_type}
-cross-sectional with experimental manipulation.
+Cross-sectional with experimental manipulation.
 
 
 ### Q2.	Study design {#study_design}
-The study has one within-subject factor (Ospan task version; standard vs. present-oriented) and a continuous between-subject factor (early-life adversity; operationalized as violence exposure and unpredictability). The order of the task versions is counterbalanced.
+The study has one within-subject factor (Ospan task version; standard vs. present-oriented) and a continuous between-subject factor (early-life adversity; operationalized as violence exposure and unpredictability). The order of the task versions is counterbalanced across participants.
 
 
 ## Part 3 - Sampling Plan {#part3}
 
 ### Q1.	Data collection procedures {#data_collection}
-Data will be collected using the online research platform Prolific Academic. People are eligible for participation if they 1) grew up and currently live in the United States; 2) Speak fluent English; 3) Are between the ages of 18 and 30. We balance our sample to include 50% males. Using the MacArthur Scale of Subjective Social Status that is a part of Prolific’s pre-screening questions, we make sure that 50% of the sample consists of participants who indicated their current perceived socio-economic status (SES) to be relatively low (between 1 and 4 on a 10-point scale), and 50% consists of participants who have a high perceived SES (between 5 and 10). 
+Data will be collected using the online research platform Prolific Academic. People are eligible for participation if they 1) grew up and currently live in the United States; 2) Speak fluent English; 3) Are between the ages of 18 and 30. We balance our sample to include about 50% males. Using the MacArthur Scale of Subjective Social Status that is a part of Prolific’s pre-screening questions, we make sure that about 50% of the sample consists of participants who indicated their current perceived socio-economic status (SES) to be relatively low (between 1 and 4 on a 10-point scale), and 50% consists of participants who have a high perceived SES (between 5 and 10). 
 
 
 ### Q2.	Sample size {#sample_size}
@@ -116,8 +116,8 @@ Each version of the Ospan provides the following DVs:
 
 2. `unp_comp`: Unpredictability composite score. Consists of the unweighted average of subjective unpredictability (`unp_subj`) and objective unpredictability (`unp_obj`), both of which are scaled before averaging. These measures consist of:
     + Subjective unpredictability. Each of the following measures was z-transformed and then combined into a single scale through unweighted averaging:
-        + Questionnaire of Unpredictability in Childhood [QUIC (adapted); @glynn_2019]: We made three general changes to the original scale as described in Glynn et al. (2019). First, we adapted all items to refer to experiences before age 13. This was done to reduce cognitive load from having to go back-and-forth between different time scales. Second, most items were rated on a scale of 1 (never true) to 5 (very often true) instead of the original yes/no answer format. An exception was made for four items of the parental environment scale which asked for more specific experiences (e.g., "I experienced changes in my custody arrangement"). For these items, we adopted a response scale with the options "never", "only once", "a couple times", "several times", "many times". Third, quantifiers such as "frequently", "often", and "There was a period of time when [...]" were dropped to better match the response scale. We excluded the item "My parents got divorced" because it did not fit the response format and was captured by one of the items of the perceived unpredictability scale. An overall QUIC variable is computed by averaging all unweighted items.
-        + Perceived Unpredictability Scale (NVS): Consists of eight items measuring perceived unpredictability before age 13 (e.g, "My family life was generally inconsistent and unpredictable from day-to-day"). Participants rated each on a scale from 1 (never true) to 5 (very often true).
+        + Questionnaire of Unpredictability in Childhood [QUIC (adapted); @glynn_2019]: We made three general changes to the original scale as described in Glynn et al. (2019). First, we adapted all items to refer to experiences before age 13. This was done to reduce cognitive load from having to go back-and-forth between different timescales. Second, most items were rated on a scale of 1 (never true) to 5 (very often true) instead of the original yes/no answer format. An exception was made for four items of the parental environment scale which asked for more specific experiences (e.g., "I experienced changes in my custody arrangement"). For these items, we adopted a response scale with the options "never", "only once", "a couple times", "several times", "many times". Third, quantifiers such as "frequently", "often", and "There was a period of time when [...]" were dropped to better match the response scale. We excluded the item "My parents got divorced" because it did not fit the response format and was captured by one of the items of the perceived unpredictability scale. An overall QUIC variable is computed by averaging all unweighted items.
+        + Perceived Unpredictability Scale (NVS): Consists of eight items measuring perceived unpredictability before age 13 (e.g., "My family life was generally inconsistent and unpredictable from day-to-day"). Participants rated each on a scale from 1 (never true) to 5 (very often true).
         + Confusion, Hubbub, and Order Scale [CHAOS (adapted); @matheny_1995]: Consists of 15 items measuring the level of chaos in the household (e.g., "No matter how hard we tried, we always seemed to be running late"). We make two changes to the original scale as described in @matheny_1995. First, all items are converted from the present tense to the past tense, and are endorsed as applying to participants' lives before age 13. Second, all items are rated on a scale of 1 (never true) to 5 (very often true) instead of the original yes/no answer format. An overall household chaos variable is computed by averaging the 15 unweighted items.
 
     + Objective unpredictability. Each of the following measures was z-transformed and then combined into a single scale through unweighted averaging:
@@ -127,13 +127,13 @@ Each version of the Ospan provides the following DVs:
 
 ### Q4. Covariates {#covariates}
 
-In our [DAGs](#hypotheses), we expect that task anxiety and education level are causal factors on WMC performance, but that both are in turn caused by SES. Under this DAG, therefore, controlling for SES would also account for the effects of task anxiety and education level. We will test these assumptions prior to fitting the main models using Pearson correlations and linear regressions. If we find that task anxiety and/or education level are not associated with SES or retain a significant association with task performance after controlling for SES, we will also include them as covariates.
+In our [DAGs](#hypotheses), we expect that task anxiety and education level are causal factors on WMC performance, but that both are in turn caused by SES. Under this DAG, therefore, controlling for SES would also account for the effects of task anxiety and education level. We will test these assumptions prior to fitting the [main models](#analyses) using Pearson correlations and linear regressions. If we find that task anxiety and/or education level are not associated with SES or retain a significant association with task performance after controlling for SES, we will also include them as covariates.
 
 1. `ses_comp`: Childhood socio-economic status (SES) composite score. Consists of the unweighted average of subjective SES (`ses_subj`) and objective SES (`ses_obj`), both of which are scaled before averaging. These measures consist of:
-    + Subjective SES. Each of the following measures was z-tranformed and then combined into a single scale through unweighted averaging:
+    + Subjective SES. Each of the following measures was z-transformed and then combined into a single scale through unweighted averaging:
         + Perceived level of resource scarcity. Consists of seven items (e.g., "Your family had enough money to afford the kind of home you all needed"). The items are averaged together to create an unweighted composite score.
         + Childhood social class. Participants answered the question "Which of these classes would you say your family belonged to **when you were growing up**?" on a 5-point scale: 'Poor', 'Working class', 'Middle class', 'Upper-middle class', 'Upper class'.
-    + Objective SES. Each of the following measures was z-tranformed and then combined into a single scale through unweighted averaging:
+    + Objective SES. Each of the following measures was z-transformed and then combined into a single scale through unweighted averaging:
         + Highest education of caregivers/parents. Separate items for each caregiver, on an 8-point scale: 'some high school', 'GED', 'high school diploma', 'some college but no college degree', associate's  degree', 'bachelor's degree', 'master's  degree', or 'doctoral or lab degree'. The caregivers' education levels are averaged to create an overall unweighted parental education composite.
         + Childhood household income. six-point scale: 'less than \$ 25k/year', '\$25k - \$49k/year, '\$50 - \$74k/year', '\$75 - \$99k/year', '\$100 - \$149k/year', 'more than \$150k/year'.
         
@@ -177,7 +177,7 @@ As discussed under [Covariates](#covariates), all models will include SES as a c
 
 ### Q3.	Multiverse analyses {#multiverse}
 
-Online experiments come at the trade-off of having less experimental control over the way in which participants complete the experiment and over the environment in which they do so. It is largely unclear which factors affect performance and how strong these effects are. We used multiverse analysis for all main analysis to assess the robustness of the results against various environmental factors and situations during the experiment. We identified six arbitrary analytic decisions, including or excluding 1) participants who had a recaptcha score below 0.5 (possibly indicating bots); 2) participants who did not enter fullscreen mode prior to starting the task; 3) participants who exited fullscreen mode at any point during the task; 4) participants who did not resize the screen at the start of the experiment; 5) participants who indicated high levels of noise in their environment; 6) participants who indicated extreme interruptions during the experiment. 
+Online experiments come at the trade-off of having less experimental control over the way in which participants complete the experiment and over the environment in which they do so. It is largely unclear how strong the effects of these factors are. We used multiverse analysis for all main analysis to assess the robustness of the results against various environmental factors and situations during the experiment. We identified six arbitrary analytic decisions, including or excluding 1) participants who had a recaptcha score below 0.5 (possibly indicating bots); 2) participants who did not enter fullscreen mode prior to starting the task; 3) participants who exited fullscreen mode at any point during the task; 4) participants who did not resize the screen at the start of the experiment; 5) participants who indicated high levels of noise in their environment; 6) participants who indicated extreme interruptions during the experiment. 
 
 For each analysis, we report the median $\beta$, 95% confidence intervals, proportion of *p*-values < .05 across all analytic decisions. For the primary analyses, we used a bootstrapping technique to compute overall *p*-values to assess whether the obtained median $\beta$ is significantly larger than zero [@simonsohn_2020].
 
@@ -188,7 +188,7 @@ Typically, participants are excluded when their accuracy on the secondary task i
 
 
 ### Q5. Trial-level exclusions {#trial_exclusions}
-trials with reaction times < 300 ms [@ratcliff_2015] were excluded from the analyses. The math trials have a maximum duration of 6000 ms if no response is provided. We do not have an *a-priori* cut-off point for trials (such as the typically used 3500 ms). In addition, trials with a log-transformed reaction time > 3.2 SDs above the subject-level mean are excluded. 
+trials with reaction times <300 ms [@ratcliff_2015] were excluded from the analyses. The math trials have a maximum duration of 6000 ms if no response is provided. We do not have an *a-priori* cut-off point for trials (such as the typically used 3500 ms). In addition, trials with a log-transformed reaction time >3.2 SDs above the subject-level mean are excluded. 
 
 Participants with more than 10 removed trials were excluded from the analyses. Finally, we logged whether participants exited full-screen mode and/or engaged with other browser tabs (i.e., blur events) at any point during the Task. We excluded participants for whom blur events occurred while the task was ongoing (but not while reading instructions or taking breaks in between versions). Full-screen exits were included in the [multiverse analysis](#multiverse).
 
