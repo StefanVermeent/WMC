@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <title>Letters and Numbers Game</title>
+    <script src="jspsych-6.3.1/jspsych.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-html-button-response.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
+
+    <script src="jspsych-6.3.1/plugins/jspsych-ospan-trial.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-ospan-cue.js"></script>
+    
+    <script src="jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-instructions.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-fullscreen.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-resize.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-survey-text-duration.js"></script>
+    <script src="jspsych-6.3.1/plugins/jspsych-call-function.js"></script>
+    
+    <script src="jspsych-6.3.1/plugins/jspsych-operation-span-recall.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="jspsych-6.3.1/css/jspsych_operationspan.css" rel="stylesheet" type="text/css"></link>
+    
+    <script src="0_ospan_functions.js"></script> 
+    <script src="2_ospan_setup.js"></script>
+    <script src="1_ospan_instructions.js"></script>
+    <script src="1_ospan_practice.js"></script>   
+   
+    <script src="3_ospan_adapted.js"></script>
+    <script src="4_ospan_standard.js"></script>
+    
+    <link href="jspsych-6.3.1/css/jspsych_grid.css" rel="stylesheet" type="text/css"></link>
+
+
+  </head>
+  <body></body>
+  <script>
+  
+var proefpersoonnummer = {
+  type: 'survey-text',
+  questions: [
+    {prompt: 'Wat is je proefpersoonnummer?'}
+  ],
+  data: {
+        variable: 'id'
+      }
+}
+
+
+// Specify all possible condition orders. Includes function to save counterbalancing code to data when test order is randomly chosen below.
+var test_order1 = [
+  {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
+  ospan_instructions_letters_adapted,
+  ospan_practice_letters_adapted_procedure,
+  ospan_instructions_math,
+  ospan_practice_math_procedure,
+  ospan_instructions_full,
+  ospan_practice_adapted_procedure, 
+  ospan_start, 
+  ospan_adapted_procedure, 
+  ospan_reset_counters, 
+  ospan_transition_to_standard, 
+  ospan_standard_procedure,
+  ospan_end
+]
+var test_order2 = [
+  {type: 'call-function', func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
+  ospan_instructions_letters_standard,
+  ospan_practice_letters_standard_procedure,
+  ospan_instructions_math,
+  ospan_practice_math_procedure,
+  ospan_instructions_full,
+  ospan_practice_standard_procedure, 
+  ospan_start, 
+  ospan_standard_procedure, 
+  ospan_reset_counters, 
+  ospan_transition_to_adapted, 
+  ospan_adapted_procedure,
+  ospan_end
+]
+
+
+var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1, test_order2], 1)[0]
+
+var full_experiment_timeline = [
+    fullscreenmode,
+    proefpersoonnummer,
+    ospan_welcome,
+    counterbalance
+    ].flat(2)
+
+    
+
+var timeline = full_experiment_timeline
+
+
+
+
+jsPsych.init({
+  timeline: timeline,
+  on_finish: function() {
+    tasks_start                 = jsPsych.startTime();
+    data_id                     = jsPsych.data.get().filter({variable: 'id'});
+    data_ospan_practice_letters = jsPsych.data.get().filter({variable: 'practice_letters'});
+    data_ospan_practice_math    = jsPsych.data.get().filter({variable: 'practice_math'});
+    data_ospan_practice_full    = jsPsych.data.get().filter({variable: 'practice_full'});
+    data_ospan_standard1        = jsPsych.data.get().filter({variable: 'task_standard1'});
+    data_ospan_standard2        = jsPsych.data.get().filter({variable: 'task_standard2'});
+    data_ospan_adapted1         = jsPsych.data.get().filter({variable: 'task_adapted1'});
+    data_ospan_adapted2         = jsPsych.data.get().filter({variable: 'task_adapted2'});
+    tasks_browser               = jsPsych.data.getInteractionData().json();
+    
+    window.parent.postMessage([
+      tasks_start, 
+      data_id,
+      data_ospan_practice_letters.json(),
+      data_ospan_practice_math.json(),
+      data_ospan_practice_full.json(),
+      data_ospan_standard1.json(),
+      data_ospan_standard2.json(),
+      data_ospan_adapted1.json(),
+      data_ospan_adapted2.json(),
+      tasks_browser
+      ],
+      "https://survey.uu.nl/jfe/form/SV_6ojJjZEZk50bs9g")
+  }
+});
+</script>
+</html>
