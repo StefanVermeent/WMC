@@ -537,7 +537,7 @@ var ospan_transition_to_standard = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "In plaats daarvan verschijnt er telkens een zwart vierkant met een rode omlijning op de positie van de volgende letter,<br>vlak voordat de letter wordt getoond." +
+      "In plaats daarvan verschijnt er telkens een zwart vierkant met een rode omlijning op de positie van de volgende letter,<br>vlak voordat de letter wordt getoond.",
       
        "<style>" +
       ".grid-container {" +
@@ -687,7 +687,7 @@ var ospan_transition_to_adapted = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "De vierkanten zullen een voor een een rode omlijning krijgen, vlak voordat de letter eronder wordt getoond.<br><br>" +
+      "De vierkanten zullen een voor een een rode omlijning krijgen, vlak voordat de letter eronder wordt getoond.<br><br>",
       
       
       "<style>" +
