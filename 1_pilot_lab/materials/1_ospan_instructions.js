@@ -448,7 +448,7 @@ var ospan_start = {
     stimulus: "<p style = 'text-align: center;'>"+ 
       "Je bent nu klaar voor de echte taak.<br><br>" +
       "Vanaf nu krijg je geen feedback meer op je prestaties.<br><br><br>" +
-      "Druk op het pijltje naar links (&larr;) of het pijltje naar rechts (&rarr;) om te beginnen met het volgende blok",
+      "Druk op het pijltje naar links (&larr;) of het pijltje naar rechts (&rarr;) om te beginnen met het volgende blok.",
     choices: ["arrowleft", "arrowright"],
     data: {variable: 'ospan_start'},
 };
@@ -758,7 +758,7 @@ var ospan_end = {
   type: "instructions",
   pages: [
      "<p style = 'text-align: center;'>"+ 
-    "Dit is het einde van de <strong>Letters en Nummers</strong> taak." +
+    "Dit is het einde van de <strong>Letters en Nummers</strong> taak.<br>" +
     "Klik op 'verder' om door te gaan.",
   ],
       show_clickable_nav: true,
