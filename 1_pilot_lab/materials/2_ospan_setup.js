@@ -122,7 +122,7 @@ var ospan_full_feedback = {
      type: 'html-keyboard-response',
      stimulus: function(){
        stim = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nLettersRecalled+" van de " + jsPsych.timelineVariable('selection').length + "</font> letters in de juiste volgorde onthouden.</b><br><br><br>";
-       stim = "Je hebt <font color='blue'>"+nMathAcc+" van de " + jsPsych.timelineVariable('selection').length + "</font> rekensommen correct opgelost.<br><br></div><br><br><br>";
+       stim += "Je hebt <font color='blue'>"+nMathAcc+" van de " + jsPsych.timelineVariable('selection').length + "</font> rekensommen correct opgelost.<br><br></div><br><br><br>";
        stim += "Druk op het pijltje naar links (&larr;) or het pijltje naar rechts (&rarr;) om de volgende trial te starten.";
        
        return stim;
@@ -136,7 +136,7 @@ var ospan_full_feedback = {
 
 var ospan_interblock = {
   type: 'html-keyboard-response',
-  stimulus: stim += "Druk op het pijltje naar links (&larr;) or het pijltje naar rechts (&rarr;) om door te gaan naar het volgende blok.",
+  stimulus: "Druk op het pijltje naar links (&larr;) or het pijltje naar rechts (&rarr;) om door te gaan naar het volgende blok.",
   choices: ["arrowleft", "arrowright"]
 };
 
