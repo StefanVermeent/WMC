@@ -136,7 +136,7 @@ var ospan_full_feedback = {
 
 var ospan_interblock = {
   type: 'html-keyboard-response',
-  stimulus: stim += "Druk op het pijltje naar links (&larr;) or het pijltje naar rechts (&rarr;) om door te gaan naar het volgende blok.";
+  stimulus: stim += "Druk op het pijltje naar links (&larr;) or het pijltje naar rechts (&rarr;) om door te gaan naar het volgende blok.",
   choices: ["arrowleft", "arrowright"]
 };
 
