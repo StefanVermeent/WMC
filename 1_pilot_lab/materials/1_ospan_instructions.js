@@ -368,7 +368,7 @@ var ospan_instructions_math = {
       
       //page 4
       "<p style = 'text-align: center;'>"+ 
-      "Soms is de uitkomst van de rekensom INCORRECT:<br><br><br><br>"
+      "Soms is de uitkomst van de rekensom INCORRECT:<br><br><br><br>" +
       "<div style = 'font-size:70px'>3 + 1 = 6</div><br><br><br>",
       
       //page 5
