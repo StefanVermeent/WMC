@@ -420,6 +420,7 @@ var ospan_instructions_full = {
       //page 4
       "<p style = 'text-align: center;'>"+ 
       "Het is belangrijk dat je je best doet op beide taken!<br><br>" +
+      "Gebruik <strong>geen</strong> hulpmiddelen, zoals je mobiel of pen en papier.<br><br>"
       "Aan het einde van elke ronde krijg je te zien hoeveel<br>letters en rekensommen je goed had.",
 
       ],
