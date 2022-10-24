@@ -112,7 +112,7 @@ var ospan_instructions_letters_standard = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "Vlak voordat de volgende letter gepresenteerd wordt zul je een zwart vierkant met een rode omlijning zien op dezelfde plek op het scherm."
+      "Vlak voordat de volgende letter gepresenteerd wordt zul je een zwart vierkant met een rode omlijning zien op dezelfde plek op het scherm.",
       
       //page 5
       "<style>" +
