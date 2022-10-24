@@ -24,13 +24,13 @@ var ospan_instructions_letters_standard = {
       //Page 1
       "<p style = 'text-align: center;'>"+ 
       "In dit spel zul je steeds twee dingen moeten doen:<br><br>" +
-      "1. <strong>Letters</strong> onthouden." +
+      "1. <strong>Letters</strong> onthouden.<br>" +
       "2. Simpele <strong>rekensommen</strong> oplossen.",
       
       //page 2
       "<p style = 'text-align: center;'>"+ 
       "<strong>Taak 1: Letters onthouden</strong><br><br>" +
-      "Je zult één voor één een reeks nummers te zien krijgen." +
+      "Je zult een voor een een reeks nummers te zien krijgen.<br>" +
       "Jouw taak is om alle letters <strong>in de juiste volgorde</strong> te onthouden.",
       
       //page 3
@@ -72,7 +72,7 @@ var ospan_instructions_letters_standard = {
       "</div>"+
       "</div></div><br><br><br>" +
       
-      "De letters zullen één voor één gepresenteerd worden bovenin het scherm, van links naar rechts.<br><br>",
+      "De letters zullen een voor een gepresenteerd worden bovenin het scherm, van links naar rechts.<br><br>",
  
       //page 5
       "<style>" +
@@ -187,13 +187,13 @@ var ospan_instructions_letters_adapted = {
       //Page 1
       "<p style = 'text-align: center;'>"+ 
       "In dit spel zul je steeds twee dingen moeten doen:<br><br>" +
-      "1. <strong>Letters</strong> onthouden." +
+      "1. <strong>Letters</strong> onthouden.<br>" +
       "2. Simpele <strong>rekensommen</strong> oplossen.",
       
       //page 2
       "<p style = 'text-align: center;'>"+ 
       "<strong>Taak 1: Letters onthouden</strong><br><br>" +
-      "Je zult één voor één een reeks nummers te zien krijgen." +
+      "Je zult een voor een een reeks nummers te zien krijgen.<br>" +
       "Jouw taak is om alle letters <strong>in de juiste volgorde</strong> te onthouden.",
       
       //page 3
@@ -317,7 +317,7 @@ var ospan_instructions_letters_adapted = {
       "</div>"+
       "</div></div><br><br><br>" +
       
-      "De zwarte vierkanten zullen één voor één verdwijnen om de letter eronder te tonen.<br><br>",
+      "De zwarte vierkanten zullen een voor een verdwijnen om de letter eronder te tonen.<br><br>",
       
       
       //page 4
@@ -409,7 +409,7 @@ var ospan_instructions_full = {
       //page 2
       "<p style = 'text-align: center;'>"+ 
       "In het volledige spel zul je <strong>snel moeten wisselen</strong> tussen de twee taken.<br><br><br>" +
-      "Je zult eerst een letter zien, dan een rekensom, dan een letter, dan een rekensom, enzovoort:<br><br>"
+      "Je zult eerst een letter zien, dan een rekensom, dan een letter, dan een rekensom, enzovoort:<br><br>" +
       "Letter &rarr; Rekensom &rarr; Letter &rarr; Rekensom ...",
       
       //page 3
@@ -420,7 +420,7 @@ var ospan_instructions_full = {
       //page 4
       "<p style = 'text-align: center;'>"+ 
       "Het is belangrijk dat je je best doet op beide taken!<br><br>" +
-      "Gebruik <strong>geen</strong> hulpmiddelen, zoals je mobiel of pen en papier.<br><br>"
+      "Gebruik <strong>geen</strong> hulpmiddelen, zoals je mobiel of pen en papier.<br><br>" +
       "Aan het einde van elke ronde krijg je te zien hoeveel<br>letters en rekensommen je goed had.",
 
       ],
@@ -537,7 +537,7 @@ var ospan_transition_to_standard = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "In plaats daarvan verschijnt er telkens een zwart vierkant met een rode omlijning op de positie van de volgende letter,<br>vlak voordat de letter wordt getoond."
+      "In plaats daarvan verschijnt er telkens een zwart vierkant met een rode omlijning op de positie van de volgende letter,<br>vlak voordat de letter wordt getoond." +
       
        "<style>" +
       ".grid-container {" +
@@ -647,7 +647,7 @@ var ospan_transition_to_adapted = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "Dit keer zullen de letters worden afgeschermd door zwarte vierkanten<br><br>",
+      "Dit keer zullen de letters worden afgeschermd door zwarte vierkanten.<br><br>",
       
       
       "<style>" +
@@ -687,7 +687,7 @@ var ospan_transition_to_adapted = {
       "<div style = 'margin: auto; padding: 25px 0px'><span></span></div>"+
       "</div>"+
       "</div></div><br><br><br>" +
-      "De vierkanten zullen één voor één een rode omlijning krijgen, vlak voordat de letter eronder wordt getoond.<br><br>"
+      "De vierkanten zullen een voor een een rode omlijning krijgen, vlak voordat de letter eronder wordt getoond.<br><br>" +
       
       
       "<style>" +

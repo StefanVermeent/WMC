@@ -36,15 +36,6 @@
   <body></body>
   <script>
   
-var proefpersoonnummer = {
-  type: 'survey-text',
-  questions: [
-    {prompt: 'Wat is je proefpersoonnummer?'}
-  ],
-  data: {
-        variable: 'id'
-      }
-}
 
 
 // Specify all possible condition orders. Includes function to save counterbalancing code to data when test order is randomly chosen below.
@@ -84,7 +75,6 @@ var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1
 
 var full_experiment_timeline = [
     fullscreenmode,
-    proefpersoonnummer,
     ospan_welcome,
     counterbalance
     ].flat(2)
@@ -100,7 +90,6 @@ jsPsych.init({
   timeline: timeline,
   on_finish: function() {
     tasks_start                 = jsPsych.startTime();
-    data_id                     = jsPsych.data.get().filter({variable: 'id'});
     data_ospan_practice_letters = jsPsych.data.get().filter({variable: 'practice_letters'});
     data_ospan_practice_math    = jsPsych.data.get().filter({variable: 'practice_math'});
     data_ospan_practice_full    = jsPsych.data.get().filter({variable: 'practice_full'});
@@ -112,7 +101,6 @@ jsPsych.init({
     
     window.parent.postMessage([
       tasks_start, 
-      data_id,
       data_ospan_practice_letters.json(),
       data_ospan_practice_math.json(),
       data_ospan_practice_full.json(),
